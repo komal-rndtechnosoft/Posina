@@ -314,7 +314,7 @@ thead,
 tr {
     border-color: inherit;
     border-style: solid;
-    border-width: 0;
+    border-width: 2px;
 }
 label {
     display: inline-block;
