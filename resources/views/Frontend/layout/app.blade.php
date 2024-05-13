@@ -10,7 +10,7 @@
 		content="Construction, Factory, elementor, engineering, Technology, online bussines, Ecommerce, Shop">
 	<meta name="description"
 		content="Factry - Factory and Industry Service HTML5 Template for all kinds of Construction,Factory,elementor, engineering, Technology, online bussines, Ecommerce, Shop,website">
-	<title>Factry - Factory and Industry Service HTML5 Template</title>
+	<title>Posina</title>
 	<meta property="og:site_name" content="Factry">
 	<meta property="og:url" content="">
 	<meta property="og:type" content="website">
@@ -42,6 +42,15 @@
 		<!-- slide-bar end -->
 
 		<main>
+		<!-- preloader -->
+				<div id="preloader">
+			<div class="preloader">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- preloader end  -->
+		
         @yield('content')
         </main>
         @include('Frontend.layout.footer')
