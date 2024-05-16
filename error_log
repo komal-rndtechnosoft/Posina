@@ -1,0 +1,7 @@
+[16-May-2024 04:30:15 UTC] PHP Warning:  require(/home/rndtd/public_html/demos/Posina1/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/rndtd/public_html/demos/Posina1/public/index.php on line 34
+[16-May-2024 04:30:15 UTC] PHP Warning:  require(/home/rndtd/public_html/demos/Posina1/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/rndtd/public_html/demos/Posina1/public/index.php on line 34
+[16-May-2024 04:30:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rndtd/public_html/demos/Posina1/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/rndtd/public_html/demos/Posina1/public/index.php:34
+Stack trace:
+#0 /home/rndtd/public_html/demos/Posina1/server.php(21): require_once()
+#1 {main}
+  thrown in /home/rndtd/public_html/demos/Posina1/public/index.php on line 34
