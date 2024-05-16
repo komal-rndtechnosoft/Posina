@@ -43,20 +43,15 @@
 							<div class="footer__widget mb-30">
 								<ul class="fot-list">
 									<li>
-										<a href="faq.html">About Us</a>
+										<a href="{{url('/aboutus')}}">About Us</a>
 									</li>
 									<li>
-										<a href="faq.html">Products & Services</a>
+										<a href="{{url('/blogs')}}">Blogs</a>
 									</li>
 									<li>
-										<a href="faq.html">Manufacturing Process</a>
+										<a href="{{url('/contactus')}}">Contact Us</a>
 									</li>
-									<li>
-										<a href="contact.html">Research Development</a>
-									</li>
-									<li>
-										<a href="contact.html">Case Studies</a>
-									</li>
+									
 								</ul>
 							</div>
 						</div>
@@ -83,39 +78,20 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xxl-3 col-lg-6 col-md-6">
-							<div class="footer__widget mb-30">
-								<h4 class="widget__title">Subscribe To Our Newsletter</h4>
-								<div class="ht-footer-subscribe-form mt-20 mb-40">
-									<form action="#" method="get">
-										<input type="text" placeholder="Email Address">
-										<button class="widget__btn mt-20" type="submit">Subscribe Now</button>
-									</form>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				<div class="container copyright__border">
 					<div class="copyright__area pt-75">
 						<div class="row align-items-center">
-							<div class="col-lg-6 text-center text-lg-start">
+							<div class="col-lg-12 text-center ">
 								<div class="copyright__text mb-30">
 									<p>
 										<a class="fw-bold" href="#">Creative Gigs</a>
 										© 2023 Factry. All rights reserved.</p>
 								</div>
 							</div>
-							<div class="col-lg-6 text-center text-lg-end">
-								<ul class="footer__menu mb-30">
-									<li>
-										<a href="contact.html">Privacy Policy</a>
-									</li>
-									<li>
-										<a href="contact.html">Terms & Conditions</a>
-									</li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>

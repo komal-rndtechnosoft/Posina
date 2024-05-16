@@ -85,14 +85,76 @@
 									<span class="pcoded-mtext">Industry We Serve</span>
 								</a>
 							</li>
+							<li class="">
+								<a href="{{url('whoweare')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Who We Are</span>
+								</a>
+							</li>
 						</ul>
 					</li>
-					<li class="">
-						<a href="{{url('About')}}" class="waves-effect waves-dark">
+					<li class="pcoded-hasmenu">
+						<a class="waves-effect waves-dark">
 							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
 							<span class="pcoded-mtext">About Us</span>
 						</a>
+						<ul class="pcoded-submenu">
+							<li class="">
+								<a href="{{url('About')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">About Us</span>
+								</a>
+							</li>
+							
+							<li class="">
+								<a href="{{url('testimonials')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Testimonials</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="{{url('Certificate')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Certificate</span>
+								</a>
+							</li>
+							
+						</ul>
 					</li>
+					<li class="pcoded-hasmenu">
+						<a class="waves-effect waves-dark">
+							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+							<span class="pcoded-mtext">Category</span>
+						</a>
+						<ul class="pcoded-submenu">
+							<li class="">
+								<a href="{{url('category')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Category</span>
+								</a>
+							</li>
+							
+							
+						</ul>
+					<li class="">
+						<a href="{{url('Blog')}}" class="waves-effect waves-dark">
+							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+							<span class="pcoded-mtext">Blogs</span>
+						</a>
+					</li>
+					<li class="pcoded-hasmenu">
+						<a class="waves-effect waves-dark">
+							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+							<span class="pcoded-mtext">Menu Setting</span>
+						</a>
+						<ul class="pcoded-submenu">
+							<li class="">
+								<a href="{{url('menu')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Menus</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="{{url('header')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Header Setting</span>
+								</a>
+							</li>
+							
+						</ul>
 				</ul>
 
 

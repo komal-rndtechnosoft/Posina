@@ -432,8 +432,8 @@ label {
 
 .logo-area img {
   max-width: 100%;
-  width: 107px;
-  height: 90px;
+  width: 88px;
+  height: 78px 
 }
 .logo-area .front {
   display: inline-block;
@@ -2365,7 +2365,7 @@ a.meanmenu-reveal {
   filter: invert(1);
 }
 .ht_btn.blog_btn {
-  width: 139px;
+  /* width: 139px; */
     padding: 12px 16px;}
 .ht_btn.blog_btn::before {
   background: #181818;
@@ -2497,6 +2497,10 @@ a.meanmenu-reveal {
 @media (max-width: 767px) {
   .sub__title__two {
     font-size: 20px;
+  }
+  .ht_btn.blog_btn 
+  {
+width:100%;
   }
 }
 
@@ -7669,4 +7673,11 @@ a.meanmenu-reveal {
     justify-content: center;
     display: flex;
 }
+
+.product__thumb
+	{
+		width:148px !important;
+	}
+
+
 /*# sourceMappingURL=main.css.map */

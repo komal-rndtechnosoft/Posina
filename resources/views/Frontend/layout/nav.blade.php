@@ -5,7 +5,7 @@
 
 		<!-- header-area start -->
 		<header class="theme-main-menu theme-menu-three">
-			<div class="container header-custom-container pt-20 pb-20">
+			<div class="container header-custom-container pt-10 pb-8">
 				<div class="row">
 					<div class="col-lg-3 d-none d-lg-inline-block">
 						<div class="logo-area">
@@ -136,7 +136,7 @@ else{
 			<!-- other pages header -->
 		<!-- header-area start -->
 			<header class="theme-main-menu theme-menu-two black-bg">
-			<div class="container header-custom-container pt-20 pb-20">
+			<div class="container header-custom-container pt-10 pb-8">
 				<div class="row">
 					<div class="col-lg-3 d-none d-lg-inline-block">
 						<div class="logo-area">
