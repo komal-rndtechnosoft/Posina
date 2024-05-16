@@ -8,13 +8,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h3 class="m-b-10">Update Category</h3>
+                            <h3 class="m-b-10">Add Menu</h3>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('home')}}"><i class="feather icon-home"></i></a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{url('category')}}">category</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Update category</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('menu')}}">Menu</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Create Menu</a></li>
                         </ul>
                     </div>
                 </div>
@@ -27,59 +27,53 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{url('category')}}"><button type="submit" class="btn btn-primary">Back</button></a>
-                        <h3>Update Category</h3>
+                        <a href="{{url('menu')}}"><button type="submit" class="btn btn-primary">Back</button></a>
+                        <h3>Add menu</h3>
                         <div class="row">
                             <div class="col-md-6">
-                                <form id="main" action="{{route('category.update', $data->id)}}" method="POST"
+                                <form id="main" action="{{route('menu.store')}}" method="POST"
                                     enctype="multipart/form-data">
-                                    {{ method_field('PATCH') }}
-                                    {{ csrf_field() }}
+                                    @csrf
+
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Name</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="name"
-                                            id="name"
-                                                placeholder="Enter Title" value="{{$data->name}}" required />
+                                        <label class="col-sm-4 col-form-label">Page Name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="page_name" id="name"
+                                                placeholder="Name" required>
                                             <span class="messages"></span>
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Slug</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Slug</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="slug" id="slug"
-                                                placeholder="Sub-Title" value="{{$data->slug}}">
+                                                placeholder="Slug" required>
                                             <span class="messages"></span>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Image<h6 style="font-size: 14px; color: red;">Size:(710 X 300px)</h6></label>
-                                            <div class="col-sm-8">
-                                                <input type="file" class="form-control" name="image" id="p_img">
-                                                <span class="messages"></span>
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label"></label>
-                                            <div class="col-sm-8">
-                                                <img class="img-fluid card-img-top" style="height: 300px; width: 710px;" src="{{ asset('Backend/images/category/' . $data->image) }}" alt="{{$data->alt_tag}}">
-                                            </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Banner Image</label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="form-control" name="banner_image" id="p_img"
+                                                required>
+                                            <span class="messages"></span>
                                         </div>
-                                        
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Alt Tag</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="alt_tag" class="form-control" placeholder="Enter Alt Tag For Image" value="{{$data->alt_tag}}" required/>
-                                                <span class="messages"></span>
-                                            </div>
-                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Alt Tag</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="alt_tag" id="p_name"
+                                            placeholder="Enter Alt Tag" required>
+                                        <span class="messages"></span>
+                                    </div>
+                                </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Meta Title</label>
                                         <div class="col-sm-8">
                                             <input type="text" name="meta_title" class="form-control"
-                                                placeholder="Enter Meta Title" value="{{$data->meta_title}}">
+                                                placeholder="Enter Meta Title">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -88,8 +82,7 @@
                                         <label class="col-sm-4 col-form-label">Meta Description</label>
                                         <div class="col-sm-8">
                                             <input type="text" name="meta_description" class="form-control"
-                                                placeholder="Enter Meta Description"
-                                                value="{{$data->meta_description}}">
+                                                placeholder="Enter Meta Description">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -98,7 +91,7 @@
                                         <label class="col-sm-4 col-form-label">Meta Keyword</label>
                                         <div class="col-sm-8">
                                             <input type="text" name="meta_keyword" class="form-control"
-                                                placeholder="Enter Meta Keyword" value="{{$data->meta_keyword}}">
+                                                placeholder="Enter Meta Keyword">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -107,7 +100,7 @@
                                         <label class="col-sm-4 col-form-label">Meta Canonical</label>
                                         <div class="col-sm-8">
                                             <input type="text" name="meta_canonical" class="form-control"
-                                                placeholder="Enter Meta Canonical" value="{{$data->meta_canonical}}">
+                                                placeholder="Enter Meta Canonical">
                                             <span class="messages"></span>
                                         </div>
                                     </div>

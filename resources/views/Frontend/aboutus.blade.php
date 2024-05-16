@@ -17,7 +17,7 @@
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="index.html">Home</a></li>
-										<li class="active" aria-current="page">Blogs</li>
+										<li class="active" aria-current="page">About Us</li>
 									</ul>
 								</nav>
 							</div>

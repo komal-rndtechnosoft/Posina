@@ -32,7 +32,7 @@
 	<section class="products-section pt-180 pb-165 pt-lg-120 pb-lg-105">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 order-lg-first order-last">
+				<div class="col-lg-5 order-lg-first order-last">
 					<div class="grey-bg widget widget-categories mb-60">
 						<div class="widget-title-box mb-25">
 							<h4 class="widget__title__three">Categories</h4>
@@ -54,20 +54,15 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-8">
+				<div class="col-lg-7">
 
 					<div class="row">
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-1.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -78,29 +73,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-2.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -111,29 +99,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-3.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -144,29 +125,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-4.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -177,29 +151,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-5.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="shap-details.html"><i class="bi bi-cart2"></i></a>
-										<a href="shap-details.html"><i class="bi bi-heart"></i></a>
-										<a href="shap-details.html"><i class="bi bi-eye"></i></a>
-										<a href="shap-details.html"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -210,29 +177,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-6.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -243,29 +203,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-7.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -276,29 +229,22 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-7 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-5 col-md-4 col-sm-6">
+						<div class="col-lg-6 col-md-4 col-sm-6">
 							<figure class="product-wrapper white-bg mb-45">
 								<div class="product-thumb">
 									<a href="product-details.html"><img src="assets/img/product/product-8.jpg"
 											class="figure-img w-100" alt="product_img"></a>
-									<div class="action-btn">
-										<a href="#"><i class="bi bi-cart2"></i></a>
-										<a href="#"><i class="bi bi-heart"></i></a>
-										<a href="#"><i class="bi bi-eye"></i></a>
-										<a href="#"><i class="bi bi-arrow-left-right"></i></a>
-									</div>
+									
 								</div>
 								<figcaption class="figure-caption">
 									<div class="product-tag">Tech</div>
@@ -309,14 +255,12 @@
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
-										<div class="col-lg-6 col-md-4 col-sm-6">
+										<div class="col-lg-7 col-md-4 col-sm-6">
 											<a href="blog-details.html" class="ht_btn blog_btn" data-bs-toggle="modal"
-												data-bs-target="#exampleModal">Read more <img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+												data-bs-target="#exampleModal">Read more </a>
 										</div>
-										<div class="col-lg-6 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire<img
-													src="assets/img/icon/arrow1.svg" alt="arrow"></a>
+										<div class="col-lg-5 col-md-4 col-sm-6">
+											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
 										</div>
 									</div>
 								</figcaption>
