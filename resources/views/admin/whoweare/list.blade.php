@@ -179,7 +179,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Video</label>
                                         <div class="col-sm-8">
-                                            <input type="file" class="form-control" name="video" id="p_img">
+                                            <input type="file" class="form-control" name="video" id="" >
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -195,8 +195,9 @@
                                         <label class="col-sm-4 col-form-label"></label>
                                         <div class="col-sm-8">
                                             <video width="320" height="240" controls>
-                                                <source src="{{ asset('/Backend/images/about/' . $data->video) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
+                                         <source src="{{ asset('/Backend/images/about/'.$data->video) }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                              
                                             </video>
                                         </div>
                                     </div>

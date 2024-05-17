@@ -32,13 +32,24 @@
                             <div class="col-md-6">
                                 <form action="{{route('product.store')}}" method="POST">
                                 @csrf
+                                    
+                                     <div class="form-group">
+                                        <label for="product">Category Name</label>
+                                        <select id="categorySelect" name="category_id" class="form-control">
+                                            <option>select</option>
+                                             @foreach($category as $c)
+                                             <option value="{{$c->category_id}}">{{$c->name}} </option>
+                                          @endforeach
+                                        </select>                        
+                                        </div>
+                                    
                                     <div class="form-group">
                                         <label for="product">Product Name</label>
                                         <input type="text" class="form-control" placeholder="Enter Product Name" name="product_name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="product">CAS No</label>
-                                        <input type="text" class="form-control" placeholder="Enter Product CAS No" name="product_cas_no">
+                                        <label for="product">Price</label>
+                                        <input type="text" class="form-control" placeholder="Enter Product Price" name="product_price">
                                     </div>
                                     <div class="form-group">
                                         <label for="product">Status</label>

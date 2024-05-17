@@ -17,9 +17,9 @@ class Footer extends Model
         'facebook_link',
         'twitter_link',
         'location',
-       ' phone1',
+       'phone1',
         'email1',
-       ' address',
+       'address',
        
 
 

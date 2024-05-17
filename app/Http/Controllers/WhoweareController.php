@@ -34,7 +34,9 @@ class WhoweareController extends Controller
 
     public function update(Request $request, $id)
     {
+       
         $data = Whoweare::find($id);
+       
         $filename = "";
         $destinationpath = public_path('/Backend/images/about/');
         if ($request->hasFile('image')) {
@@ -61,17 +63,20 @@ class WhoweareController extends Controller
             $data->image1 = $filename;
             $files->move($destinationpath, $filename);
         }
+       
         if ($request->hasFile('video')) {
+           
             $files = $request->file('video');
+            
             //Remove Old Image
             $usersImage = public_path("/Backend/images/about/$data->video"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
+             if(file_exists($usersImage)){
+                unlink($usersImage);
             }
             //Upload Image
-            $filename = "header-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+            $filename = time().'.'.$files->getClientOriginalExtension();
+            $files->move($destinationpath,$filename);
             $data->video = $filename;
-            $files->move($destinationpath, $filename);
         }
          
         $data->save();

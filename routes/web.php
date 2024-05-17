@@ -15,6 +15,7 @@ use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\FooterController;
 
 
 
@@ -42,14 +43,14 @@ use App\Http\Controllers\HeaderController;
 |
 */
 
-Route::get('/', function () {
-    return view('Frontend.index');
-});
+Route::get('/', [MainController::class,'index']);
 Route::get('/products', [MainController::class,'products'])->name('products');
 Route::get('/aboutus', [MainController::class,'aboutus'])->name('aboutus');
 Route::get('/blogs', [MainController::class,'blogs'])->name('blogs');
 Route::get('/contactus', [MainController::class,'contact'])->name('contactus');
-Route::get('/blog-details', [MainController::class,'blogdetails'])->name('blogdetails');
+// Route::get('/blog-details', [MainController::class,'blogdetails'])->name('blogdetails');
+Route::get('/blogdetails/{slug}', [MainController::class,'blogdetails'])->name('blogdetails');
+
 Route::get('/productsdetails', [MainController::class,'productsdetails'])->name('productsdetails');
 
 
@@ -72,6 +73,8 @@ Route::resource('/Certificate',CertificateController::class);
 Route::resource('/category',CategoryController::class);
 Route::resource('/menu',MenuController::class);
 Route::resource('/header',HeaderController::class);
+Route::resource('/footer',FooterController::class);
+
 
 
 

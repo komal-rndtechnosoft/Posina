@@ -41,7 +41,7 @@
                                     <span class="messages"></span>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Sub-Title</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="subtitle" placeholder="Enter Sub-Title"
@@ -56,7 +56,7 @@
                                         placeholder="Enter Description">{{$banner->description}}</textarea>
                                     <span class="messages"></span>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">BannerImage<h6 style="font-size: 14px; color: red;">Size:(710 X 300px)</h6>

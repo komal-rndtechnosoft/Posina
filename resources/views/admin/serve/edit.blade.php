@@ -37,8 +37,8 @@
                                     {{ method_field('PATCH') }}
                                     {{ csrf_field() }}
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Title</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Title</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="title"
                                                 placeholder="Enter Title" value="{{$data->title}}" required />
                                             <span class="messages"></span>
@@ -46,8 +46,8 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Description</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Description</label>
+                                        <div class="col-sm-8">
                                             <textarea class="textarea" rows="3" cols="50" type="text" name="description"
                                                 class="form-control"
                                                 placeholder="Enter Description">{{$data->description}}</textarea>
@@ -55,16 +55,16 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Icon<h6
+                                        <label class="col-sm-4 col-form-label">Icon<h6
                                                 style="font-size: 14px; color: red;">Size:(150 X 150px)</h6></label>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-8">
                                             <input type="file" class="form-control" name="icon" id="p_img">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label"></label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label"></label>
+                                        <div class="col-sm-8">
                                             <img class="img-fluid card-img-top"
                                                 style="height: 150px; width: 150px; background-color: black;"
                                                 src="{{ asset('Backend/images/serve/' . $data->icon) }}"
@@ -72,24 +72,24 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Alt Tag</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Alt Tag</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="alt_tag" id="p_name"
                                                 placeholder="Enter Alt Tag" value="{{$data->alt_tag}}">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Image<h6
+                                        <label class="col-sm-4 col-form-label">Background-Image<h6
                                                 style="font-size: 14px; color: red;">Size:(150 X 150px)</h6></label>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-8">
                                             <input type="file" class="form-control" name="image" id="p_img">
                                             <span class="messages"></span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label"></label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label"></label>
+                                        <div class="col-sm-8">
                                             <img class="img-fluid card-img-top"
                                                 style="height: 150px; width: 150px; background-color: black;"
                                                 src="{{ asset('Backend/images/serve/' . $data->image) }}"
@@ -97,8 +97,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Image Alt Tag</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Image Alt Tag</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="alt_tag1" id="p_name"
                                                 placeholder="Enter Alt Tag" value="{{$data->alt_tag1}}">
                                             <span class="messages"></span>
@@ -108,8 +108,8 @@
 
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2"></label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4"></label>
+                                        <div class="col-sm-8">
                                             <button type="submit" class="btn btn-primary m-b-0">Submit</button>
                                         </div>
                                     </div>

@@ -31,7 +31,7 @@
                         <h3>Add Category</h3>
                         <div class="row">
                             <div class="col-md-6">
-                                <form action="{{route('category.store')}}" method="POST">
+                                <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Name</label>

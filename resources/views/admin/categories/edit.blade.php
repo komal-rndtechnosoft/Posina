@@ -36,8 +36,8 @@
                                     {{ method_field('PATCH') }}
                                     {{ csrf_field() }}
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Name</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Name</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="name"
                                             id="name"
                                                 placeholder="Enter Title" value="{{$data->name}}" required />
@@ -46,8 +46,8 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Slug</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Slug</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="slug" id="slug"
                                                 placeholder="Sub-Title" value="{{$data->slug}}">
                                             <span class="messages"></span>
@@ -64,7 +64,8 @@
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label"></label>
                                             <div class="col-sm-8">
-                                                <img class="img-fluid card-img-top" style="height: 300px; width: 710px;" src="{{ asset('Backend/images/category/' . $data->image) }}" alt="{{$data->alt_tag}}">
+                                                <img class="form-control" style="height: 300px; width: 710px;"
+                                                    src="{{ asset('/Backend/images/banners/' . $data->image) }}" alt="{{$data->alt_tag}}"><br><br><br>
                                             </div>
                                         </div>
                                         
