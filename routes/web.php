@@ -16,18 +16,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\FooterController;
-
-
-
-
-
-
-
-
-
-
-
-
+use App\Http\Controllers\ProductController;
 
 
 
@@ -50,9 +39,11 @@ Route::get('/blogs', [MainController::class,'blogs'])->name('blogs');
 Route::get('/contactus', [MainController::class,'contact'])->name('contactus');
 // Route::get('/blog-details', [MainController::class,'blogdetails'])->name('blogdetails');
 Route::get('/blogdetails/{slug}', [MainController::class,'blogdetails'])->name('blogdetails');
+Route::get('/productdetails/{categorySlug}', [MainController::class,'productdetails'])->name('productdetails');
 
 Route::get('/productsdetails', [MainController::class,'productsdetails'])->name('productsdetails');
 
+Route::get('/get-product', 'MainController@getProduct')->name('get-product');
 
 
 
@@ -74,6 +65,9 @@ Route::resource('/category',CategoryController::class);
 Route::resource('/menu',MenuController::class);
 Route::resource('/header',HeaderController::class);
 Route::resource('/footer',FooterController::class);
+Route::resource('/product',ProductController::class);
+Route::delete('/product/remove/{id}/{image}/{index}', [ProductController::class, 'remove1'])->name('product.remove1');
+
 
 
 

@@ -128,6 +128,11 @@
 									<span class="pcoded-mtext">Category</span>
 								</a>
 							</li>
+							<li class="">
+								<a href="{{url('product')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Products</span>
+								</a>
+							</li>
 							
 							
 						</ul>

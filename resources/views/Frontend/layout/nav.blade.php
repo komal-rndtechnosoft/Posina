@@ -1,6 +1,8 @@
 
 <?php
 $header=DB::table('headers')->select('*')->first();
+$category = DB::table('categories')->select('*')->get();
+
     $current_page = request()->path(); // Assuming this retrieves the current page slug
     if ($current_page == '/') {
 ?>
@@ -81,11 +83,13 @@ $header=DB::table('headers')->select('*')->first();
 										</li>
 										
 										<li>
-											<a href="#">Products</a>
+											<a>Products</a>
 											<ul class="sub-menu">
+											@foreach($category as $p)
 												<li>
-													<a href="{{route('productsdetails')}}">Product-details</a>
+													<a href="{{url('/productdetails/'.$p->slug)}}">{{$p->name}}</a>
 												</li>
+												@endforeach
 												
 											</ul>
 										</li>
@@ -195,9 +199,11 @@ else{
 										<li>
 											<a href="#">Products</a>
 											<ul class="sub-menu">
+											@foreach($category as $p)
 												<li>
-													<a href="{{route('productsdetails')}}">Product-details</a>
+													<a href="{{url('/productdetails/'.$p->slug)}}">{{$p->name}}</a>
 												</li>
+												@endforeach
 												
 											</ul>
 										</li>

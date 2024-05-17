@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 
 use Illuminate\Http\Request;
 
@@ -41,7 +42,9 @@ class MainController extends Controller
     }
     public function products()
     {
-        return view('Frontend.product');
+        $product = DB::table('products')->select('*')->limit(30)->get();
+
+        return view('Frontend.product',compact('product'));
     }
     public function productsdetails()
     {
@@ -67,5 +70,23 @@ class MainController extends Controller
     {
         return view('Frontend.Contact');
     }
+    public function productdetails($categorySlug)
+    {
+        $product1 = Product::select('products.*')->get();
 
+        $product = Product::select('products.*')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->where('categories.slug', $categorySlug)
+        ->get();
+        $cat = DB::table('categories')->select('*')->get();
+        $category = DB::table('categories')->select('*')->where('slug', $categorySlug)->first();
+    return view('Frontend.product-detail', compact('category','cat','product','product1'));
+    }
+    public function getProduct(Request $request)
+    {
+        $productId = $request->input('id');
+        $product1 = Product::find($productId);
+        return response()->json($product1);
+    }
+    
 }
