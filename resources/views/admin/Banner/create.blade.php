@@ -40,7 +40,7 @@
                                                       <span class="messages"></span>
                                                    </div>
                                                 </div>
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                    <label class="col-sm-2 col-form-label">Sub-Title</label>
                                                    <div class="col-sm-10">
                                                       <input type="text" class="form-control" name="subtitle"  placeholder="Sub-Title" required/>
@@ -54,7 +54,7 @@
                                                         <textarea class="textarea form-control" rows="3" name="description" placeholder="Enter Description"></textarea>
                                                         <span class="messages"></span>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                  
                                                  <div class="form-group row">

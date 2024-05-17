@@ -4,7 +4,7 @@
 
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
+	<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
 		data-background="assets/img/page-title/page-title-bg-1a.jpg">
 		<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 		<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -38,19 +38,11 @@
 							<h4 class="widget__title__three">Categories</h4>
 						</div>
 						<ul class="list-none service-widget">
-							<li><a href="#">Industrial Automation <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a></li>
-							<li><a href="#">Manufacturing System <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a></li>
-							<li><a href="#">Oil and Gas Refinery <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a></li>
-							<li><a href="#">Energy Management <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a></li>
-							<li><a href="#">Smart Factory Solution <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a>
-							</li>
-							<li><a href="#">Lean Manufacturing <span class="float-end"><i
-											class="bi bi-arrow-right-short"></i></span></a></li>
+					                	 @foreach($category as $c)
+										<li><a href="#">{{$c->name}}<span class="float-end"><i
+									class="bi bi-arrow-right-short"></i></span></a></li>
+										@endforeach
+						
 						</ul>
 					</div>
 				</div>
@@ -65,16 +57,16 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+											Push Button Station
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
 									</div>
 									<div class="row">
 										<div class="col-lg-7 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
+										 <a  class="ht_btn blog_btn" data-bs-toggle="modal"
+												data-bs-target="#exampleModal">Read more </a>
 										</div>
 										<div class="col-lg-5 col-md-4 col-sm-6">
 											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
@@ -91,9 +83,8 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+											Weatherproof Junction Box
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
@@ -117,9 +108,8 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+											Circle Cable Clip
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
@@ -143,9 +133,8 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+                                        Abs Junction Box
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
@@ -169,9 +158,8 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+										Abs-A.C.Box
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
@@ -195,9 +183,8 @@
 									
 								</div>
 								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
 									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
+											PVC Grip
 										</a></h4>
 									<div class="price">
 										<span class="old-price">$166.00</span>
@@ -213,59 +200,7 @@
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-lg-6 col-md-4 col-sm-6">
-							<figure class="product-wrapper white-bg mb-45">
-								<div class="product-thumb">
-									<a href="product-details.html"><img src="assets/img/product/product-7.jpg"
-											class="figure-img w-100" alt="product_img"></a>
-									
-								</div>
-								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
-									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
-										</a></h4>
-									<div class="price">
-										<span class="old-price">$166.00</span>
-									</div>
-									<div class="row">
-										<div class="col-lg-7 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Read more </a>
-										</div>
-										<div class="col-lg-5 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
-										</div>
-									</div>
-								</figcaption>
-							</figure>
-						</div>
-						<div class="col-lg-6 col-md-4 col-sm-6">
-							<figure class="product-wrapper white-bg mb-45">
-								<div class="product-thumb">
-									<a href="product-details.html"><img src="assets/img/product/product-8.jpg"
-											class="figure-img w-100" alt="product_img"></a>
-									
-								</div>
-								<figcaption class="figure-caption">
-									<div class="product-tag">Tech</div>
-									<h4 class="product-title"><a href="product-details.html">
-											Smart Watch
-										</a></h4>
-									<div class="price">
-										<span class="old-price">$166.00</span>
-									</div>
-									<div class="row">
-										<div class="col-lg-7 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn" data-bs-toggle="modal"
-												data-bs-target="#exampleModal">Read more </a>
-										</div>
-										<div class="col-lg-5 col-md-4 col-sm-6">
-											<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
-										</div>
-									</div>
-								</figcaption>
-							</figure>
-						</div>
+					
 
 					</div>
 				</div>
@@ -388,7 +323,6 @@
 									<div class="row align-items-center">
 										<div class="col-lg-12 col-md-12">
 											<div class="description-content mb-30">
-												<h4 class="semi-title product-desc mb-20">About Products</h4>
 												<table class="table table-hover">
 												<thead class="table-dark">
 													<tr>
@@ -437,10 +371,7 @@
 			<!--product-review-section end-->
 			</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
+			
 		</div>
 	</div>
 </div>

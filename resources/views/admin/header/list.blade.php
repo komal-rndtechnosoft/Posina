@@ -39,7 +39,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Phone Number</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="title"
+                                            <input type="text" class="form-control" name="phone"
                                                 placeholder="Enter Title" value="{{$header->phone}}" required />
                                             <span class="messages"></span>
                                         </div>
@@ -56,9 +56,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Address</label>
                                         <div class="col-sm-8">
-                                            <textarea class="textarea" rows="3" cols="50" type="text" name="address"
-                                                class="form-control"
-                                                placeholder="Enter Description">{{$header->address}}</textarea>
+                                           <input type="text" class="form-control" name="address"
+                                                placeholder="Enter address" value="{{$header->address}}" required />
                                             <span class="messages"></span>
                                         </div>
                                     </div>

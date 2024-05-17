@@ -153,6 +153,11 @@
 									<span class="pcoded-mtext">Header Setting</span>
 								</a>
 							</li>
+								<li class="">
+								<a href="{{url('footer')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Footer Setting</span>
+								</a>
+							</li>
 							
 						</ul>
 				</ul>

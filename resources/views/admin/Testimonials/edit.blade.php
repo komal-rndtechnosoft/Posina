@@ -13,8 +13,8 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('home')}}"><i class="feather icon-home"></i></a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{url('testimonials')}}">USP</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Update USP</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('testimonials')}}">Testimonials</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Update Testimonials</a></li>
                         </ul>
                     </div>
                 </div>

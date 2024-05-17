@@ -35,10 +35,6 @@ class CategoryController extends Controller
     {
         $data = new Category();
         $data->fill($request->all());
-             $destinationPath = public_path('/Backend/images/banners');
-
-
-        
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $filename = date('YmdHi') . $file->getClientOriginalName();
@@ -70,11 +66,11 @@ class CategoryController extends Controller
     {
         $data = Category::find($id);
         $filename = "";
-        $destinationpath = public_path('/Backend/images/category/');
+        $destinationpath = public_path('/Backend/images/banners/');
         if ($request->hasFile('image')) {
             $files = $request->file('image');
             //Remove Old Image
-            $usersImage = public_path("/Backend/images/category/$data"); // get previous image from folder
+            $usersImage = public_path("/Backend/images/banners/$data"); // get previous image from folder
             if (File::exists($usersImage)) {
                 File::delete($usersImage);
             }

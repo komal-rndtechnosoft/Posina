@@ -10752,7 +10752,7 @@ a.text-dark:hover, a.text-dark:focus {
   h3 {
         page-break-after: avoid;
     }
-  @    page {
+  @page {
         size: a3;
     }
 
@@ -24168,6 +24168,12 @@ div.dtk-focus-alt table.dataTable tbody th.focus {
 .aut-bg-img .auth-content {
     padding: 70px 40px;
 }
+.red-second-letter {
+    color: black; 
+  }
+  .red-second-letter span {
+    color: red;
+  }
 
 /* image varient End */
 /**====== Authentication css end ======**/

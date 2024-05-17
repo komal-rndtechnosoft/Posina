@@ -1,4 +1,6 @@
+
 <?php
+$header=DB::table('headers')->select('*')->first();
     $current_page = request()->path(); // Assuming this retrieves the current page slug
     if ($current_page == '/') {
 ?>
@@ -9,8 +11,8 @@
 				<div class="row">
 					<div class="col-lg-3 d-none d-lg-inline-block">
 						<div class="logo-area">
-							<a class="front" href="index.html"><img src="assets/img/logo/POSINA logo.png"
-									alt="Header-logo"></a>
+							<a class="front" href="{{url('/')}}"><img src="{{ asset('Backend/images/header/' . $header->image) }}"
+									alt="{{$header->alt_tag}}"></a>
 						</div>
 					</div>
 					<div class="col-lg-9 col-12">
@@ -19,45 +21,27 @@
 							<li>
 								<div class="header-info-box">
 									<div class="icon">
-										<img src="assets/img/icon/phone.svg" alt="Phone">
+										<img src="{{asset('assets/img/icon/phone.svg')}}" alt="Phone">
 									</div>
 									<div class="text-content">
 										<span>Call</span>
-										<h6>(505) 555-0125</h6>
+										<h6><a href="tel:{{$header->phone}}">{{$header->phone}}</a></h6>
 									</div>
 								</div>
 							</li>
 							<li class="d-none d-md-inline-block">
 								<div class="header-info-box">
 									<div class="icon">
-										<img src="assets/img/icon/location.svg" alt="Phone">
+										<img src="{{asset('assets/img/icon/location.svg')}}" alt="Phone">
 									</div>
 									<div class="text-content">
 										<span>Location</span>
 										<div class="right-language">
 											<div class="dropdown">
-												<a class="language-btn dropdown-toggle" href="#" role="button"
-													id="dropdownMenuLink" data-bs-toggle="dropdown"
-													aria-expanded="false">
-													USA, New York
+												<a  href="https://www.google.com/maps?ll=20.301965,72.986267&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=1541238221608601714" style="color:white">
+													{{$header->address}}
 												</a>
-												<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-													<li>
-														<a class="dropdown-item" href="#">Washington DC</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Nevrada</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">New Walsh</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Merily Land</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Hampshire</a>
-													</li>
-												</ul>
+											
 											</div>
 										</div>
 									</div>
@@ -70,7 +54,7 @@
 									</div>
 									<div class="text-content">
 										<span>Time</span>
-										<h6>10AM - 11:30PM</h6>
+										<h6>{{$header->time}}</h6>
 									</div>
 								</div>
 							</li>
@@ -78,7 +62,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main-header-area pt-15 pb-10">
+			<div class="main-header-area pt-10 pb-8">
 				<div class="container header-custom-container">
 					<div class="row">
 						<div class="col-lg-10 col-6">
@@ -120,7 +104,7 @@
 							</div>
 						</div>
 						<div class="col-lg-2 col-6">
-								<a href="contact.html" class="ht_btn ht_btn2 butt"><span>Catalogue
+								<a href="{{url('/contactus')}}" class="ht_btn ht_btn2 butt"><span>Catalogue
 									<img src="{{asset('assets/img/icon/arrow1.svg')}}" alt=""></span></a>	
 						</div>
 					</div>
@@ -140,7 +124,7 @@ else{
 				<div class="row">
 					<div class="col-lg-3 d-none d-lg-inline-block">
 						<div class="logo-area">
-							<a class="front" href="index.html"><img src="assets/img/logo/POSINA LOGO white.png"
+							<a class="front" href="{{url('/')}}"><img src="{{asset('assets/img/logo/POSINA LOGO white.png')}}"
 									alt="Header-logo"></a>
 						</div>
 					</div>
@@ -150,46 +134,27 @@ else{
 							<li>
 								<div class="header-info-box">
 									<div class="icon">
-										<img src="assets/img/icon/phone.svg" alt="Phone">
+										<img src="{{asset('assets/img/icon/phone.svg')}}" alt="Phone">
 									</div>
 									<div class="text-content">
 										<span>Call</span>
-										<h6>(505) 555-0125</h6>
+										<h6><a href="tel:{{$header->phone}}">{{$header->phone}}</a></h6>
 									</div>
 								</div>
 							</li>
 							<li class="d-none d-md-inline-block">
 								<div class="header-info-box">
 									<div class="icon">
-										<img src="assets/img/icon/location.svg" alt="Phone">
+										<img src="{{asset('assets/img/icon/location.svg')}}" alt="Phone">
 									</div>
 									<div class="text-content">
 										<span>Location</span>
-										<div class="right-language">
+											<div class="right-language">
 											<div class="dropdown">
-												<a class="language-btn dropdown-toggle" href="#" role="button"
-													id="dropdownMenuLink" data-bs-toggle="dropdown"
-													aria-expanded="false">
-													USA, New York
-													<i class="fal fa-chevron-down"></i>
+												<a  href="https://www.google.com/maps?ll=20.301965,72.986267&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=1541238221608601714" style="color:white">
+													{{$header->address}}
 												</a>
-												<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-													<li>
-														<a class="dropdown-item" href="#">Washington DC</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Nevrada</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">New Walsh</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Merily Land</a>
-													</li>
-													<li>
-														<a class="dropdown-item" href="#">Hampshire</a>
-													</li>
-												</ul>
+											
 											</div>
 										</div>
 									</div>
@@ -198,11 +163,11 @@ else{
 							<li class="d-none d-lg-inline-block">
 								<div class="header-info-box">
 									<div class="icon">
-										<img src="assets/img/icon/phone.svg" alt="Phone">
+										<img src="{{asset('assets/img/icon/phone.svg')}}" alt="Phone">
 									</div>
 									<div class="text-content">
-										<span>Time</span>
-										<h6>10AM - 11:30PM</h6>
+                                    	<span>Time</span>
+										<h6>{{$header->time}}</h6>
 									</div>
 								</div>
 							</li>
@@ -210,12 +175,12 @@ else{
 					</div>
 				</div>
 			</div>
-			<div class="main-header-area pt-15 pb-10">
+			<div class="main-header-area pt-10 pb-8">
 				<div class="container header-custom-container">
 					<div class="row align-items-center">
 						<div class="col-lg-10 col-6">
 							<div class="logo-area d-lg-none d-md-inline-block">
-								<a class="front" href="index.html"><img src="assets/img/logo/POSINA logo.png"
+								<a class="front" href="{{url('/')}}"><img src="{{asset('assets/img/logo/POSINA logo.png')}}"
 										alt="Header-logo"></a>
 							</div>
 							<div class="main-menu d-none d-lg-block">
@@ -251,7 +216,7 @@ else{
 							</div>
 						</div>
 						<div class="col-lg-2 col-6">
-						<a href="contact.html" class="ht_btn hover-bg butt"><span>Catalogue
+						<a href="{{url('/')}}" class="ht_btn hover-bg butt"><span>Catalogue
 						<img src="{{asset('assets/img/icon/arrow1.svg')}}" alt=""></span></a>	
 						</div>
 					</div>
