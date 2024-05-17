@@ -599,10 +599,10 @@
 		slidesPerView: 4,
 		spaceBetween: 10,
 		loop: true,
-		slideToClickedSlide: true,
+		slideToClickedSlide: false,
 		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
+			delay: 500,
+			disableOnInteraction: true,
 		},
 
 		breakpoints: {
@@ -632,8 +632,8 @@
 		slidesPerView: 1,
 		loop: true,
 		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
+			delay: 500,
+			disableOnInteraction: true,
 		},
 		thumbs: {
 			swiper: product__thumbs__slider,
