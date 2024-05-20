@@ -2742,9 +2742,10 @@ width:100%;
 }
 
 .main__slider__section2 {
-  background-size: cover;
+  padding-bottom: 109px !important;
+  /* background-size: contain; */
   background-repeat: no-repeat;
-  background-position: center center;
+  /* background-position: center center; */
   position: relative;
   z-index: 1;
 }
@@ -3236,7 +3237,7 @@ width:100%;
 
 .ht__feature__box {
   background: white;
-  border: 2px solid rgba(82, 196, 89, 0.1);
+  border: 2px solid rgba(196 82 85 / 10%);
   border-radius: 5px;
   padding: 40px 20px 30px 20px;
 }
@@ -3282,7 +3283,7 @@ width:100%;
   width: 180px;
   height: 172px;
   position: absolute;
-  right: -40px;
+  right: -98px;
   bottom: 80px;
   z-index: 1;
   padding: 25px 0 0 30px;
@@ -3614,7 +3615,7 @@ width:100%;
 
 .service__title__three {
   color: #181818;
-  font-size: 32px;
+  font-size: 23px;
 }
 @media only screen and (max-width: 1200px) {
   .service__title__three {
@@ -5576,7 +5577,7 @@ width:100%;
   padding: 40px;
 }
 .testimonial__wrapper__two .author__img img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .testimonial__wrapper__two .testmonial__desc {
   font-size: 24px;
@@ -6277,7 +6278,7 @@ width:100%;
   display: inline-block;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  /* z-index: 1; */
   top: 0;
 }
 .teams__two .teams__name {
@@ -6469,7 +6470,7 @@ width:100%;
 }
 .single__info__box span {
   color: #181818;
-  font-size: 24px;
+  font-size: 21px;
   font-family: "Urbanist", sans-serif;
   font-weight: 600;
   display: block;
@@ -7442,7 +7443,7 @@ width:100%;
 
 .footer__contact .phone__nimber {
   color: white;
-  font-size: 30px;
+  font-size: 26px;
 }
 @media only screen and (max-width: 991.98px) {
   .footer__contact .phone__nimber {
@@ -7680,5 +7681,12 @@ width:100%;
 		width:148px !important;
 	}
 
+img{
+  object-fit: contain;
+}
+.single__box:hover .single__box__desc
+{
+color:white;
+}
 
 /*# sourceMappingURL=main.css.map */

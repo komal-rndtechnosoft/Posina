@@ -114,6 +114,11 @@
 									<span class="pcoded-mtext">Certificate</span>
 								</a>
 							</li>
+							<li class="">
+								<a href="{{url('MissionVision')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Mision-Vision</span>
+								</a>
+							</li>
 							
 						</ul>
 					</li>

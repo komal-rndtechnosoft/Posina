@@ -1,6 +1,8 @@
 @extends('Frontend.layout.app')
 @section('content')
-
+<?php
+$contact=DB::table("footers")->first();
+?>
 		<main>
 			<!--page-title-area start-->
 			<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
@@ -36,19 +38,19 @@
 									<div class="icon">
 										<i class="bi bi-telephone"></i>
 									</div>
-									<span>(704) 555-0127</span>
+									<span><a href="tel:{{$contact->phone1}}">{{$contact->phone1}}</a></span>
 								</div>
 								<div class="single__info__box">
 									<div class="icon">
 										<i class="bi bi-geo-alt"></i>
 									</div>
-									<span>414 Rd. New York,USA</span>
+									<span><a target="_blank" href="{{$contact->location}}">{{$contact->address}}</a></span>
 								</div>
 								<div class="single__info__box">
 									<div class="icon">
 										<i class="bi bi-envelope"></i>
 									</div>
-									<span>Graham@mail.com</span>
+									<span><a href="mailto:{{$contact->email1}}">{{$contact->email1}}</a></span>
 								</div>
 							
 							</div>
@@ -56,35 +58,30 @@
 						<div class="col-lg-8">
 							<div class="contact-form-one">
 								<h3 class="section__title__one mb-50">Send Us Message</h3>
-								<form class="widget-form" action="#">
+								<form class="widget-form" action="{{ route('store') }}" method="post">
+								@csrf
 									<div class="row">
 										<div class="col-md-6">
-											<label class="label">First Name</label>
+											<label class="label">Name</label>
 											<input type="text" name="fname" placeholder="First Name">
 										</div>
-										<div class="col-md-6">
-											<label class="label">Last Name</label>
-											<input type="text" name="lname" placeholder="Last Name">
-										</div>
+									
 										<div class="col-md-6">
 											<label class="label">Email</label>
 											<input type="email" name="email" placeholder="Email ID">
 										</div>
 										<div class="col-md-6">
 											<label class="label">Phone No</label>
-											<input type="text" name="phone" placeholder="Phone">
-										</div>
+											<input type="text" name="phone" oninput="validateNumber(this)"  class="form-control" pattern="\d{10,}" minlength="10" maxlength="10" id="userPhone" required placeholder="Your Phone *" title="Enter exactly 10 digits">
+											</div>
+										
 										<div class="col-md-6">
-											<label class="label">Country</label>
-											<input type="text" name="country" placeholder="Country Name">
-										</div>
-										<div class="col-md-6">
-											<label class="label">Birthdate</label>
-											<input type="date" name="date">
+											<label class="label">Subject</label>
+											<input type="text" name="sub" placeholder="Subject">
 										</div>
 										<div class="col-md-12 mb-25">
-											<label class="label">Question</label>
-											<textarea name="message" placeholder="Write Your Questions"></textarea>
+											<label class="label">Message</label>
+											<textarea name="message" placeholder="Message"></textarea>
 										</div>
 										<div class="col-12">
 											<button class="ht_btn hover-bg border-0">Send Message</button>

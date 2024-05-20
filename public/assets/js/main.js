@@ -349,40 +349,43 @@
 
 
 	//brand__slider__two
+	
+
+	
+
+
 	const brand__slider__two = new Swiper('.brand__slider__two', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 2,
+		slidesPerView: 3.5,
 		loop: true,
+		centeredSlides: false,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
 		},
 
 		breakpoints: {
-			// when window width is >= 320px
+
 			320: {
 				slidesPerView: 1,
-				spaceBetween: 0
+				spaceBetween: 20,
 			},
-			// when window width is >= 480px
-			575: {
-				slidesPerView: 3,
-				spaceBetween: 0
+			800: {
+				slidesPerView: 2,
+				spaceBetween: 30,
 			},
-			// when window width is >= 640px
 			991: {
-				slidesPerView: 4,
-				spaceBetween: 0
+				slidesPerView: 3,
+				spaceBetween: 30,
 			},
 			1200: {
-				slidesPerView: 5,
-				spaceBetween: 0
+				slidesPerView: 3.5,
+				spaceBetween: 30,
 			}
-		}
+		},
+
 	});
-
-
 
 	//case__slider__two
 	const case__slider__two = new Swiper('.case__slider__two', {
