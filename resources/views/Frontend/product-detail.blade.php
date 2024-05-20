@@ -75,7 +75,7 @@
 
 											</div>
 											<div class="col-lg-5 col-md-4 col-sm-6">
-												<a href="blog-details.html" class="ht_btn blog_btn">Inquire</a>
+												<a  class="ht_btn blog_btn"  data-bs-toggle="modal" data-bs-target="#exampleModal1">Inquire</a>
 											</div>
 										</div>
 									</figcaption>
@@ -217,6 +217,68 @@
 			</div>
 		</div>
 	</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Inquiring Requirement Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+			<div class="contact__section pt-10 pb-110 pt-lg-120 pb-lg-120">
+				<div class="container">
+					<div class="row">
+					
+						<div class="col-lg-12">
+							<div class="contact-form-one">
+								<form class="widget-form" action="#">
+									<div class="row">
+										<div class="col-md-12">
+											<label class="label">Name</label>
+											<input type="text" name="fname" placeholder="First Name">
+										</div>
+									
+										<div class="col-md-12">
+											<label class="label">Email</label>
+											<input type="email" name="email" placeholder="Email ID">
+										</div>
+										<div class="col-md-12">
+											<label class="label">Phone No</label>
+											<input type="text" name="phone" placeholder="Phone">
+										</div>
+										<div class="col-md-12">
+											<label class="label">Product Name</label>
+											<input type="text" name="pname" placeholder="Phone" value="{{$p->name}}" readonly>
+										</div>
+										<div class="col-md-6">
+											<label class="label">Product Quantity</label>
+											<input type="text" name="qty" placeholder="Product Quantity">
+										</div>
+										<div class="col-md-6">
+											<label class="label">Subject</label>
+											<input type="text" name="sub" placeholder="Subject">
+										</div>
+										<div class="col-md-12 mb-25">
+											<label class="label">Message</label>
+											<textarea name="message" placeholder="Message"></textarea>
+										</div>
+										<div class="col-12">
+											<button class="ht_btn hover-bg border-0">Send Message</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+      </div>
+     
+    </div>
+  </div>
+</div>
 @endforeach
 </div>
 <!-- Add this script in your HTML file -->

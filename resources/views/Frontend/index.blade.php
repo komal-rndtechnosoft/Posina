@@ -10,47 +10,44 @@
 			<div class="swiper-slide">
 				<section class="main__slider__section2 pt-300 pb-205 pt-md-240 pb-md-105"
 					data-background="{{ asset('/Backend/images/banners/' . $b->banner_image) }}">
-					<div class="circular__box">
-						<img class="circular__text" src="{{asset('assets/img/hero/circular-text-3c.png')}}" alt="Circular">
-						<img class="circular__img" src="{{asset('assets/img/hero/icon-1c.svg')}}" alt="Icon">
-					</div>
+					<!--<div class="circular__box">-->
+					<!--	<img class="circular__text" src="{{asset('assets/img/hero/circular-text-3c.png')}}" alt="Circular">-->
+ 				<!--		<img class="circular__img" src="{{asset('assets/img/hero/icon-1c.svg')}}" alt="Icon">-->
+					<!--</div>-->
 					<div class="blur__box"></div>
 					<div class="container">
 						<div class="row align-items-center justify-content-center">
 							<div class="col-lg-10">
 								<div class="theme__content text-center mt-185">
-									<h2 class="main__title mb-60 red-second-letter">{{$b->title}}</h2>
-									<a href="{{url('aboutus')}}" class="ht_btn ht_btn2"><span>Explore Now <img
-												src="{{asset('assets/img/icon/arrow-black.svg')}}" alt=""></span></a>
+									<!--<h2 class="main__title mb-60 red-second-letter">{{$b->title}}</h2>-->
+									<!--<a href="{{url('aboutus')}}" class="ht_btn ht_btn2"><span>Explore Now <img-->
+									<!--			src="{{asset('assets/img/icon/arrow1.svg')}}" alt=""></span></a>-->
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="hero__media">
-						<div class="call__box">
-							<div class="icon mr-10">
-								<img src="assets/img/icon/icon-22c.svg" alt="Phone">
-							</div>
-							<div class="call__content pt-10">
-								<h5 class="call__title">Call For Support</h5>
-								<h4 class="call__number">(603) 555-01239</h4>
-							</div>
-						</div>
-					</div>
-					<div class="social_media">
-						<a href="#">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-						<a href="#">
-							<i class="fab fa-twitter"></i>
-						</a>
-						<a href="#">
-							<i class="fab fa-linkedin-in"></i>
-						</a>
-						<a href="#">
-							<i class="fab fa-youtube"></i>
-						</a>
-					</div>
+					<!--<div class="hero__media">-->
+					<!--	<div class="call__box">-->
+					<!--		<div class="icon mr-10">-->
+					<!--			<img src="assets/img/icon/icon-22c.svg" alt="Phone">-->
+					<!--		</div>-->
+					<!--		<div class="call__content pt-10">-->
+					<!--			<h5 class="call__title">Call For Support</h5>-->
+					<!--			<h4 class="call__number"><a href="tel:{{$header->phone}}">{{$header->phone}}</a></h4>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--</div>-->
+					<!--<div class="social_media">-->
+					<!--<a href="{{ $footer->facebook_link }}" style="cursor:pointer;" target="_blank">-->
+     <!--                <i class="fab fa-facebook-f"></i>-->
+     <!--                </a>-->
+					<!--	<a href="{{ $footer->twitter_link }}" style="cursor:pointer;" target="_blank">-->
+					<!--	<i class="fab fa-twitter"></i>-->
+					<!--	</a>-->
+				 <!--   	<a href="{{ $footer->instagram_link }}" style="cursor:pointer;" target="_blank">-->
+					<!--	<i class="fab fa-instagram"></i>-->
+					<!--	</a>-->
+					<!--</div>-->
 					<img class="shapes shapes__1" src="{{asset('assets/img/shape/hero-half-circle-1c.svg')}}"
 						alt="Shape One">
 				</section>
@@ -58,9 +55,9 @@
 		@endforeach
 	</div>
 	<!-- swiper-scrollbar -->
-	<div class="swiper-scrollbar d-none d-lg-inline-block"></div>
+	<!--<div class="swiper-scrollbar d-none d-lg-inline-block"></div>-->
 	<!-- swiper-pagination -->
-	<div class="swiper-pagination d-none d-lg-inline-block"></div>
+	<!--<div class="swiper-pagination d-none d-lg-inline-block"></div>-->
 	<!-- swiper-arrow-pagination -->
 	<div class="swiper-button-prev d-none d-lg-inline-block"><i class="bi bi-chevron-left"></i></div>
 	<div class="swiper-button-next d-none d-lg-inline-block"><i class="bi bi-chevron-right"></i></div>
@@ -110,7 +107,7 @@
 								Step 0{{$loop->index + 1}}
 							</div>
 							<div class="icon mb-25">
-								<img src="{{ asset('Backend/images/usp/' . $u->icon) }}" alt="{{$u->alt_tag}}">
+								<img src="{{ asset('Backend/images/usp/' . $u->icon) }}" alt="{{$u->alt_tag}}" style="width:60px;">
 							</div>
 							<h4 class="single__box__title"><a>{{$u->title}}</a></h4>
 							<p>{!!$u->description!!}</p>
@@ -138,7 +135,7 @@
 		<div class="row align-items-center mb-20">
 			<div class="col-lg-6">
 				<div class="about__img__wrapper mb-30">
-					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}">
+					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="width:610px;height:637px;">
 					<div class="service__year d-none d-md-inline-block">
 						<span class="service__label">Over</span>
 						<h2 class="section__title__one text-white">08+</h2>
@@ -203,7 +200,7 @@
 			<div class="col-lg-3 col-md-6">
 				<div class="ht__feature__box text-center mb-30"  style="height:317px">
 					<div class="icon mb-30">
-						<img src="{{ asset('Backend/images/wcs/' . $w->icon) }}" alt="{{$w->alt_tag}}">
+						<img src="{{ asset('Backend/images/wcs/' . $w->icon) }}" alt="{{$w->alt_tag}}" style="width:60px;height:60px;">
 					</div>
 					<h4 class="feature__service__title">{{$w->title}}</h4>
 				</div>
@@ -248,7 +245,7 @@
 									<div class="services__icon">
 										<img src="assets/img/icon/icon-5a.svg" alt="Icon">
 									</div>
-									<h4 class="single__service__title"><a >{{$c->name}}</a>
+									<h4 class="single__service__title"><a href="{{url('/productdetails/'.$c->slug)}}">{{$c->name}}</a>
 									</h4>
 									<a ><img src="assets/img/icon/long-arrow.svg" alt="Arrow"></a>
 								</div>
@@ -365,49 +362,43 @@
 <!-- Who We Are end -->
 
 
-<!-- blog__area start -->
-			<section class="blog__area2 pt-85 pt-md-60 pb-90 pb-md-60">
-				<div class="big-style-text">Blogs</div>
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-7">
-							<div class="section__title text-center mb-50">
-								<h4 class="sub__title__one text-theme mb-20">{{$title4->title}}</h4>
-								<h2 class="section__title__one">{{$title4->subtitle}}</h2>
+
+	<!-- blog__area start -->
+	<section class="blog__area pt-100 pt-lg-120 pb-90 pb-lg-120">
+		<div class="container">
+			<div class="section__title text-center mb-50">
+				<h4 class="sub__title__one text-theme mb-20">{{$title4->title}}</h4>
+				<h2 class="section__title__one">{{$title4->subtitle}}</h2>
+			</div>
+			<div class="row align-items-center justify-content-center">
+
+				@foreach($blogs as $b)
+					<div class="col-lg-4 col-md-6">
+						<div class="blog__one mb-30">
+							<div class="blog__thumb">
+								<a href="{{url('/blogdetails/' . $b->slug)}}"><img class="w-100"
+										src="{{ asset('Backend/images/blogs/' . $b->image) }}" alt="{{$b->alt_tag}}"></a>
+							</div>
+							<div class="blog__content__one">
+								<div class="blog__meta mb-15">
+									<a>{{$b->posted_by}} ~ </a>
+									<a class="date-text">{{ date('F', strtotime($b->created_at)) }}
+										{{ date('d', strtotime($b->created_at)) }},
+										{{ date('Y', strtotime($b->created_at)) }}</a>
+								</div>
+								<h3 class="blog__title__three"><a href="{{url('/blogdetails/' . $b->slug)}}">{{$b->title}}</a>
+								</h3>
+
 							</div>
 						</div>
 					</div>
-					<div class="row align-items-center justify-content-center">
-					
-						@foreach($blogs as $b)
-						<div class="col-lg-4 col-md-6">
-							<div class="blog__two mb-30">
-								<div class="blog__thumb mb-25">
-									<a href="{{url('/blogdetails/'.$b->slug)}}"><img class="w-100" src="{{ asset('Backend/images/blogs/' . $b->image) }}" alt="{{$b->alt_tag}}"></a>
-								</div>
-								<div class="blog__content">
-									<a class="date__text" >{{ date('F', strtotime($b->created_at)) }}
-															{{ date('d', strtotime($b->created_at)) }},
-															{{ date('Y', strtotime($b->created_at)) }}
-									</a>
-									<div class="inner__content">
-										<h3 class="blog__title__two"><a href="{{url('/blogdetails/'.$b->slug)}}">{{$b->title}}</a></h3>
-										<div class="blog__meta">
-											<a class="author__name" href="{{url('/blogdetails/'.$b->slug)}}">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						@endforeach
-						
-					<div class="more__btn__box text-center mt-30">
-						<a href="{{url('/blogs')}}" class="ht_btn hover-bg"><span>See More <img
-									src="assets/img/icon/arrow1.svg" alt=""></span></a>
-					</div>
-				</div>
-			</section>
-			<!-- blog__area end -->
+				@endforeach
+
+			</div>
+
+		</div>
+	</section>
+	<!-- blog__area end -->
 
 
 
