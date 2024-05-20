@@ -17,6 +17,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MisionVisionController;
 
 
 
@@ -42,7 +43,7 @@ Route::get('/blogdetails/{slug}', [MainController::class,'blogdetails'])->name('
 Route::get('/productdetails/{categorySlug}', [MainController::class,'productdetails'])->name('productdetails');
 
 Route::get('/productsdetails', [MainController::class,'productsdetails'])->name('productsdetails');
-
+Route::POST('store', [Maincontroller::class,'store'])->name('store');
 Route::get('/get-product', 'MainController@getProduct')->name('get-product');
 
 
@@ -66,6 +67,7 @@ Route::resource('/menu',MenuController::class);
 Route::resource('/header',HeaderController::class);
 Route::resource('/footer',FooterController::class);
 Route::resource('/product',ProductController::class);
+Route::resource('/MissionVision',MisionVisionController::class);
 Route::delete('/product/remove/{id}/{image}/{index}', [ProductController::class, 'remove1'])->name('product.remove1');
 
 

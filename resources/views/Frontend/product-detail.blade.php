@@ -233,7 +233,8 @@
 					
 						<div class="col-lg-12">
 							<div class="contact-form-one">
-								<form class="widget-form" action="#">
+								<form class="widget-form" action="{{ route('store') }}" method="post">
+								@csrf
 									<div class="row">
 										<div class="col-md-12">
 											<label class="label">Name</label>
@@ -246,16 +247,16 @@
 										</div>
 										<div class="col-md-12">
 											<label class="label">Phone No</label>
-											<input type="text" name="phone" placeholder="Phone">
-										</div>
+											<input type="text" name="phone" oninput="validateNumber(this)"  class="form-control" pattern="\d{10,}" minlength="10" maxlength="10" id="userPhone" required placeholder="Your Phone *" title="Enter exactly 10 digits">
+											</div>
 										<div class="col-md-12">
 											<label class="label">Product Name</label>
 											<input type="text" name="pname" placeholder="Phone" value="{{$p->name}}" readonly>
 										</div>
 										<div class="col-md-6">
 											<label class="label">Product Quantity</label>
-											<input type="text" name="qty" placeholder="Product Quantity">
-										</div>
+											<input type="number"  name="qty" id="qty" min="1" max="1000000000" step="1" value="1" placeholder="Quantity"  required>	
+											</div>
 										<div class="col-md-6">
 											<label class="label">Subject</label>
 											<input type="text" name="sub" placeholder="Subject">

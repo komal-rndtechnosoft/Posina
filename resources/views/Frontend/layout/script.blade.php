@@ -39,4 +39,9 @@
 </script>
 <!-- banner second letter should red  end-->
 
+<script>
+function validateNumber(input) {
+  input.value = input.value.replace(/[^0-9]/g, ''); // Remove any non-numeric characters
+}
+</script>
 

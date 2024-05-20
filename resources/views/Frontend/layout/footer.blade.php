@@ -86,7 +86,9 @@
 						<div class="col-xxl-3 col-lg-4 col-md-6">
 							<div class="footer__widget mb-30">
 								<div class="footer__contact">
-									<h3 class="phone__nimber mb-25"><a href="tel:{{$footer->phone1}}">{{$footer->phone1}}</a></h3>
+									<h3 class="phone__nimber mb-25"><a href="tel:{{$footer->phone1}}">{{$footer->phone1}}</a><br>
+									<a href="tel:{{$header->phone}}">{{$header->phone}}</a></h3>
+
 									<p class="mb-0"><a  href="https://www.google.com/maps?ll=20.301965,72.986267&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=1541238221608601714" style="color:white">
 													{{$footer->address}}
 												</a></p>
@@ -115,7 +117,7 @@
 							<div class="col-lg-12 text-center ">
 								<div class="copyright__text mb-30">
 									<p>
-										<a class="fw-bold" href="#">Creative Gigs</a>
+										<a class="fw-bold" >Creative Gigs</a>
 										© 2023 Factry. All rights reserved.</p>
 								</div>
 							</div>

@@ -48,8 +48,7 @@
 					<!--	<i class="fab fa-instagram"></i>-->
 					<!--	</a>-->
 					<!--</div>-->
-					<img class="shapes shapes__1" src="{{asset('assets/img/shape/hero-half-circle-1c.svg')}}"
-						alt="Shape One">
+					
 				</section>
 			</div>
 		@endforeach
@@ -72,19 +71,21 @@
 			@foreach($brands as $b)
 				<div class="swiper-slide">
 					<div class="brand__img__two">
-						<a><img src="{{ asset('Backend/images/brands/' . $b->image) }}" alt="{{$b->alt_tag}}"></a>
+						<a><img src="{{ asset('Backend/images/brands/' . $b->image) }}" alt="{{$b->alt_tag}}" style="width:85px;"></a>
 					</div>
 				</div>
 			@endforeach
 	</div>
+	
 </div>
+
 <!-- brand__area end -->
 
 
 
 <!--usp__area start -->
 <section class="working__process__area">
-	<div class="grey-bg process__wrapper__about pt-180 pt-lg-60 pb-320 pb-lg-80 pb-md-90">
+	<div class="grey-bg process__wrapper__about pt-130 pt-lg-60 pb-50 pb-lg-70 pb-md-90">
 		<img class="shapes__1" src="assets/img/shape/about-line-2a.svg" alt="shape">
 		<img class="shapes__2" src="assets/img/shape/faq-line-5a.svg" alt="shape">
 		<div class="container">
@@ -135,11 +136,11 @@
 		<div class="row align-items-center mb-20">
 			<div class="col-lg-6">
 				<div class="about__img__wrapper mb-30">
-					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="width:610px;height:637px;">
+					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="object-fit:cover;">
 					<div class="service__year d-none d-md-inline-block">
 						<span class="service__label">Over</span>
 						<h2 class="section__title__one text-white">08+</h2>
-						<span class="service__label">Great Services</span>
+						<span class="service__label">Great Products</span>
 					</div>
 				</div>
 			</div>
@@ -284,7 +285,7 @@
 					<div class="single__services__three mb-30" data-background="{{ asset('Backend/images/serve/' . $s->image) }}">
 						<div class="services__content">
 							<div class="services__icon mb-20">
-								<img src="{{ asset('Backend/images/serve/' . $s->icon) }}" alt="{{$s->alt_tag}}">
+								<img src="{{ asset('Backend/images/serve/' . $s->icon) }}" alt="{{$s->alt_tag}}" style="width:80px;">
 							</div>
 							<h4 class="service__title__three mb-20"><a>{{$s->title}}</a>
 							</h4>

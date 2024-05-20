@@ -38,7 +38,7 @@
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" name="title" placeholder="Title"
-                                                required />
+                                                 />
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">BannerImage</label>
                                         <div class="col-sm-10">
-                                            <input type="file" class="form-control" name="banner_image" required />
+                                            <input type="file" class="form-control" name="banner_image"  />
                                             <span class="messages"></span>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                         <label class="col-sm-2 col-form-label">Alt Tag</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="alt_tag" class="form-control"
-                                                placeholder="Enter Alt Tag For Banner Image" required />
+                                                placeholder="Enter Alt Tag For Banner Image"  />
                                             <span class="messages"></span>
                                         </div>
                                     </div>

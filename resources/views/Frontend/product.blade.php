@@ -13,11 +13,11 @@
 			<div class="row gx-4 gx-xxl-5 align-items-center">
 				<div class="col-xl-6 col-md-6">
 					<div class="page-title-wrapper text-md-start text-center">
-						<h2 class="page-title mb-10">Our Products</h2>
+						<h2 class="page-title mb-10">New Products</h2>
 						<nav aria-label="breadcrumb">
 							<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 								<li><a href="{{url('/')}}">Home</a></li>
-								<li class="active" aria-current="page">Our Products</li>
+								<li class="active" aria-current="page">New Products</li>
 							</ul>
 						</nav>
 					</div>
@@ -34,8 +34,8 @@
 	<section class="blog__area pt-100 pt-lg-120 pb-90 pb-lg-120">
 		<div class="container">
 			<div class="section__title text-center mb-50">
-				<h4 class="sub__title__one text-theme mb-20">Our Products</h4>
-				<h2 class="section__title__one">Our Products</h2>
+				<h4 class="sub__title__one text-theme mb-20">New Products</h4>
+				<h2 class="section__title__one">New Products</h2>
 			</div>
 			<div class="row align-items-center justify-content-center">
 
@@ -63,8 +63,6 @@
 
 		</div>
 	</section>
-
-
 
 </main>
 

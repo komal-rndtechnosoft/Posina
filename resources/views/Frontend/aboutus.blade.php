@@ -1,6 +1,12 @@
 @extends('Frontend.layout.app')
 @section('content')
-
+<style>
+	/* certifficate */
+	.modal-content 
+	{
+		width:83%;
+	}
+</style>
 
 		<main>
 			<!--page-title-area start-->
@@ -36,11 +42,11 @@
 		<div class="row align-items-center mb-20">
 			<div class="col-lg-6">
 				<div class="about__img__wrapper mb-30">
-					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="width:610px;height:637px;">
+					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}">
 					<div class="service__year d-none d-md-inline-block">
 						<span class="service__label">Over</span>
 						<h2 class="section__title__one text-white">08+</h2>
-						<span class="service__label">Great Services</span>
+						<span class="service__label">Our Products</span>
 					</div>
 				</div>
 			</div>
@@ -58,6 +64,36 @@
 	</div>
 </section>
 <!-- about__area end -->
+
+	  <!-- mission vision start -->
+	  <section class="feature__area pt-20 pb-100 pt-lg-40 pb-lg-20">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="single__box feat__border mb-30">
+								<div class="icon mb-35">
+									<img class="front-icon" src="assets/img/icon/icon-1a.svg" alt="Icon">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image) }}" alt="{{$miss->alt_tag}}">
+								</div>
+								<h3 class="single__box__title">{{$miss->about_title}}</a></h3>
+								<p class="single__box__desc">{{$miss->about_description}}</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="single__box feat__border mb-30">
+								<div class="icon mb-35">
+									<img class="front-icon" src="assets/img/icon/icon-1a.svg" alt="Icon">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image1) }}" alt="{{$miss->alt_tag1}}">
+								</div>
+								<h3 class="single__box__title">{{$miss->about_title1}}</a></h3>
+								<p class="single__box__desc"> {{$miss->about_description1}}</p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- mission vision end -->
 			<!-- testimonial__area start -->
 			<section class="testimonial__area">
 				<div class="grey-bg testimonial__section__wrapper pt-100 pb-80 pt-lg-60 pb-lg-60">
@@ -107,67 +143,104 @@
 			</section>
 			<!-- testimonial__area end -->
 
-			<!-- certificates start -->
-			<section class="services__area2 pt-100 pb-70 pb-lg-95">
-				<div class="services__bg__wrapper pt-100 pb-250" data-background="assets/img/service/service-bg-1b.jpg">
-					<div class="big-style-text">Certificates</div>
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-lg-6">
-								<div class="section__title text-center mb-60">
-									<h4 class="sub__title__one text-theme mb-20">{{$title6->title}}</h4>
-									<h2 class="section__title__one text-white">{{$title6->subtitle}}
-									</h2>
-								</div>
+	
+
+
+				<!-- certificates start -->
+			<section class="teams__area pt-100 pt-lg-60 pb-70 pb-lg-30">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="section__title text-center mb-60">
+								<h4 class="sub__title__one text-theme mb-20">{{$title6->title}}</h4>
+								<h2 class="section__title__one mb-25">{{$title6->subtitle}}</h2>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="container services__slider__wrapper">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="swiper services__slider__two pb-60">
-								<div class="swiper-wrapper">
-									
-									@foreach($certi as $data)
-									<div class="swiper-slide">
-										<div class="single__services__two mb-60">
-											<div class="services__thumb">
-												<img class="w-100" src="{{ asset('Backend/images/certificate/' . $data->image) }}"
-													alt="{{$data->alt_tag}}">
-											</div>
-											<div class="services__content">
-												<img class="traingle__shape" src="assets/img/shape/traingle-1b.png"
-													alt="Triangle">
-												<img class="traingle__shape tri__2"
-													src="assets/img/shape/traingle-2b.png" alt="Triangle">
-												<h4 class="service__title__two mb-0"><span class="icon"><img
-															src="assets/img/icon/icon-12b.svg" alt="Icon"></span>
-													<a>{{ $data->name }}</a>
-												</h4>
-											</div>
-										</div>
+					<div class="swiper teams__slider__one">
+						<div class="swiper-wrapper pb-90 pb-md-10">
+							
+							@foreach($certi as $data)
+							<div class="swiper-slide">
+								<div class="teams__two mb-30">
+									<div class="teams__thumb mb-20">
+									<a class="room-img" style="cursor:pointer;">  
+									<img src="{{ asset('Backend/images/certificate/' . $data->image) }}" alt="{{$data->alt_tag}}" class="w-100 i2" >
+									</a>
 									</div>
-									@endforeach
-								
-								
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination"></div>
 							</div>
+							@endforeach
+						
 						</div>
-					</div>
+					
 				</div>
 			</section>
-			<!-- certificates end -->
-
-
-		
-
-
+			<!-- team__area end -->
 		</main>
 
 
+		<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all room images
+        const roomImages = document.querySelectorAll('.i2');
+
+        // Attach click event listener to each room image
+        roomImages.forEach(roomImage => {
+            roomImage.addEventListener('click', function(event) {
+                // Prevent the default behavior of the anchor tag
+                event.preventDefault();
+                
+                // Get the image URL
+                const imageUrl = this.src;
+
+                // Create a modal container
+                const modalContainer = document.createElement('div');
+                modalContainer.classList.add('modal', 'image-modal'); // Adding 'modal' class for Bootstrap modal styling
+
+                // Create the modal dialog
+                const modalDialog = document.createElement('div');
+                modalDialog.classList.add('modal-dialog');
+
+                // Create the modal content
+                const modalContent = document.createElement('div');
+                modalContent.classList.add('modal-content');
+
+                // Create the modal body
+                const modalBody = document.createElement('div');
+                modalBody.classList.add('modal-body');
+
+                // Create the image element
+                const previewImage = document.createElement('img');
+                previewImage.src = imageUrl;
+                previewImage.classList.add('img-fluid'); // Adding 'img-fluid' class for Bootstrap responsive images
+
+                // Append the image to the modal body
+                modalBody.appendChild(previewImage);
+
+                // Append the modal body to the modal content
+                modalContent.appendChild(modalBody);
+
+                // Append the modal content to the modal dialog
+                modalDialog.appendChild(modalContent);
+
+                // Append the modal dialog to the modal container
+                modalContainer.appendChild(modalDialog);
+
+                // Append the modal container to the body
+                document.body.appendChild(modalContainer);
+
+                // Show the modal
+                $('.image-modal').modal('show');
+
+                // Close the modal when clicking outside the image or pressing escape key
+                $(modalContainer).on('hidden.bs.modal', function() {
+                    modalContainer.remove();
+                });
+            });
+        });
+    });
+</script>
 	</div>
 
 

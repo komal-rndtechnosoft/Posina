@@ -12,8 +12,8 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('home')}}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{url('category')}}">Category</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Update Category</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('banner')}}">Banner</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Update Banner</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                 <label class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="title" placeholder="Enter Title" value="{{$banner->title}}"
-                                        required />
+                                         />
                                     <span class="messages"></span>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                                 <label class="col-sm-2 col-form-label">Alt Tag</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="alt_tag" class="form-control" placeholder="Enter Alt Tag For Banner Image"
-                                        value="{{$banner->alt_tag}}" required />
+                                        value="{{$banner->alt_tag}}"  />
                                     <span class="messages"></span>
                                 </div>
                             </div>
