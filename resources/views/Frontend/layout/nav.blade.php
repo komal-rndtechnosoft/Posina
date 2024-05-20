@@ -1,6 +1,7 @@
 
 <?php
 $header=DB::table('headers')->select('*')->first();
+$footer=DB::table('footers')->select('*')->first();
 $category = DB::table('categories')->select('*')->get();
 
     $current_page = request()->path(); // Assuming this retrieves the current page slug
@@ -69,7 +70,7 @@ $category = DB::table('categories')->select('*')->get();
 					<div class="row">
 						<div class="col-lg-10 col-6">
 							<div class="logo-area d-lg-none d-md-inline-block">
-								<a class="front" href="index.html"><img src="assets/img/logo/POSINA logo.png"
+								<a class="front" href="{{url('/')}}"><img src="assets/img/logo/POSINA logo.png"
 										alt="Header-logo"></a>
 							</div>
 							<div class="main-menu d-none d-lg-block">
@@ -128,7 +129,7 @@ else{
 				<div class="row">
 					<div class="col-lg-3 d-none d-lg-inline-block">
 						<div class="logo-area">
-							<a class="front" href="{{url('/')}}"><img src="{{asset('assets/img/logo/POSINA LOGO white.png')}}"
+							<a class="front" href="{{url('/')}}"><img src="{{ asset('/Backend/images/blogs/' . $footer->image) }}"
 									alt="Header-logo"></a>
 						</div>
 					</div>

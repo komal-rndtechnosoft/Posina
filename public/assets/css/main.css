@@ -432,8 +432,8 @@ label {
 
 .logo-area img {
   max-width: 100%;
-  width: 88px;
-  height: 78px 
+  width: 92px;
+    height: 86px;
 }
 .logo-area .front {
   display: inline-block;
@@ -817,7 +817,8 @@ label {
 }
 
 .theme-menu-three {
-  position: absolute;
+  /*position: absolute;*/
+  background:black;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -2505,10 +2506,10 @@ width:100%;
 }
 
 .sub__title__three {
-  color: #d8292d;
+  color:#fff;
   font-size: 20px;
   font-weight: 600;
-  background: rgba(82, 196, 89, 0.08);
+  background:#d8292d;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 40px;

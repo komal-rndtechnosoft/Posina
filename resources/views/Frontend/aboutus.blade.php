@@ -27,42 +27,37 @@
 			</div>
 			<!--page-title-area end-->
 
+	
+			
 			<!-- about__area start -->
-			<section class="about__area">
-				<div class="about__section__wrapper2 pt-180 pb-50 pt-lg-120 pb-lg-30">
-					<div data-text="About" class="big-style-text">About</div>
-					<img class="about__shape__1" src="assets/img/shape/about-line-2a.svg" alt="About Shape">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-xl-7 col-lg-6">
-								<div class="about__img__wrapper mb-30">
-									<div class="main__img">
-										<img class="main__img__1b" src="{{ asset('Backend/images/about/' . $about->image) }}"  alt="{{$about->alt_tag}}">
-									</div>
-									<div class="experience__box">
-										<img class="icon" src="assets/img/icon/icon-9a.svg" alt="Icon">
-										<span>A+</span>
-										<h3>25+ Years Of Experiences</h3>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-5 col-lg-6">
-								<div class="about__text__wrapper ps-xl-3 mb-30">
-									<div class="section__title mb-30">
-										<h4 class="sub__title__one text-theme mb-20">{{$about->title}}</h4>
-										<h2 class="section__title__one mb-25">{{$about->subtitle}}
-										</h2>
-										<p class="mb-35">{!!$about->description1!!}</p>
-										
-									</div>
-								
-								</div>
-							</div>
-						</div>
+<section class="about__area pt-130 pb-60 pt-lg-60 pb-lg-20">
+	<div class="container">
+		
+		<div class="row align-items-center mb-20">
+			<div class="col-lg-6">
+				<div class="about__img__wrapper mb-30">
+					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="width:610px;height:637px;">
+					<div class="service__year d-none d-md-inline-block">
+						<span class="service__label">Over</span>
+						<h2 class="section__title__one text-white">08+</h2>
+						<span class="service__label">Great Services</span>
 					</div>
 				</div>
-			</section>
-			<!-- about__area end -->
+			</div>
+			<div class="col-lg-6">
+				<div class="about__counter__wrapper ps-xl-5 ms-xl-4 mb-30">
+				    <h4 class="sub__title__one text-theme mb-20">{{$about->title}}</h4>
+										<h2 class="section__title__one mb-25">{{$about->subtitle}}
+										</h2>
+					<p class="mb-30">{!!$about->description1!!}</p>
+				
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- about__area end -->
 			<!-- testimonial__area start -->
 			<section class="testimonial__area">
 				<div class="grey-bg testimonial__section__wrapper pt-100 pb-80 pt-lg-60 pb-lg-60">

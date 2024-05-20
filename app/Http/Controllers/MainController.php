@@ -11,6 +11,8 @@ class MainController extends Controller
 {
     public function index()
     {
+         $footer=DB::table('footers')->select('*')->first();
+        $header=DB::table('headers')->select('*')->first();
         $banners = DB::table('banners')->select('*')->get();
         $brands = DB::table('brands')->select('*')->get();
         $blogs = DB::table('blogs')->select('*')->limit(3)->get();
@@ -26,7 +28,7 @@ class MainController extends Controller
         $title7 = DB::table('titles')->select('*')->where('id', 7)->first();
         $serve = DB::table('serves')->select('*')->get();
 
-        return view('Frontend.index', compact('whoweare', 'blogs', 'title4', 'banners', 'brands', 'usp', 'usptitle', 'about', 'wcs', 'wcstitle', 'category', 'title3', 'title7', 'serve'));
+        return view('Frontend.index', compact('whoweare', 'blogs','footer', 'title4', 'header','banners', 'brands', 'usp', 'usptitle', 'about', 'wcs', 'wcstitle', 'category', 'title3', 'title7', 'serve'));
     }
     public function aboutus()
     {
@@ -87,6 +89,18 @@ class MainController extends Controller
         $productId = $request->input('id');
         $product1 = Product::find($productId);
         return response()->json($product1);
+    }
+    public function store(Request $request)
+    {
+      
+        $input = request()->except(['_token', '_method']);
+        Contact::create($input);
+
+        $mail = Mail::to('diya.rndtechnosoft@gmail.com');
+        $mail->send(new ContactEmail($input));
+
+        return back();
+
     }
     
 }
