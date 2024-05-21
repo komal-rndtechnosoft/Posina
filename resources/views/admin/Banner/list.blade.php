@@ -35,7 +35,7 @@
                                             <thead>
                                                 <tr style="text-transform: capitalize;">
                                                     <th>Id</th>
-                                                    <th>Title</th>
+                                                    <!-- <th>Title</th> -->
                                                     <th>Banner Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -44,7 +44,7 @@
                                                 <tr>
                                                     @foreach ($banners as $banner)
                                                         <td>{{ $banner->id }}</td>
-                                                        <td>{{ $banner->title }}</td>
+                                                        <!-- <td>{{ $banner->title }}</td> -->
                                                         <td>
                                                             <img src="{{ asset('/Backend/images/banners/'.$banner->banner_image) }}" alt="{{$banner->alt_tag}}" width="200px" height="100px">
                                                         </td>

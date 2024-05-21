@@ -70,6 +70,13 @@
                                  <span class="messages"></span>
                               </div>
                            </div>
+                           <div class="form-group row">
+                              <label class="col-sm-4 col-form-label">Minimum Order Quantity</label>
+                              <div class="col-sm-8">
+                                 <input type="text" class="form-control" name="qty" id="" placeholder="Minimum Order Quantity">
+                                 <span class="messages"></span>
+                              </div>
+                           </div>
 
                            <div class="form-group row">
                               <label class="col-sm-4 col-form-label">Description</label>

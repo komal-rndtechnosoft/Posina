@@ -240,12 +240,10 @@
 						<div class="swiper-slide">
 							<div class="single__services__box mb-60">
 								<div class="services__thumb">
-									<img class="w-100" src="{{ asset('Backend/images/banners/' . $c->image) }}" alt="{{$c->alt_tag}}">
+									<img class="w-100" src="{{ asset('Backend/images/banners/' . $c->image) }}" alt="{{$c->alt_tag}}" style="width:410px;height:370px;">
 								</div>
 								<div class="services__content">
-									<div class="services__icon">
-										<img src="assets/img/icon/icon-5a.svg" alt="Icon">
-									</div>
+									
 									<h4 class="single__service__title"><a href="{{url('/productdetails/'.$c->slug)}}">{{$c->name}}</a>
 									</h4>
 									<a ><img src="assets/img/icon/long-arrow.svg" alt="Arrow"></a>
@@ -263,6 +261,8 @@
 	</div>
 </section>
 <!-- Category end -->
+
+
 
 
 <!-- Industry start -->
@@ -345,8 +345,8 @@
 				<div class="chose__img__wrapper text-center text-lg-end mb-30">
 					<div class="service__year text-start d-none d-md-inline-block">
 						<span class="service__label">Over</span>
-						<h2 class="section__title__one text-white mb-1">08+</h2>
-						<span class="service__label">Years Services</span>
+						<h2 class="section__title__one text-white mb-1">70+</h2>
+						<span class="service__label">Our Products</span>
 					</div>
 					<img class="main__img__3c" src="{{ asset('Backend/images/about/' . $whoweare->image) }}" alt="{{$whoweare->alt_tag}}">
 					<img class="main__img__4c d-none d-xl-inline-block" src="{{ asset('Backend/images/about/' . $whoweare->image1) }}"
@@ -375,7 +375,7 @@
 
 				@foreach($blogs as $b)
 					<div class="col-lg-4 col-md-6">
-						<div class="blog__one mb-30">
+						<div class="blog__one mb-30 bloo">
 							<div class="blog__thumb">
 								<a href="{{url('/blogdetails/' . $b->slug)}}"><img class="w-100"
 										src="{{ asset('Backend/images/blogs/' . $b->image) }}" alt="{{$b->alt_tag}}"></a>

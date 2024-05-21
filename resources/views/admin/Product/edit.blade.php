@@ -130,21 +130,29 @@
                                         </div>
                                     </div>
                                             <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">Price</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="price" id="name"
-                                            placeholder="Product_Price" value="{{ $product->price }}" >
-                                        <span class="messages"></span>
-                                    </div>
-                                </div>
-                                    <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Price</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="price" id="name"
+                                                    placeholder="Product_Price" value="{{ $product->price }}" >
+                                                <span class="messages"></span>
+                                                </div>
+                                                </div>
+                                                <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Minimum Order Quantity</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="qty" id=""
+                                                    placeholder="Minimum Order Quantity" value="{{ $product->qty }}" >
+                                                <span class="messages"></span>
+                                                </div>
+                                                </div>
+                                               <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Description</label>
                                                 <div class="col-sm-8">
-                                                    <textarea class="textarea"  rows="3" cols="50" type="text" name="desc1"
+                                                    <textarea class="textarea"  rows="10" cols="100" type="text" name="desc1"
                                                         class="form-control" placeholder="Enter Description"style="width:500px;height:400px">{{ $product->desc1 }}</textarea>
                                                     <span class="messages"></span>
                                                 </div>
-                                            </div>
+                                               </div>
 
 
                                                  <div class="form-group row">

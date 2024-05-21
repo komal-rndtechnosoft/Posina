@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Technical;
+
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -45,52 +47,63 @@ class MainController extends Controller
     }
     public function products()
     {
+        $menu1 = DB::table('menus')->select('*')->where('id', 6)->first();
+
         $product = DB::table('products')->select('*')->limit(30)->get();
 
-        return view('Frontend.product', compact('product'));
+        return view('Frontend.product', compact('product','menu1'));
     }
     public function productsdetails()
     {
+
         $category = DB::table('categories')->select('*')->get();
         return view('Frontend.product-detail', compact('category'));
     }
     public function blogs()
     {
+        $menu1 = DB::table('menus')->select('*')->where('id', 3)->first();
+
         $title4 = DB::table('titles')->select('*')->where('id', 4)->first();
         $blogs = DB::table('blogs')->select('*')->get();
 
-        return view('Frontend.blogs', compact('blogs', 'title4'));
+        return view('Frontend.blogs', compact('blogs', 'title4','menu1'));
     }
 
     public function blogdetails($slug)
     {
+        $menu1 = DB::table('menus')->select('*')->where('id', 4)->first();
         $category = DB::table('categories')->select('*')->get();
         $blogs = DB::table('blogs')->select('*')->latest()->limit(3)->get();
         $data = DB::table('blogs')->select('*')->where('slug', $slug)->first();
-        return view('Frontend.blog-details', compact('data', 'blogs', 'category'));
+        return view('Frontend.blog-details', compact('data', 'blogs', 'category','menu1'));
     }
     public function contact()
     {
-        return view('Frontend.Contact');
+        $menu1 = DB::table('menus')->select('*')->where('id', 5)->first();
+
+        return view('Frontend.Contact',compact('menu1'));
     }
     public function productdetails($categorySlug)
     {
-        $product1 = Product::select('products.*')->get();
+        $menu1 = DB::table('menus')->select('*')->where('id', 7)->first();
 
+        $product1 = Product::select('products.*')->get();
         $product = Product::select('products.*')
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('categories.slug', $categorySlug)
             ->get();
         $cat = DB::table('categories')->select('*')->get();
         $category = DB::table('categories')->select('*')->where('slug', $categorySlug)->first();
-        return view('Frontend.product-detail', compact('category', 'cat', 'product', 'product1'));
+        $tech = DB::table('technicals')
+        ->join('products', 'products.id', '=', 'technicals.product_id')
+        ->whereIn('products.id', $product->pluck('id'))
+        ->select('technicals.*', 'products.id as product_id')
+        ->get()
+        ->groupBy('product_id');
+
+        return view('Frontend.product-detail', compact('category', 'cat', 'product', 'product1','tech','menu1'));
     }
-    public function getProduct(Request $request)
-    {
-        $productId = $request->input('id');
-        $product1 = Product::find($productId);
-        return response()->json($product1);
-    }
+   
     public function store(Request $request)
     {
 

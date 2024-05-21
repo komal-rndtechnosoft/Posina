@@ -138,6 +138,11 @@
 									<span class="pcoded-mtext">Products</span>
 								</a>
 							</li>
+							<li class="">
+								<a href="{{url('Technical')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Technical Specification</span>
+								</a>
+							</li>
 							
 							
 						</ul>

@@ -18,7 +18,7 @@ use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MisionVisionController;
-
+use App\Http\Controllers\TechnicalController;
 
 
 
@@ -68,6 +68,8 @@ Route::resource('/header',HeaderController::class);
 Route::resource('/footer',FooterController::class);
 Route::resource('/product',ProductController::class);
 Route::resource('/MissionVision',MisionVisionController::class);
+Route::resource('/Technical',TechnicalController::class);
+
 Route::delete('/product/remove/{id}/{image}/{index}', [ProductController::class, 'remove1'])->name('product.remove1');
 
 

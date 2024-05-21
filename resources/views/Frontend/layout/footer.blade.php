@@ -117,8 +117,7 @@
 							<div class="col-lg-12 text-center ">
 								<div class="copyright__text mb-30">
 									<p>
-										<a class="fw-bold" >Creative Gigs</a>
-										© 2023 Factry. All rights reserved.</p>
+										<a class="fw-bold" ><strong>Copyright 2024 © Posina.</strong> All Right Reserved. Design & Developed by <a href="https://www.rndtechnosoft.com/" style="color:#FACC3F"  target="_blank">RnD Technosoft</a></p>
 								</div>
 							</div>
 							

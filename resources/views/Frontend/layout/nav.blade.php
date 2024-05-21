@@ -4,8 +4,16 @@ $header=DB::table('headers')->select('*')->first();
 $footer=DB::table('footers')->select('*')->first();
 $category = DB::table('categories')->select('*')->get();
 
-  
 ?>
+<style>
+ li a.active{
+    color: #d8292d;
+}
+.cate.active{
+    color: white !important;
+}
+
+</style>
 
 		<!-- header-area start -->
 		<header class="theme-main-menu theme-menu-three">
@@ -40,7 +48,7 @@ $category = DB::table('categories')->select('*')->get();
 										<span>Location</span>
 										<div class="right-language">
 											<div class="dropdown">
-												<a  href="https://www.google.com/maps?ll=20.301965,72.986267&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=1541238221608601714" style="color:white">
+												<a  href="https://www.google.com/maps?ll=20.301965,72.986267&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=1541238221608601714" target="_blank">
 													{{$header->address}}
 												</a>
 											
@@ -69,8 +77,8 @@ $category = DB::table('categories')->select('*')->get();
 					<div class="row">
 						<div class="col-lg-10 col-6">
 							<div class="logo-area d-lg-none d-md-inline-block">
-								<a class="front" href="{{url('/')}}"><img src="assets/img/logo/POSINA logo.png"
-										alt="Header-logo"></a>
+								<a class="front" href="{{url('/')}}"><img src="{{ asset('Backend/images/header/' . $header->image) }}"
+									alt="{{$header->alt_tag}}"></a>
 							</div>
 							<div class="main-menu d-none d-lg-block">
 								<nav id="mobile-menu">
@@ -78,7 +86,7 @@ $category = DB::table('categories')->select('*')->get();
 										<li>
 											<a href="{{url('/')}}">Home</a>
 										</li>
-										<li>
+										<li  class="@if(Route::is('about')) active @endif">
 											<a href="{{url('/aboutus')}}">About Us</a>
 										</li>
 										
@@ -86,28 +94,28 @@ $category = DB::table('categories')->select('*')->get();
 											<a style="color:white;">Products</a>
 											<ul class="sub-menu">
 											@foreach($category as $p)
-												<li>
-													<a href="{{url('/productdetails/'.$p->slug)}}">{{$p->name}}</a>
+												<li class="cate">
+													<a href="{{url('/productdetails/'.$p->slug)}}" style="color:black">{{$p->name}}</a>
 												</li>
 												@endforeach
 												
 											</ul>
 										</li>
-										<li>
+										<li  class="@if(Route::is('blogs')) active @endif">
 											<a href="{{route('blogs')}}">Blogs</a>
 										</li>
 										
-										<li>
+										<li class="@if(Route::is('contactus')) active @endif">
 											<a href="{{route('contactus')}}">Contact Us</a>
 										</li>
-										<li>
+										<li class="@if(Route::is('products')) active @endif">
 											<a href="{{route('products')}}">New Products</a>
 										</li>
 									</ul>
 								</nav>
 							</div>
 						</div>
-						<div class="col-lg-2 col-6">
+						<div class="col-lg-2 col-6 catlog">
 		
 								<a href="POSINA CATALOGUE 1MAY2024 VER15.pdf" class="ht_btn ht_btn2 butt" download="POSINA CATALOGUE 1MAY2024 VER15.pdf"><span>Catalogue
 									<img src="{{asset('assets/img/icon/arrow1.svg')}}" alt=""></span></a>	

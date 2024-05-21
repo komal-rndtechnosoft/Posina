@@ -12,6 +12,7 @@ class Product extends Model
         'category_id',
             'name',
             'slug',
+            'qty',
             'price',
             'desc1',
             'image',

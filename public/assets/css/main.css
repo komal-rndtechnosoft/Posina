@@ -2742,10 +2742,10 @@ width:100%;
 }
 
 .main__slider__section2 {
-  padding-bottom: 109px !important;
-  /* background-size: contain; */
+  /* padding-bottom: 109px !important; */
+  background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center center; */
+  background-position: center center;
   position: relative;
   z-index: 1;
 }
@@ -5262,7 +5262,7 @@ width:100%;
 }
 
 .blog__title__three {
-  font-size: 26px;
+  font-size: 25px;
   line-height: 1.4;
 }
 @media only screen and (max-width: 1200px) {
@@ -7689,4 +7689,64 @@ img{
 color:white;
 }
 
+.product-wrapper {
+  /* Add shadow properties */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+  transition: box-shadow 0.3s ease; /* Add transition effect for smoother change */
+}
+
+.product-wrapper:hover {
+  /* Adjust shadow on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+}
+.product-thumb {
+ 
+
+  /* Add shadow properties */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+  transition: box-shadow 0.3s ease; /* Add transition effect for smoother change */
+}
+
+.product-thumb:hover {
+  /* Adjust shadow on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+}
+.product__slider
+{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+  transition: box-shadow 0.3s ease; /* Add transition effect for smoother change */
+}
+
+.box 
+{
+  margin-top:20px;
+  border: 1px solid;
+}
+.bloo {
+  /* Adjust shadow on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+}
+
+a:hover 
+{
+  color:#d8292d;
+}
+
+.single__services__box
+{
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+
+}
+a
+{
+  color:white;
+}
+
+@media (max-width: 767px) {
+  .catlog
+  {
+    margin-top:10px;
+  }
+    
+}
 /*# sourceMappingURL=main.css.map */

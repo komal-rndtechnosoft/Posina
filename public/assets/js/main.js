@@ -599,13 +599,13 @@
 	const product__thumbs__slider = new Swiper('.product__thumbs__slider', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 4,
-		spaceBetween: 10,
+		slidesPerView: 3,
+		spaceBetween: 4,
 		loop: true,
-		slideToClickedSlide: false,
+		slideToClickedSlide: true,
 		autoplay: {
 			delay: 500,
-			disableOnInteraction: true,
+			disableOnInteraction: false,
 		},
 
 		breakpoints: {
@@ -624,6 +624,14 @@
 				slidesPerView: 4,
 				spaceBetween: 10
 			},
+			991: {
+				slidesPerView: 3,
+				spaceBetween: 30
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			}
 
 		}
 	});
