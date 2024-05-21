@@ -12,7 +12,7 @@
 					data-background="{{ asset('/Backend/images/banners/' . $b->banner_image) }}">
 					<!--<div class="circular__box">-->
 					<!--	<img class="circular__text" src="{{asset('assets/img/hero/circular-text-3c.png')}}" alt="Circular">-->
- 				<!--		<img class="circular__img" src="{{asset('assets/img/hero/icon-1c.svg')}}" alt="Icon">-->
+ 			        	<!--		<img class="circular__img" src="{{asset('assets/img/hero/icon-1c.svg')}}" alt="Icon">-->
 					<!--</div>-->
 					<div class="blur__box"></div>
 					<div class="container">
