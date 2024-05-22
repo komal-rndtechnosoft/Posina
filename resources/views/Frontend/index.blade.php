@@ -139,7 +139,7 @@
 					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}" style="object-fit:cover;">
 					<div class="service__year d-none d-md-inline-block">
 						<span class="service__label">Over</span>
-						<h2 class="section__title__one text-white">08+</h2>
+						<h2 class="section__title__one text-white">20+</h2>
 						<span class="service__label">Great Products</span>
 					</div>
 				</div>
@@ -254,7 +254,6 @@
 					
 					</div>
 					<!-- If we need pagination -->
-					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
@@ -345,7 +344,7 @@
 				<div class="chose__img__wrapper text-center text-lg-end mb-30">
 					<div class="service__year text-start d-none d-md-inline-block">
 						<span class="service__label">Over</span>
-						<h2 class="section__title__one text-white mb-1">70+</h2>
+						<h2 class="section__title__one text-white mb-1">20+</h2>
 						<span class="service__label">Our Products</span>
 					</div>
 					<img class="main__img__3c" src="{{ asset('Backend/images/about/' . $whoweare->image) }}" alt="{{$whoweare->alt_tag}}">
