@@ -1,9 +1,22 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::BlogSeo($slug);
+?>
 @extends('Frontend.layout.app')
 @section('content')
-
+<style>
+	a 
+	{
+		color:#d8292d;
+	}
+	.bloo {
+    box-shadow: 0px 8px 16px rgb(175 164 164 / 20%);
+}
+</style>
 			<main>
 			<!--page-title-area start-->
-			<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
+			<div class="page-title-area pt-60 pb-30 pt-lg-60 pb-lg-105 pb-md-50"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="{{asset('assets/img/shape/line-14d.svg')}}" alt="shape">
 				<img class="page-title-shape shape-two" src="{{asset('assets/img/shape/pattern-1a.svg')}} " alt="shape">
@@ -38,9 +51,9 @@
 															{{ date('d', strtotime($data->created_at)) }},
 															{{ date('Y', strtotime($data->created_at)) }}
 									</a>									
-									<a class="meta-author float-end" href="#">{{$data->posted_by}}</span></a>
+									<a class="date__text float-end">{{$data->posted_by}}</a>
 								</div>
-								<img class="w-100 mb-30" src="{{ asset('/Backend/images/blogs/' . $data->banner_image) }}" alt="Blog">
+								<img class="w-100 mb-30 bloo" src="{{ asset('/Backend/images/blogs/' . $data->banner_image) }}" alt="Blog">
 								<p class="mb-30">{!!$data->short_description!!}</p>
 
 						
@@ -79,10 +92,10 @@
 										<h4 class="widget__title__three">Categories</h4>
 									</div>
 									<ul class="list-none service-widget">
-									    @foreach($category as $c)
-										<li><a href="#">{{$c->name}}<span class="float-end"><i
-														class="bi bi-arrow-right-short"></i></span></a></li>
-										@endforeach
+									@foreach($category as $c)
+								<li><a href="{{url('/productdetails/' . $c->slug)}}">{{$c->name}}<span class="float-end"><i
+												class="bi bi-arrow-right-short"></i></span></a></li>
+							@endforeach
 									
 									</ul>
 								</div>

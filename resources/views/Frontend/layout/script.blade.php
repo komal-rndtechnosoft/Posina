@@ -17,6 +17,7 @@
 	<script src="{{asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('assets/js/plugins.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 	<!--Custom JS here -->
@@ -44,4 +45,41 @@ function validateNumber(input) {
   input.value = input.value.replace(/[^0-9]/g, ''); // Remove any non-numeric characters
 }
 </script>
+
+
+
+
+<script>
+    document.querySelector('.widget-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        Swal.fire({
+            title: "Thank You!",
+            text: "Form submitted successfully!",
+            icon: "success"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                submitForm();
+                document.querySelector('.widget-form').reset();
+            }
+        });
+    });
+
+    function submitForm() {
+        // Use fetch or any other method to submit the form asynchronously
+        // For example, using fetch:
+        fetch(document.querySelector('.widget-form').action, {
+            method: 'POST',
+            body: new FormData(document.querySelector('.widget-form'))
+        })
+        .then(response => {
+            // Handle the response if needed
+            console.log('Form submitted successfully.');
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+        });
+    }
+</script>
+
+
 

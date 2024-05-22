@@ -1,11 +1,27 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::Breadcrumb($slug);
+?>
 @extends('Frontend.layout.app')
 @section('content')
 <?php
-$contact=DB::table("footers")->first();
+$contact = DB::table("footers")->first();
 ?>
-		<main>
-			<!--page-title-area start-->
-			<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
+<style>
+
+	a {
+		color: black;
+	}
+
+	.single__info__box:hover a {
+		color: white;
+	}
+
+</style>
+<main>
+	<!--page-title-area start-->
+	<div class="page-title-area pt-30 pb-30 pt-lg-60 pb-lg-105 pb-md-50"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -26,82 +42,84 @@ $contact=DB::table("footers")->first();
 					</div>
 				</div>
 			</div>
-			<!--page-title-area end-->
+	<!--page-title-area end-->
 
-			<!--contact__section start-->
-			<div class="contact__section pt-180 pb-140 pt-lg-120 pb-lg-120">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="contact__info__wrapper me-xxl-4 pe-xxl-5 mb-45">
-								<div class="single__info__box">
-									<div class="icon">
-										<i class="bi bi-telephone"></i>
-									</div>
-									<span><a href="tel:{{$contact->phone1}}">{{$contact->phone1}}</a></span>
-								</div>
-								<div class="single__info__box">
-									<div class="icon">
-										<i class="bi bi-geo-alt"></i>
-									</div>
-									<span><a target="_blank" href="{{$contact->location}}">{{$contact->address}}</a></span>
-								</div>
-								<div class="single__info__box">
-									<div class="icon">
-										<i class="bi bi-envelope"></i>
-									</div>
-									<span><a href="mailto:{{$contact->email1}}">{{$contact->email1}}</a></span>
-								</div>
-							
+	<!--contact__section start-->
+	<div class="contact__section pt-180 pb-140 pt-lg-120 pb-lg-120">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="contact__info__wrapper me-xxl-4 pe-xxl-5 mb-45">
+						<div class="single__info__box">
+							<div class="icon">
+								<i class="bi bi-telephone"></i>
 							</div>
+							<span><a href="tel:{{$contact->phone1}}">{{$contact->phone1}}</a></span>
 						</div>
-						<div class="col-lg-8">
-							<div class="contact-form-one">
-								<h3 class="section__title__one mb-50">Send Us Message</h3>
-								<form class="widget-form" action="{{ route('store') }}" method="post">
-								@csrf
-									<div class="row">
-										<div class="col-md-6">
-											<label class="label">Name</label>
-											<input type="text" name="fname" placeholder="First Name">
-										</div>
-									
-										<div class="col-md-6">
-											<label class="label">Email</label>
-											<input type="email" name="email" placeholder="Email ID">
-										</div>
-										<div class="col-md-6">
-											<label class="label">Phone No</label>
-											<input type="text" name="phone" oninput="validateNumber(this)"  class="form-control" pattern="\d{10,}" minlength="10" maxlength="10" id="userPhone" required placeholder="Your Phone *" title="Enter exactly 10 digits">
-											</div>
-										
-										<div class="col-md-6">
-											<label class="label">Subject</label>
-											<input type="text" name="sub" placeholder="Subject">
-										</div>
-										<div class="col-md-12 mb-25">
-											<label class="label">Message</label>
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<button class="ht_btn hover-bg border-0">Send Message</button>
-										</div>
-									</div>
-								</form>
+						<div class="single__info__box">
+							<div class="icon">
+								<i class="bi bi-geo-alt"></i>
 							</div>
+							<span><a target="_blank" href="{{$contact->location}}">{{$contact->address}}</a></span>
 						</div>
+						<div class="single__info__box">
+							<div class="icon">
+								<i class="bi bi-envelope"></i>
+							</div>
+							<span><a href="mailto:{{$contact->email1}}">{{$contact->email1}}</a></span>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="contact-form-one">
+						<h3 class="section__title__one mb-50">Send Us Message</h3>
+						<form class="widget-form" action="{{ route('store1') }}" method="post">
+							@csrf
+							<div class="row">
+								<div class="col-md-6">
+									<label class="label">Name</label>
+									<input type="text" name="fname" placeholder="First Name">
+								</div>
+
+								<div class="col-md-6">
+									<label class="label">Email</label>
+									<input type="email" name="email" placeholder="Email ID">
+								</div>
+								<div class="col-md-6">
+									<label class="label">Phone No</label>
+									<input type="text" name="phone" oninput="validateNumber(this)" class="form-control"
+										pattern="\d{10,}" minlength="10" maxlength="10" id="userPhone" required
+										placeholder="Your Phone *" title="Enter exactly 10 digits">
+								</div>
+								
+								<div class="col-md-6">
+									<label class="label">Subject</label>
+									<input type="text" name="sub" placeholder="Subject">
+								</div>
+								<div class="col-md-12 mb-25">
+									<label class="label">Message</label>
+									<textarea name="message" placeholder="Message"></textarea>
+								</div>
+								<div class="col-12">
+									<button class="ht_btn hover-bg border-0">Send Message</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
-			<!--contact__section end-->
-
-			
-
-		</main>
-
-        </div>
+		</div>
+	</div>
+	<!--contact__section end-->
 
 
-	
-	
+
+</main>
+
+</div>
+
+
+
+
 @endsection

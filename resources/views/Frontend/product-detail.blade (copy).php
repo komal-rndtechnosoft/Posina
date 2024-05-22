@@ -218,7 +218,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div class="contact__section pt-10 pb-110 pt-lg-120 pb-lg-120">
+					<div class="contact__section pt-10 pb-110 pt-lg-120 pb-lg-120 e1">
 						<div class="container">
 							<div class="row">
 

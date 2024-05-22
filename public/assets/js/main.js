@@ -206,7 +206,7 @@
 	const testimonial__slider__one = new Swiper('.testimonial__slider__one', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 1,
+		slidesPerView: 2,
 		loop: true,
 		autoplay: {
 			delay: 2500,
@@ -224,6 +224,10 @@
 				slidesPerView: 2,
 				spaceBetween: 30
 			},
+			1200: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			}
 
 		}
 	});
@@ -563,35 +567,34 @@
 	const teams__slider__one = new Swiper('.teams__slider__one', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 1,
+		slidesPerView: 3,
 		loop: true,
+		centeredSlides: false,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
 		},
 
-		// Navigation arrows
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-
 		breakpoints: {
-			// when window width is >= 320px
+
 			320: {
 				slidesPerView: 1,
-				spaceBetween: 20
+				spaceBetween: 20,
 			},
 			800: {
 				slidesPerView: 2,
-				spaceBetween: 30
+				spaceBetween: 30,
 			},
 			991: {
 				slidesPerView: 3,
-				spaceBetween: 30
+				spaceBetween: 30,
 			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			}
+		},
 
-		}
 	});
 
 

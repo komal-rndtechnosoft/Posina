@@ -37,7 +37,7 @@
                        <thead>
                            <tr style="text-transform: capitalize;">
                               <th>Id</th>
-                                   <th>Name</th>
+                                   <th>Certificate</th>
                                  <th>Action</th>
                               </tr>
                                    </thead>
@@ -45,7 +45,9 @@
                               <tr>
                                  @foreach($data as $d)
                                  <td>{{$d->id}}</td>
-                                  <td>{{$d->name}}</td>
+                                 <td>
+                                   <img src="{{ asset('Backend/images/certificate/' . $d->image) }}" alt="{{$d->alt_tag}}" width="200px" height="100px">
+                                  </td>
                                    <td> 
                                      <form action="{{ route('Certificate.destroy',$d->id) }}"
                                      method="Post">

@@ -197,5 +197,17 @@ class ProductController extends Controller
         }
     }
 
+    public function show8()
+    {
+        $data = DB::table('titles')->select('*')->where('id', 8)->first();
+        return view('admin.Product.show', compact('data'));
+    }
+    public function update8(Request $request)
+    {
+        $data = Title::find(8);
+        $data->update($request->all());
+        $data->save();
+        return redirect()->route('product.index')->with('success', 'Successfully Update.');
+    } 
 
 }

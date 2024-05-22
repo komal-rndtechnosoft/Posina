@@ -72,8 +72,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Alt Tag</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-4 col-form-label">Alt Tag</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" name="alt_tag" id="p_name"
                                                 placeholder="Enter Alt Tag" value="{{$data->alt_tag}}">
                                             <span class="messages"></span>

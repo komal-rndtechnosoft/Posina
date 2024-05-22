@@ -11,3 +11,4 @@
 	<link rel="stylesheet" href="{{asset('assets/css/aos.css')}}" />
 	<link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}" />
 	<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">

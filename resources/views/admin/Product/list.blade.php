@@ -28,6 +28,7 @@
                 <div class="card">
                     <div class="card-header">
                     <a href="{{route('product.create')}}"><button type="submit" class="btn btn-primary">Add Products</button></a>
+                    <a href="{{route('show8')}}"><button type="submit" class="btn btn-primary">Update Products Title</button></a>
 
                     </div>
                     <div class="card-body table-border-style">

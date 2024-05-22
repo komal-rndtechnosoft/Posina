@@ -1,5 +1,9 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::Breadcrumb($slug);
+?>
 @extends('Frontend.layout.app')
-
 @section('content')
 
 

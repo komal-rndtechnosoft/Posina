@@ -1,3 +1,8 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::CategorySEo($slug);
+?>
 @extends('Frontend.layout.app')
 @section('content')
 <style>
@@ -34,7 +39,7 @@
 
 
 	<!--products-section start-->
-	<section class="products-section pt-180 pb-165 pt-lg-120 pb-lg-105">
+	<section class="products-section pt-90 pb-125 pt-lg-120 pb-lg-105">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 order-lg-first order-last">
@@ -90,7 +95,7 @@
 											</div>
 											<div class="col-lg-5 col-md-4 col-sm-6">
 												<a class="ht_btn blog_btn" data-bs-toggle="modal"
-													data-bs-target="#exampleModal1">Inquire</a>
+													data-bs-target="#exampleModal1{{$p->id}}">Inquire</a>
 											</div>
 										</div>
 									</figcaption>
@@ -215,7 +220,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal1{{$p->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -223,34 +228,34 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div class="contact__section pt-10 pb-110 pt-lg-120 pb-lg-120">
+					<div class="contact__section pt-10 pb-110 pt-lg-120 ">
 						<div class="container">
 							<div class="row">
 
 								<div class="col-lg-12">
 									<div class="contact-form-one">
-										<form class="widget-form" action="{{ route('store') }}" method="post">
+									<form class="widget-form" action="{{ route('store') }}" method="post" >
 											@csrf
 											<div class="row">
-												<div class="col-md-12">
+												<div class="col-md-6">
 													<label class="label">Name</label>
 													<input type="text" name="fname" placeholder="First Name">
 												</div>
 
-												<div class="col-md-12">
+												<div class="col-md-6">
 													<label class="label">Email</label>
 													<input type="email" name="email" placeholder="Email ID">
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-6">
 													<label class="label">Phone No</label>
 													<input type="text" name="phone" oninput="validateNumber(this)"
 														class="form-control" pattern="\d{10,}" minlength="10" maxlength="10"
 														id="userPhone" required placeholder="Your Phone *"
 														title="Enter exactly 10 digits">
 												</div>
-												<div class="col-md-12">
+												<div class="col-md-6">
 													<label class="label">Product Name</label>
-													<input type="text" name="pname" placeholder="Phone" value="{{$p->name}}"
+													<input type="text" name="pname" placeholder="Product Name" value="{{$p->name}}"
 														readonly>
 												</div>
 												<div class="col-md-6">

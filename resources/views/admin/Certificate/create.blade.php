@@ -36,14 +36,14 @@
                                     enctype="multipart/form-data">
 
                                     @csrf
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Name</label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control" name="name" id="name"
                                                 placeholder="name" required>
                                             <span class="messages"></span>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Image</label>

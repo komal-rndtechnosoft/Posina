@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
+use App\Models\Contactus;
+use App\Models\Staticseo;
+
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactEmail;
+use App\Mail\ContactusEmail;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Technical;
@@ -48,10 +53,19 @@ class MainController extends Controller
     public function products()
     {
         $menu1 = DB::table('menus')->select('*')->where('id', 6)->first();
+        $title8 = DB::table('titles')->select('*')->where('id', 8)->first();
 
         $product = DB::table('products')->select('*')->limit(30)->get();
 
-        return view('Frontend.product', compact('product','menu1'));
+        $tech = DB::table('technicals')
+        ->join('products', 'products.id', '=', 'technicals.product_id')
+        ->whereIn('products.id', $product->pluck('id'))
+        ->select('technicals.*', 'products.id as product_id')
+        ->get()
+        ->groupBy('product_id');
+
+
+        return view('Frontend.product', compact('product','menu1','tech','title8'));
     }
     public function productsdetails()
     {
@@ -104,6 +118,19 @@ class MainController extends Controller
         return view('Frontend.product-detail', compact('category', 'cat', 'product', 'product1','tech','menu1'));
     }
    
+   
+    public function store1(Request $request)
+    {
+
+        $input = request()->except(['_token', '_method']);
+        Contactus::create($input);
+
+        $mail = Mail::to('diya.rndtechnosoft@gmail.com');
+        $mail->send(new ContactusEmail($input));
+
+        return back();
+
+    }
     public function store(Request $request)
     {
 
@@ -115,6 +142,36 @@ class MainController extends Controller
 
         return back();
 
+    }
+    public function showdesc()
+    {
+        $data = DB::table('staticseos')->select('*')->where('id', 1)->first();
+        return view('admin.Menu.show', compact('data'));
+    }
+    public function updatedesc1(Request $request)
+    {
+        $data = Staticseo::find(1);
+       
+        $filename = "";
+        $destination = public_path('Backend/images/menu');
+            if ($request->hasfile('ogimage')) {
+                $file = $request->file('ogimage');
+        
+                // Remove old image
+                $userImage = public_path("Backend/images/menu/{$data->ogimage}");
+                if (file_exists($userImage)) {
+                    unlink($userImage);
+                }
+        
+                // Upload Image
+                $filename = "banner-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+                $file->move($destination, $filename);
+                $data->ogimage = $filename;
+            }
+
+            $data->update($request->except('ogimage')); // Exclude the 'image' field from the update
+
+            return redirect()->route('menu.index')->with('success', 'Seo updated successfully');
     }
 
 }
