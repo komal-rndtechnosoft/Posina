@@ -61,27 +61,24 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $banner = Banner::find($id);
-
-        $filename = "";
         $destination = public_path('/Backend/images/banners');
-        if ($request->hasfile('banner_image')) {
+        if ($request->hasFile('banner_image')) {
             $file = $request->file('banner_image');
-
             // Remove old image
-            $userImage = public_path("/Backend/images/banners/{$banner->banner_image}");
-            if (file_exists($userImage)) {
-                unlink($userImage);
+            $oldImagePath = public_path("/Backend/images/banners/{$banner->banner_image}");
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
             }
-
-            // Upload Image
+        // Upload Image
             $filename = "banner-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
             $file->move($destination, $filename);
             $banner->banner_image = $filename;
         }
 
-        $banner->update($request->except('banner_image')); // Exclude the 'image' field from the update
+        // Update other fields excluding the 'banner_image'
+        $banner->update($request->except('banner_image'));
 
-        return redirect()->route('banner.index')->with('success', 'banner updated successfully');
+        return redirect()->route('banner.index')->with('success', 'Banner updated successfully');
     }
 
     public function destroy(banner $banner)

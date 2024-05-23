@@ -80,40 +80,42 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $data = Blog::find($id);
-        $filename = "";
-        $destinationpath = public_path('/Backend/images/blogs/');
+        $destinationPath = public_path('/Backend/images/blogs/');
+    
+        // Update blog image
         if ($request->hasFile('image')) {
-            $files = $request->file('image');
-            //Remove Old Image
-            $usersImage = public_path("/Backend/images/blogs/$data"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
+            $file = $request->file('image');
+            // Remove old blog image
+            $oldBlogImagePath = public_path("/Backend/images/blogs/{$data->image}");
+            if (File::exists($oldBlogImagePath)) {
+                unlink($oldBlogImagePath);
             }
-            //Upload Image
-            $filename = "Blog-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+            // Upload new blog image
+            $filename = "Blog-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+            $file->move($destinationPath, $filename);
             $data->image = $filename;
-            $files->move($destinationpath, $filename);
         }
-
+    
+        // Update banner image
         if ($request->hasFile('banner_image')) {
-            $files = $request->file('banner_image');
-            //Remove Old Image
-            $usersImage = public_path("/Backend/images/blogs/$data"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
+            $file = $request->file('banner_image');
+            // Remove old banner image
+            $oldBannerImagePath = public_path("/Backend/images/blogs/{$data->banner_image}");
+            if (File::exists($oldBannerImagePath)) {
+                unlink($oldBannerImagePath);
             }
-            //Upload Image
-            $filename = "Blog-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
-            $data->banner_image = $filename;
-            $files->move($destinationpath, $filename);
+            // Upload new banner image
+            $bannerFilename = "Banner-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+            $file->move($destinationPath, $bannerFilename);
+            $data->banner_image = $bannerFilename;
         }
-
-        $data->save();
-
-        $data->update($request->except('image', 'banner_image')); // Exclude the 'image' field from the update
-
+    
+        // Update other fields excluding the 'image' and 'banner_image'
+        $data->update($request->except('image', 'banner_image'));
+    
         return redirect()->route('Blog.index')->with('success', 'Blog updated successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.

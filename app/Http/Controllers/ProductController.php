@@ -110,18 +110,22 @@ class ProductController extends Controller
         $filename = "";
 
         $destination = public_path('Backend/images/product/');
-        if ($request->hasFile('image')) {
-            $files = $request->file('image');
-            //Remove Old Image
-            $usersImage = public_path("Backend/images/product/$product"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
-            }
-            //Upload Image
-            $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
-            $product->image = $filename;
-            $files->move($destination, $filename);
+       // Update single image
+    if ($request->hasFile('image')) {
+        $destination = public_path('Backend/images/product/');
+        $file = $request->file('image');
+
+        // Remove old image
+        $oldImagePath = public_path("Backend/images/product/{$product->image}");
+        if (File::exists($oldImagePath)) {
+            unlink($oldImagePath);
         }
+
+        // Upload new image
+        $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+        $file->move($destination, $filename);
+        $product->image = $filename;
+    }
 
 
         // Handle 'multiimage' field

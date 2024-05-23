@@ -73,18 +73,19 @@ class CertificateController extends Controller
         $filename = "";
         $destinationpath = public_path('/Backend/images/certificate/');
         if ($request->hasFile('image')) {
-            $files = $request->file('image');
-            //Remove Old Image
-            $usersImage = public_path("/Backend/images/certificate/$data"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
+            $file = $request->file('image');
+            
+            // Remove old certificate image
+            $oldImagePath = public_path("/Backend/images/certificate/{$data->image}");
+            if (File::exists($oldImagePath)) {
+                unlink($oldImagePath);
             }
-            //Upload Image
-            $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+    
+            // Upload new certificate image
+            $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+            $file->move($destinationpath, $filename);
             $data->image = $filename;
-            $files->move($destinationpath, $filename);
         }
-
         $data->save();
 
         $data->update($request->except('image')); // Exclude the 'image' field from the update

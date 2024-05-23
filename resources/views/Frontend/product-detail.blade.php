@@ -191,17 +191,17 @@
                     	<!--<div class="swiper-button-next"><i class="bi bi-chevron-right"></i></div>-->
 								</div>
 
-								<div class="swiper product__thumbs__slider">
+								<div class="swiper product__thumbs__slider"id="thumbnailSlider">
 									<div class="swiper-wrapper">
 										@php
 											$multiImages = explode('|', $p->multiimage);
 										@endphp
 										@foreach ($multiImages as $index => $image)
-										<div class="swiper-slide product__thumb box">
-											<img src="{{ asset('/Backend/images/product/' . $image) }}" alt="{{$p->alt1}}"
-												style="width:144px;height:150px;"
-												onclick="updateBigImage('{{ asset('/Backend/images/product/' . $image) }}', 'bigImage{{$p->id}}')">
-										</div>
+									<div class="swiper-slide product__thumb box">
+										<img src="{{ asset('/Backend/images/product/' . $image) }}" alt="{{$p->alt1}}"
+											style="width:144px;height:150px;cursor:pointer;"
+											onclick="updateBigImage('{{ asset('/Backend/images/product/' . $image) }}', 'bigImage{{$p->id}}')">
+									</div>
 									@endforeach
 
 									</div>
@@ -338,13 +338,34 @@
 	</div>
 @endforeach
 </div>
-<!-- Add this script in your HTML file -->
+
+
+
+
+<!-- show big image when i click on small  -->
 <script>
     function updateBigImage(imageSrc, bigImageId) {
-        document.getElementById(bigImageId).src = imageSrc;
+        // Disable slider movement temporarily
+        var thumbnailSlider = document.getElementById('thumbnailSlider');
+        
+        // Check if swiper instance exists
+        if (thumbnailSlider && thumbnailSlider.swiper && thumbnailSlider.swiper.autoplay) {
+            thumbnailSlider.swiper.autoplay.stop();
+
+            // Update the big image
+            document.getElementById(bigImageId).src = imageSrc;
+
+            // Re-enable slider movement after 5 seconds
+            setTimeout(function() {
+                thumbnailSlider.swiper.autoplay.start();
+            }, 3000); // 5000 milliseconds = 5 seconds
+        } else {
+            console.error('Swiper instance not found or autoplay not configured.');
+        }
     }
-    
 </script>
+
+
 
 
 @endsection

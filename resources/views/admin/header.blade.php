@@ -36,15 +36,15 @@
 						<img class="img-radius" src="{{asset('admin/assets/images/user/avatar-2.jpg')}}"
 							alt="User-Profile-Image">
 						<div class="user-details">
-							<div id="more-details">Admin <i class="fa fa-caret-down"></i></div>
+							<div id="more-details">Admin </div>
 						</div>
 					</div>
-					<div class="collapse" id="nav-user-link">
+					<!-- <div class="collapse" id="nav-user-link">
 						<ul class="list-unstyled">
 							<li class="list-group-item"><a href="user-profile.html"><i
 										class="feather icon-user m-r-5"></i>View Profile</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 
 				<ul class="nav pcoded-inner-navbar ">
