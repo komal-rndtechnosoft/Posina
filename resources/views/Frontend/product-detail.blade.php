@@ -173,14 +173,22 @@
 						<!--product-details-section start-->
 						<section class="product-details-section pt-25 pt-lg-90 pb-50">
 							<div class="container">
-								<div class="swiper product__slider">
+								<div class="swiper testimonial__slider__three">
 									<div class="swiper-wrapper mb-20">
+									    	@php
+											$multiImages = explode('|', $p->multiimage);
+										@endphp
+										@foreach ($multiImages as $index => $image)
 										<div class="swiper-slide product-item">
 											<img id="bigImage{{$p->id}}" class="w-100"
-												src="{{ asset('/Backend/images/product/' . $p->image) }}" alt="{{$p->alt}}">
+												src="{{ asset('/Backend/images/product/' . $image) }}" alt="{{$p->alt}}">
 										</div>
+										@endforeach
+										
 									</div>
-
+										
+                     <!--   <div class="swiper-button-prev"><i class="bi bi-chevron-left"></i></div>-->
+                    	<!--<div class="swiper-button-next"><i class="bi bi-chevron-right"></i></div>-->
 								</div>
 
 								<div class="swiper product__thumbs__slider">
@@ -232,7 +240,7 @@
 											</div>
 											<div class="tab-pane fade show  text-center" id="profile{{$p->id}}"
 												role="tabpanel" aria-labelledby="home-tab">
-												<table class="table table-hover">
+												<table class="table table-hover" style="border: 1px;">
 													<tbody>
 														@if(isset($tech[$p->id]))
 															@foreach($tech[$p->id] as $t)
@@ -335,6 +343,7 @@
     function updateBigImage(imageSrc, bigImageId) {
         document.getElementById(bigImageId).src = imageSrc;
     }
+    
 </script>
 
 

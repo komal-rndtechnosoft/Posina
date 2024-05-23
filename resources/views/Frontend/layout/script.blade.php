@@ -18,6 +18,7 @@
 	<script src="{{asset('assets/js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('assets/js/plugins.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 	<!--Custom JS here -->

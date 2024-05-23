@@ -7711,10 +7711,10 @@ color:white;
   /* Adjust shadow on hover */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
 }
-.product__slider
+.testimonial__slider__three
 {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
-  transition: box-shadow 0.3s ease; /* Add transition effect for smoother change */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important; 
+  transition: box-shadow 0.3s ease !important; 
 }
 
 .blog__one:hover {
