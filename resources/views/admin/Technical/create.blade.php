@@ -45,18 +45,15 @@
                                             <span class="messages"></span>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Product Name</label>
-                                        <div class="col-sm-8">
-                                            <select name="product_id" class="form-control">
-                                                <option>Select</option>
-                                                @foreach($product as $p)
-                                                    <option value="{{$p->id}}">{{$p->name}} </option>
-                                                @endforeach
-                                            </select>
-                                            <span class="messages"></span>
-                                        </div>
+                                  <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Product Name</label>
+                                    <div class="col-sm-8">
+                                        <select id="subcategorySelect" name="product_id" class="form-control">
+                                            <option>Select</option>
+                                        </select>
+                                        <span class="messages"></span>
                                     </div>
+                                </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Name</label>
                                         <div class="col-sm-8">
@@ -88,5 +85,31 @@
     </div>
 </section>
 <!-- [ Main Content ]  -->
-      
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function () {
+    $('#categorySelect').on('change', function () {
+        var selectedCategory = $(this).val();
+
+        $.get('{{ route("getProductsByCategory", ['category' => ':category']) }}'.replace(':category', selectedCategory))
+            .done(function (data) {
+                // Success: Update the product dropdown
+                $('#subcategorySelect').empty();
+                $.each(data, function (key, value) {
+                    $('#subcategorySelect').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            })
+            .fail(function (xhr, status, error) {
+                // Failure: Log error details and display an alert
+                console.error('AJAX request failed:');
+                console.log('XHR object:', xhr);
+                console.log('Status:', status);
+                console.log('Error:', error);
+
+                alert('Failed to fetch products. Please try again.');
+            });
+    });
+});
+
+</script>
 @include('admin.footer')

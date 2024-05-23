@@ -213,5 +213,5 @@ class ProductController extends Controller
         $data->save();
         return redirect()->route('product.index')->with('success', 'Successfully Update.');
     } 
-
+   
 }

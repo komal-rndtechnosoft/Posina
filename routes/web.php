@@ -104,6 +104,5 @@ Route::get('/show8', [App\Http\Controllers\ProductController::class, 'show8'])->
 Route::post('/update8', [App\Http\Controllers\ProductController::class, 'update8'])->name('update8');
 Route::get('/showdesc', [Maincontroller::class, 'showdesc'])->name('showdesc');
 Route::post('/updatedesc1', [Maincontroller::class, 'updatedesc1'])->name('updatedesc1');
-
-
+Route::get('/getProductsByCategory/{category}', [TechnicalController::class, 'getProductsByCategory'])->name('getProductsByCategory');
 

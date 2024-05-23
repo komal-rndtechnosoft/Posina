@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Technical;
+use App\Models\Product;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -121,5 +123,12 @@ class TechnicalController extends Controller
         $data->delete();
         return redirect()->route('Technical.index', compact('data'));
     }
+public function getProductsByCategory($category)
+{
+    $products = Product::where('category_id', $category)->get(); // Assuming you have a Product model
+    
+    return response()->json($products);
+}
+
 
 }
