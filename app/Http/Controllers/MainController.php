@@ -103,9 +103,9 @@ class MainController extends Controller
 
         $product1 = Product::select('products.*')->get();
         $product = Product::select('products.*')
-            ->join('categories', 'categories.id', '=', 'products.category_id')
-            ->where('categories.slug', $categorySlug)
-            ->get();
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->where('categories.slug', $categorySlug)
+        ->paginate(5);
         $cat = DB::table('categories')->select('*')->get();
         $category = DB::table('categories')->select('*')->where('slug', $categorySlug)->first();
         $tech = DB::table('technicals')

@@ -10,10 +10,11 @@ $contact = DB::table("footers")->first();
 ?>
 <style>
 
-	a {
-		color: black;
-	}
 
+.bl
+{
+    color:black !important;
+}
 	.single__info__box:hover a {
 		color: white;
 	}
@@ -54,19 +55,19 @@ $contact = DB::table("footers")->first();
 							<div class="icon">
 								<i class="bi bi-telephone"></i>
 							</div>
-							<span><a href="tel:{{$contact->phone1}}">{{$contact->phone1}}</a></span>
+							<span><a href="tel:{{$contact->phone1}}" class="bl">{{$contact->phone1}}</a></span>
 						</div>
 						<div class="single__info__box">
 							<div class="icon">
 								<i class="bi bi-geo-alt"></i>
 							</div>
-							<span><a target="_blank" href="{{$contact->location}}">{{$contact->address}}</a></span>
+							<span><a target="_blank" href="{{$contact->location}}"  class="bl">{{$contact->address}}</a></span>
 						</div>
 						<div class="single__info__box">
 							<div class="icon">
 								<i class="bi bi-envelope"></i>
 							</div>
-							<span><a href="mailto:{{$contact->email1}}">{{$contact->email1}}</a></span>
+							<span><a href="mailto:{{$contact->email1}}"  class="bl">{{$contact->email1}}</a></span>
 						</div>
 
 					</div>

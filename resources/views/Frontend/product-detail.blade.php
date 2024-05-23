@@ -9,6 +9,10 @@
  li a.active{
     background: #d8292d;
 }
+.active-category {
+   background: #d8292d !important;
+   color:white !important;
+}
 
 </style>
 
@@ -47,12 +51,20 @@
 						<div class="widget-title-box mb-25">
 							<h4 class="widget__title__three">Categories</h4>
 						</div>
-						<ul class="list-none service-widget">
-							@foreach($cat as $c)
-								<li><a href="{{url('/productdetails/' . $c->slug)}}">{{$c->name}}<span class="float-end"><i
-												class="bi bi-arrow-right-short"></i></span></a></li>
-							@endforeach
-						</ul>
+					<ul class="list-none service-widget">
+                        @foreach($cat as $c)
+                            @if(Request::url() == url('/productdetails/' . $c->slug))
+                                <li>
+                                    <a class="active-category" href="{{ url('/productdetails/' . $c->slug) }}">{{ $c->name }}<span class="float-end"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="{{ url('/productdetails/' . $c->slug) }}">{{ $c->name }}<span class="float-end"><i class="bi bi-arrow-right-short"></i></span></a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+
 					</div>
 				</div>
 
@@ -102,6 +114,36 @@
 								</figure>
 							</div>
 						@endforeach
+                   
+                    <div class="row">
+                        <div class="col-lg-12 mt-15">
+                            <div class="page-navigation">
+                                <ul class="pagination justify-content-center">
+                                    <!-- Previous Page Link -->
+                                    @if ($product->previousPageUrl())
+                                        <li class="page-item"><a class="page-link" href="{{ $product->previousPageUrl() }}"><i class="bi bi-arrow-left-short"></i></a></li>
+                                    @else
+                                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-arrow-left-short"></i></span></li>
+                                    @endif
+                    
+                                    <!-- Pagination Elements -->
+                                    @for ($i = 1; $i <= $product->lastPage(); $i++)
+                                        <li class="page-item {{ $i === $product->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $product->url($i) }}">{{ $i }}</a></li>
+                                    @endfor
+                    
+                                    <!-- Next Page Link -->
+                                    @if ($product->nextPageUrl())
+                                        <li class="page-item"><a class="page-link" href="{{ $product->nextPageUrl() }}"><i class="bi bi-arrow-right-short"></i></a></li>
+                                    @else
+                                        <li class="page-item disabled"><span class="page-link"><i class="bi bi-arrow-right-short"></i></span></li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
 
 					</div>

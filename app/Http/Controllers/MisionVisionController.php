@@ -97,7 +97,7 @@ class MisionVisionController extends Controller
 
         $data->save();
 
-        $data->update($request->except('image','image1')); // Exclude the 'image' field from the update
+        $data->update($request->except('image','image1','image2','image3')); // Exclude the 'image' field from the update
 
         return redirect()->route('MissionVision.index')->with('success', 'MissionVision updated successfully');
     }
