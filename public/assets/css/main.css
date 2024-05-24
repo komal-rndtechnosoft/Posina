@@ -7751,7 +7751,14 @@ a
 {
   color:white;
 }
-
+@media(max-width: 991.98px)
+{
+     .main__slider__section2
+  {
+ background-size: contain !important; 
+ margin-top: -41px !important; 
+  }
+}
 @media (max-width: 767px) {
   .search-area
   {
@@ -7765,6 +7772,11 @@ a
   .catlog
   {
     margin-top:10px;
+  }
+  .main__slider__section2
+  {
+ background-size: contain !important; 
+ margin-top: -41px !important; 
   }
   
     
