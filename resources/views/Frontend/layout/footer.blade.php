@@ -74,11 +74,15 @@
 										<a href="{{url('/aboutus')}}">About Us</a>
 									</li>
 									<li>
+										<a href="{{url('/products')}}">Products</a>
+									</li>
+									<li>
 										<a href="{{url('/blogs')}}">Blogs</a>
 									</li>
 									<li>
 										<a href="{{url('/contactus')}}">Contact Us</a>
 									</li>
+									
 									
 								</ul>
 							</div>

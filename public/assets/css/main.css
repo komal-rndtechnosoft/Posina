@@ -855,10 +855,11 @@ label {
 }
 
 .page-title-area {
-  background-size: cover;
+ background-position: center center;
+background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
+position: relative;
+z-index: 1;
 }
 .page-title-area::before {
   content: "";

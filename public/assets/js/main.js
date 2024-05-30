@@ -491,35 +491,35 @@
 	});
 
 	//hero__slider__three
-// 	const hero__slider__three = new Swiper('.hero__slider__three', {
-// 		// Optional parameters
-// 		direction: 'horizontal',
-// 		slidesPerView: 1,
-// 		loop: true,
-// 		autoplay: {
-// 			delay: 2500,
-// 			disableOnInteraction: false,
-// 		},
+	const hero__slider__three = new Swiper('.hero__slider__three', {
+		// Optional parameters
+		direction: 'horizontal',
+		slidesPerView: 1,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
 
-// 		scrollbar: {
-// 			el: '.swiper-scrollbar',
-// 			hide: false,
-// 		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			hide: false,
+		},
 
-// 		// If we need pagination
-// 		pagination: {
-// 			el: '.swiper-pagination',
-// 			type: "fraction",
-// 			clickable: true,
-// 		},
+		// If we need pagination
+		pagination: {
+			el: '.swiper-pagination',
+			type: "fraction",
+			clickable: true,
+		},
 
-// 		// Navigation arrows
-// 		navigation: {
-// 			nextEl: '.swiper-button-next',
-// 			prevEl: '.swiper-button-prev',
-// 		},
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
 
-// 	});
+	});
 
 
 	//testimonial__slider__three

@@ -41,7 +41,7 @@
 	
 			
 			<!-- about__area start -->
-<section class="about__area pt-130 pb-60 pt-lg-60 pb-lg-20">
+<section class="about__area pt-110 pb-40 pt-lg-60 pb-lg-20">
 	<div class="container">
 		
 		<div class="row align-items-center mb-20">
@@ -71,24 +71,24 @@
 <!-- about__area end -->
 
 	  <!-- mission vision start -->
-	  <section class="feature__area pt-20 pb-100 pt-lg-40 pb-lg-20">
+	  <section class="feature__area pt-20 pb-50 pt-lg-40 pb-lg-20">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6">
 							<div class="single__box feat__border mb-30">
 								<div class="icon mb-35">
-									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image) }}" alt="{{$miss->alt_tag}}">
-									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image2) }}" alt="{{$miss->alt_tag}}">
+									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image) }}" alt="{{$miss->alt_tag}}" style="width:80px">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image2) }}" alt="{{$miss->alt_tag}}" style="width:80px">
 								</div>
 								<h3 class="single__box__title">{{$miss->about_title}}</a></h3>
 								<p class="single__box__desc">{{$miss->about_description}}</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6">
-							<div class="single__box feat__border mb-30">
+							<div class="single__box feat__border mb-30" style="height:564px;">
 								<div class="icon mb-35">
-									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image1) }}" alt="{{$miss->alt_tag1}}">
-									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image3) }}" alt="{{$miss->alt_tag1}}">
+									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image1) }}" alt="{{$miss->alt_tag1}}" style="width:80px">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image3) }}" alt="{{$miss->alt_tag1}}" style="width:80px">
 								</div>
 								<h3 class="single__box__title">{{$miss->about_title1}}</a></h3>
 								<p class="single__box__desc"> {{$miss->about_description1}}</p>

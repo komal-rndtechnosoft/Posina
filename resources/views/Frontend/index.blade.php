@@ -14,54 +14,23 @@
 			<div class="swiper-slide">
 				<section class="main__slider__section2 pt-300 pb-205 pt-md-240 pb-md-105"
 					data-background="{{ asset('/Backend/images/banners/' . $b->banner_image) }}">
-					<!--<div class="circular__box">-->
-					<!--	<img class="circular__text" src="{{asset('assets/img/hero/circular-text-3c.png')}}" alt="Circular">-->
- 			        	<!--		<img class="circular__img" src="{{asset('assets/img/hero/icon-1c.svg')}}" alt="Icon">-->
-					<!--</div>-->
+				
 					<div class="blur__box"></div>
 					<div class="container">
 						<div class="row align-items-center justify-content-center">
 							<div class="col-lg-10">
 								<div class="theme__content text-center mt-185">
-									<!--<h2 class="main__title mb-60 red-second-letter">{{$b->title}}</h2>-->
-									<!--<a href="{{url('aboutus')}}" class="ht_btn ht_btn2"><span>Explore Now <img-->
-									<!--			src="{{asset('assets/img/icon/arrow1.svg')}}" alt=""></span></a>-->
+								
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--<div class="hero__media">-->
-					<!--	<div class="call__box">-->
-					<!--		<div class="icon mr-10">-->
-					<!--			<img src="assets/img/icon/icon-22c.svg" alt="Phone">-->
-					<!--		</div>-->
-					<!--		<div class="call__content pt-10">-->
-					<!--			<h5 class="call__title">Call For Support</h5>-->
-					<!--			<h4 class="call__number"><a href="tel:{{$header->phone}}">{{$header->phone}}</a></h4>-->
-					<!--		</div>-->
-					<!--	</div>-->
-					<!--</div>-->
-					<!--<div class="social_media">-->
-					<!--<a href="{{ $footer->facebook_link }}" style="cursor:pointer;" target="_blank">-->
-     <!--                <i class="fab fa-facebook-f"></i>-->
-     <!--                </a>-->
-					<!--	<a href="{{ $footer->twitter_link }}" style="cursor:pointer;" target="_blank">-->
-					<!--	<i class="fab fa-twitter"></i>-->
-					<!--	</a>-->
-				 <!--   	<a href="{{ $footer->instagram_link }}" style="cursor:pointer;" target="_blank">-->
-					<!--	<i class="fab fa-instagram"></i>-->
-					<!--	</a>-->
-					<!--</div>-->
-					
+				
 				</section>
 			</div>
 		@endforeach
 	</div>
-	<!-- swiper-scrollbar -->
-	<!--<div class="swiper-scrollbar d-none d-lg-inline-block"></div>-->
-	<!-- swiper-pagination -->
-	<!--<div class="swiper-pagination d-none d-lg-inline-block"></div>-->
-	<!-- swiper-arrow-pagination -->
+
 	<div class="swiper-button-prev d-none d-lg-inline-block"><i class="bi bi-chevron-left"></i></div>
 	<div class="swiper-button-next d-none d-lg-inline-block"><i class="bi bi-chevron-right"></i></div>
 </div>
@@ -89,7 +58,7 @@
 
 <!--usp__area start -->
 <section class="working__process__area">
-	<div class="grey-bg process__wrapper__about pt-130 pt-lg-60 pb-50 pb-lg-70 pb-md-90">
+	<div class="grey-bg process__wrapper__about pt-90 pt-lg-60 pb-30 pb-lg-70 pb-md-90">
 		<img class="shapes__1" src="assets/img/shape/about-line-2a.svg" alt="shape">
 		<img class="shapes__2" src="assets/img/shape/faq-line-5a.svg" alt="shape">
 		<div class="container">
@@ -115,7 +84,7 @@
 								<img src="{{ asset('Backend/images/usp/' . $u->icon) }}" alt="{{$u->alt_tag}}" style="width:60px;">
 							</div>
 							<h4 class="single__box__title"><a>{{$u->title}}</a></h4>
-							<p>{!!$u->description!!}</p>
+							<p style="width: 224px;">{!!$u->description!!}</p>
 						</div>
 					</div>
 				@endforeach
@@ -127,7 +96,7 @@
 <!-- usp end -->
 
 <!-- about__area start -->
-<section class="about__area pt-300 pb-60 pt-lg-60 pb-lg-20">
+<section class="about__area pt-260 pb-30 pt-lg-60 pb-lg-20">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-7">
@@ -173,7 +142,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="counter__box mb-30 ps-xxl-4">
-							<h3 class="counter__number"><span class="counter">{{$about->counter4}}</span></h3>
+							<h3 class="counter__number"><span class="counter">{{$about->counter4}}</span>+</h3>
 								<p>{{$about->countertitle4}}</p>
 							</div>
 						</div>
@@ -189,7 +158,7 @@
 <!-- about__area end -->
 
 <!-- Why Choose Us start -->
-<section class="who__we__area pt-80 pb-60 pt-lg-60 pb-lg-30">
+<section class="who__we__area pt-20 pb-30 pt-lg-60 pb-lg-30">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
@@ -220,7 +189,7 @@
 
 
 <!-- Category start -->
-<section class="services__area pt-80 pb-45 pt-lg-60 pb-lg-40">
+<section class="services__area pt-50 pb-22 pt-lg-60 pb-lg-40">
 	<div class="big-style-text">Category</div>
 	<div class="container">
 		<div class="row justify-content-center">
@@ -270,7 +239,7 @@
 
 <!-- Industry start -->
 <section class="services__area">
-	<div class="grey-bg services__bg__three pt-120 pb-90 pt-lg-60 pb-lg-30">
+	<div class="grey-bg services__bg__three pt-70 pb-60 pt-lg-60 pb-lg-30">
 		<img class="shapes__1" src="assets/img/shape/line-13c.svg" alt="line">
 		<img class="shapes__2" src="assets/img/shape/bio-electricity-1c.svg" alt="Bio">
 		<div class="container">
@@ -305,7 +274,7 @@
 <!-- Industry end -->
 
 <!-- Who We Are start -->
-<section class="chose__us__area pt-120 pt-lg-60 pb-85 pb-lg-30">
+<section class="chose__us__area pt-90 pt-lg-60 pb-40 pb-lg-30">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-xl-5 col-lg-6">
@@ -368,7 +337,7 @@
 
 
 	<!-- blog__area start -->
-	<section class="blog__area pt-100 pt-lg-120 pb-90 pb-lg-120">
+	<section class="blog__area pt-30 pt-lg-120 pb-30 pb-lg-120">
 		<div class="container">
 			<div class="section__title text-center mb-50">
 				<h4 class="sub__title__one text-theme mb-20">{{$title4->title}}</h4>

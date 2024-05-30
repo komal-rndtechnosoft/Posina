@@ -9,7 +9,7 @@
 
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-60 pb-30 pt-lg-60 pb-lg-105 pb-md-50"
+	<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">

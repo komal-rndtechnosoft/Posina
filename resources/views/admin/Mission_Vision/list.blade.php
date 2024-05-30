@@ -48,7 +48,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Description</label>
                                         <div class="col-sm-8">
-                                            <textarea rows="3" cols="70" type="text"
+                                            <textarea rows="6" cols="100" type="text"
                                                 name="about_description" class="form-control"
                                                 placeholder="Enter Description">{{$data->about_description}}</textarea>
                                             <span class="messages"></span>
@@ -118,7 +118,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Description</label>
                                         <div class="col-sm-8">
-                                            <textarea  rows="3" cols="70" type="text"
+                                            <textarea  rows="6" cols="100" type="text"
                                                 name="about_description1" class="form-control"
                                                 placeholder="Enter Description">{{$data->about_description1}}</textarea>
                                             <span class="messages"></span>

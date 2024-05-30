@@ -47,7 +47,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-10">
-                                            <textarea class="textarea" rows="3" cols="50" type="text" name="description" class="form-control"
+                                            <textarea  rows="3" cols="50" type="text" name="description" class="form-control"
                                                 placeholder="Enter Description">{{$data->description}}</textarea>
                                             <span class="messages"></span>
                                         </div>
