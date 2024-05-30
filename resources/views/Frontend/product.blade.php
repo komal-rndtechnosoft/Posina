@@ -6,10 +6,32 @@
 @extends('Frontend.layout.app')
 @section('content')
 
+<style>
+ .blog__one {
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.blog__thumb img {
+    max-height: 200px; 
+    object-fit: cover;
+}
+
+.blog__content__one {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+</style>
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
+	<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -52,7 +74,7 @@
 								<a><img class="w-100" src="{{ asset('Backend/images/product/' . $c->image) }}"
 										alt="{{$c->alt}}"></a>
 							</div>
-							<div class="blog__content__one">
+						<div class="blog__content__one">
 								
 								<h3 class="blog__title__three">{{$c->name}}
 								</h3>
