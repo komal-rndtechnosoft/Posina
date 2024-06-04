@@ -17,6 +17,8 @@
 	<script src="{{asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('assets/js/plugins.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/xzoom.min.js')}}"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -46,7 +48,39 @@ function validateNumber(input) {
   input.value = input.value.replace(/[^0-9]/g, ''); // Remove any non-numeric characters
 }
 </script>
+<script>
+    document.getElementById('contact-form4').addEventListener('submit', function (event) {
+        event.preventDefault();
+        Swal.fire({
+            title: "Thank You!",
+            text: "Form submitted successfully!",
+            icon: "success"
+        }).then((result) => {
+            if (result.isConfirmed) {
+          
+                submitForm();
+               
+                document.getElementById('contact-form4').reset();
+            }
+        });
+    });
 
+    function submitForm() {
+        // Use fetch or any other method to submit the form asynchronously
+        // For example, using fetch:
+        fetch(document.getElementById('contact-form4').action, {
+            method: 'POST',
+            body: new FormData(document.getElementById('contact-form4'))
+        })
+        .then(response => {
+            // Handle the response if needed
+            console.log('Form submitted successfully.');
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+        });
+    }
+</script>
 
 
 
@@ -80,7 +114,7 @@ function validateNumber(input) {
             console.error('Error submitting form:', error);
         });
     }
-</script>
+</script> 
 
 
 

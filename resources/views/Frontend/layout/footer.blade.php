@@ -26,29 +26,66 @@
 			<!-- cta__area end -->
 <!--footer-area start-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<div style=" display: flex;justify-content: flex-start;">
 <a href="https://wa.me/{{$header->phone}}" class="float f" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
+<a href="{{ $footer->facebook_link }}" class="float1 f" target="_blank">
+<i class="fa fa-facebook my-float" ></i>
 </a>
+<a href="{{ $footer->instagram_link }}" class="float2 f" target="_blank">
+<i class="fa fa-instagram my-float"></i>
+</a>
+</div>
 
 <style>
-    .float{
-    margin-left: 14px;
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:14px;
-	/*right:40px;*/
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-    font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-    z-index:100;
+   .float {
+    margin-left: 13px;
+    position: fixed;
+    width: 42px;
+    height: 43px;
+    bottom: 58px;
+    /* right: 40px; */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 21px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
 }
 
+.float1 {
+    margin-left: 14px;
+    position: fixed;
+	width: 42px;
+    height: 43px;
+    bottom: 9px;
+    /* right: 40px; */
+    background-color: #1371F6;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 21px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+.float2 {
+    margin-left: 12px;
+    position: fixed;
+    width: 42px;
+    height: 43px;
+    bottom: 109px;
+    /* right: 40px; */
+    background: linear-gradient(138deg, #9617db, #d640e6, #eb384e, #f1dd1d, transparent);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 21px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
 .my-float{
-	margin-top:16px;
+	margin-top:11px;
 }
 
  

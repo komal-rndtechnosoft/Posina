@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Contactus;
+use App\Models\Category;
+
 use App\Models\Staticseo;
 
 use Illuminate\Support\Facades\Mail;
@@ -30,7 +32,7 @@ class MainController extends Controller
         $whoweare = DB::table('whoweares')->select('*')->first();
         $wcs = DB::table('w_c_s')->select('*')->get();
         $wcstitle = DB::table('titles')->select('*')->where('id', 2)->first();
-        $category = DB::table('categories')->select('*')->get();
+        $category = DB::table('categories')->select('*')->limit(8)->get();
         $title3 = DB::table('titles')->select('*')->where('id', 3)->first();
         $title4 = DB::table('titles')->select('*')->where('id', 4)->first();
         $title7 = DB::table('titles')->select('*')->where('id', 7)->first();
@@ -173,5 +175,18 @@ class MainController extends Controller
 
             return redirect()->route('menu.index')->with('success', 'Seo updated successfully');
     }
+
+
+    public function showProductDetails($slug)
+{
+    $category = Category::where('slug', $slug)->first();
+    $products = Product::where('category_id', $category->id)->paginate(10);
+
+    if (request()->ajax()) {
+        return view('Frontend.product-detail', compact('products'))->render();
+    }
+
+    return view('Frontend.product-detail', compact('category', 'products'));
+}
 
 }

@@ -15,7 +15,7 @@
 
 		<main>
 			<!--page-title-area start-->
-			<div class="page-title-area pt-60 pb-30 pt-lg-60 pb-lg-105 pb-md-50"
+			<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -108,7 +108,7 @@
 					<div class="container">
 						<div class="row justify-content-center justify-content-xl-end">
 							<div class="col-xxl-5 col-lg-6">
-								<div class="section__title text-center text-xl-start mb-50">
+								<div class="section__title text-center text-xl-start mb-50" style="margin-left:8%;">
 									<h4 class="sub__title__one mb-0">{{$title5->title}}</h4>
 									<div class="snake-line mb-15">
 										<img src="assets/img/shape/snake-line-1a.svg" alt="line">

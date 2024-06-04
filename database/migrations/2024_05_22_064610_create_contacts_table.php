@@ -17,9 +17,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
            $table->string('pname');
-            $table->string('qty');
-            $table->string('sub');
-            $table->string('message');
+            $table->string('cname');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -33,3 +32,4 @@ return new class extends Migration
         Schema::dropIfExists('contacts');
     }
 };
+

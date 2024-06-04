@@ -58,6 +58,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/banner',BannerController::class);
 Route::resource('/brands',BrandController::class);
+Route::post('product/import', [ProductController::class, 'import'])->name('product.import');
 Route::resource('/usp',USPController::class);
 Route::resource('/wcs',WCSController::class);
 Route::resource('/About',AboutController::class);
@@ -105,4 +106,5 @@ Route::post('/update8', [App\Http\Controllers\ProductController::class, 'update8
 Route::get('/showdesc', [Maincontroller::class, 'showdesc'])->name('showdesc');
 Route::post('/updatedesc1', [Maincontroller::class, 'updatedesc1'])->name('updatedesc1');
 Route::get('/getProductsByCategory/{category}', [TechnicalController::class, 'getProductsByCategory'])->name('getProductsByCategory');
+Route::post('/products-import', [ProductController::class, 'import'])->name('products.import');
 

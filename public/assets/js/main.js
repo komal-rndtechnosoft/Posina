@@ -74,9 +74,17 @@
 	$(window).on('scroll', function () {
 		var scroll = $(window).scrollTop();
 		if (scroll < 200) {
-			$(".main-header-area").removeClass("sticky-menu");
+			$(".cust").removeClass("sticky-menu");
 		} else {
-			$(".main-header-area").addClass("sticky-menu");
+			$(".cust").addClass("sticky-menu");
+		}
+	});
+	$(window).on('scroll', function () {
+		var scroll = $(window).scrollTop();
+		if (scroll < 200) {
+			$(".c1").removeClass("sticky-menu");
+		} else {
+			$(".cust").addClass("sticky-menu");
 		}
 	});
 
@@ -836,7 +844,60 @@
 	});
 
 
-
+	var Zoom = function(imageZoom) {
+		this.urlImage = imageZoom;
+		this.img = undefined;
+		this.$img = undefined;
+	  
+		this.init = function() {
+		  this.loaders("on");
+		  this.calcs();
+		};
+		this.calcs = function() {
+		  var self = this;
+		  this.img = new Image();
+		  this.img.onload = function() {
+			self.build();
+		  };
+		  this.img.src = this.urlImage;
+		};
+		this.loaders = function(status) {
+		  switch(status) {
+			case "on":
+			  $('#loader').fadeIn(200);
+			  break;
+			case "off":
+			  $('#loader').fadeOut(200);
+			  break;
+		  }
+		};
+		this.build = function() {
+		  var self = this;
+		  this.$img = $(self.img);
+		  
+		  $('#zoom').fadeIn(200).append(this.$img);
+		  
+		  this.$img.on('mousedown', function(e) {
+			e.preventDefault();
+		  });
+		  
+		  // this is the problematic function
+		  $('body').on('mousemove', function(e) {
+			e.preventDefault();
+			// calc the percents of the window where
+			var px = 100 * e.pageX / $(window).width(); 
+			var py = 100 * e.pageY / $(window).height();
+	  
+			// calc of the percent pixel of the image
+			var fx = self.$img.width() * px / 100;
+			var fy = self.$img.height() * py / 100;
+	  
+			// render it left / 2 and top / 1.5 (the 1.5 value is imaginary!!)
+			self.$img.css({'transform': 'translate('+ -(fx/2) +'px, '+ -(fy/1.5)+'px)'});
+		  });
+		  self.loaders("off");
+		};
+	  };
 	//jquiry-price-slider
 	$(function () {
 		$("#slider-range").slider({
@@ -867,3 +928,4 @@
 
 
 })(jQuery);
+

@@ -63,17 +63,17 @@
                               </div>
                            </div>
                            <div class="form-group row">
-                              <label class="col-sm-4 col-form-label">Price</label>
+                              <label class="col-sm-4 col-form-label">Size</label>
                               <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="price" id="name"
-                                    placeholder="Product_Price" required>
+                                 <input type="text" class="form-control" name="size" id="name"
+                                    placeholder="Product_Size" required>
                                  <span class="messages"></span>
                               </div>
                            </div>
                            <div class="form-group row">
-                              <label class="col-sm-4 col-form-label">Minimum Order Quantity</label>
+                              <label class="col-sm-4 col-form-label">Master Packaging</label>
                               <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="qty" id="" placeholder="Minimum Order Quantity">
+                                 <input type="text" class="form-control" name="pack" id="" placeholder="Master Packaging">
                                  <span class="messages"></span>
                               </div>
                            </div>

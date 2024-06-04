@@ -22,7 +22,7 @@ $contact = DB::table("footers")->first();
 </style>
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-30 pb-30 pt-lg-60 pb-lg-105 pb-md-50"
+	<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -75,12 +75,12 @@ $contact = DB::table("footers")->first();
 				<div class="col-lg-8">
 					<div class="contact-form-one">
 						<h3 class="section__title__one mb-50">Send Us Message</h3>
-						<form class="widget-form" action="{{ route('store1') }}" method="post">
+						<form id="contact-form4" action="{{ route('store') }}" method="post" class="widget-form">
 							@csrf
 							<div class="row">
 								<div class="col-md-6">
 									<label class="label">Name</label>
-									<input type="text" name="fname" placeholder="First Name">
+									<input type="text" name="fname" placeholder="Name">
 								</div>
 
 								<div class="col-md-6">
@@ -93,14 +93,17 @@ $contact = DB::table("footers")->first();
 										pattern="\d{10,}" minlength="10" maxlength="10" id="userPhone" required
 										placeholder="Your Phone *" title="Enter exactly 10 digits">
 								</div>
-								
 								<div class="col-md-6">
-									<label class="label">Subject</label>
-									<input type="text" name="sub" placeholder="Subject">
+									<label class="label">Product Name</label>
+									<input type="text" name="pname" placeholder="Enter your Product Name">
+								</div>
+								<div class="col-md-12">
+									<label class="label">Company Name</label>
+									<input type="text" name="cname" placeholder="Enter your Company Name">
 								</div>
 								<div class="col-md-12 mb-25">
-									<label class="label">Message</label>
-									<textarea name="message" placeholder="Message"></textarea>
+									<label class="label">Address</label>
+									<textarea name="address" placeholder="Enter your Address Name"></textarea>
 								</div>
 								<div class="col-12">
 									<button class="ht_btn hover-bg border-0">Send Message</button>

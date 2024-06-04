@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+
 use App\Models\Title;
 use Illuminate\Support\Facades\Auth;
-
-use App\Models\Subcategory;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ProductImport;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\DB;
 
 
@@ -110,22 +114,22 @@ class ProductController extends Controller
         $filename = "";
 
         $destination = public_path('Backend/images/product/');
-       // Update single image
-    if ($request->hasFile('image')) {
-        $destination = public_path('Backend/images/product/');
-        $file = $request->file('image');
+        // Update single image
+        if ($request->hasFile('image')) {
+            $destination = public_path('Backend/images/product/');
+            $file = $request->file('image');
 
-        // Remove old image
-        $oldImagePath = public_path("Backend/images/product/{$product->image}");
-        if (File::exists($oldImagePath)) {
-            unlink($oldImagePath);
+            // Remove old image
+            $oldImagePath = public_path("Backend/images/product/{$product->image}");
+            if (File::exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+
+            // Upload new image
+            $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
+            $file->move($destination, $filename);
+            $product->image = $filename;
         }
-
-        // Upload new image
-        $filename = "certificate-" . strtotime(date('d-m-Y h:i:s')) . "." . $file->getClientOriginalExtension();
-        $file->move($destination, $filename);
-        $product->image = $filename;
-    }
 
 
         // Handle 'multiimage' field
@@ -212,6 +216,14 @@ class ProductController extends Controller
         $data->update($request->all());
         $data->save();
         return redirect()->route('product.index')->with('success', 'Successfully Update.');
-    } 
-   
-}
+    }
+
+
+
+    public function import() 
+    {
+        Excel::import(new ProductImport,request()->file('file'));
+               
+        return back();
+    }
+    }

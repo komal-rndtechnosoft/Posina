@@ -1,7 +1,7 @@
 <?php 
-    $currentURL = url()->current(); 
-    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
-    $BreadCrumb = Helper::CategorySEo($slug);
+    $currentURL = url()->current();
+$slug = basename(parse_url($currentURL, PHP_URL_PATH));
+$BreadCrumb = Helper::CategorySEo($slug);
 ?>
 @extends('Frontend.layout.app')
 @section('content')
@@ -13,6 +13,13 @@
    background: #d8292d !important;
    color:white !important;
 }
+@media screen and(min-width: 1200px)
+{
+.container{
+    max-width: 1275px;
+}
+}
+
 
 </style>
 
@@ -46,69 +53,77 @@
 	<section class="products-section pt-90 pb-125 pt-lg-120 pb-lg-105">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5 order-lg-first order-last">
+				<div class="col-lg-4 order-lg-first order-last">
 					<div class="grey-bg widget widget-categories mb-60">
 						<div class="widget-title-box mb-25">
 							<h4 class="widget__title__three">Categories</h4>
 						</div>
-					<ul class="list-none service-widget">
-                        @foreach($cat as $c)
-                            @if(Request::url() == url('/productdetails/' . $c->slug))
-                                <li>
-                                    <a class="active-category" href="{{ url('/productdetails/' . $c->slug) }}">{{ $c->name }}<span class="float-end"><i class="bi bi-arrow-right-short"></i></span></a>
-                                </li>
-                            @else
-                                <li>
-                                    <a href="{{ url('/productdetails/' . $c->slug) }}">{{ $c->name }}<span class="float-end"><i class="bi bi-arrow-right-short"></i></span></a>
-                                </li>
-                            @endif
-                        @endforeach
-                    </ul>
+						<ul class="list-none service-widget">
+						@foreach($cat as $c)
+							<li>
+								<a class="category-link {{ Request::url() == url('/productdetails/' . $c->slug) ? 'active-category' : '' }}" href="{{ url('/productdetails/' . $c->slug) }}" data-slug="{{ $c->slug }}">
+									{{ $c->name }}<span class="float-end"><i class="bi bi-arrow-right-short"></i></span>
+								</a>
+							</li>
+						@endforeach
+					</ul>
 
 					</div>
-				</div>
+					<div class="grey-bg mt-60">
+						<h3 class="widget__title__two mb-15 pt-20" style="text-align:center">Contact Us</h3>
+						
+						<form class="widget-form" action="{{ route('store') }}" method="post">
+						@csrf
+							<input type="text" placeholder="Enter Name" name="fname">
+							<input type="email" placeholder="Email" name="email">
+							<input type="text" placeholder="Company Name" name="cname">
+							<input type="text" placeholder="Product Name" name="pname">
+							<input type="text" name="phone" oninput="validateNumber(this)" class="form-control" pattern="\d{10,}" minlength="10"
+								maxlength="10" id="userPhone" required placeholder="Your Phone Number *" title="Enter exactly 10 digits">						
+							<textarea name="address" placeholder="Enter Your Address" spellcheck="false"></textarea>
+							<button class="widget-btn mt-20">Contact Now</button>
 
-
-				<div class="col-lg-7">
-
-					<div class="row">
+						</form>
+						
+					</div>
+						</div>
+				
+				<div class="col-lg-8" id="product-list">
+					<div class="row" id="product-container">
 						@foreach($product as $p)
-							<div class="col-lg-6 col-md-4 col-sm-6">
-								<figure class="product-wrapper white-bg mb-45">
-									<div class="product-thumb">
-										<a><img
+							<div class="col-lg-5 col-md-4 col-sm-6">
+								<figure class="product-wrapper white-bg mb-45" >
+									<div class="product-thumb" id="loader">
+										<a  id="zoom">
+											<img
 												src="{{ asset('/Backend/images/product/' . $p->image) }}"
-												class="figure-img w-100" alt="{{$p->alt}}" style=""></a>
-
-									</div>
-									<hr>
+												class="figure-img w-100" alt="{{$p->alt}}" style="height:280px;"></a>
+										</div>
+									
 									<figcaption class="figure-caption">
 										<h4 class="product-title"><a>
 												{{$p->name}}
 											</a></h4>
 
 										<div class="row">
-											<div class="col-lg-7 col-md-4 col-sm-6">
-												<span class="Quantity">Min Order Qty:{{$p->qty}}</span>
+											<div class="col-lg-12 col-md-4 col-sm-6">
+												<span class="Quantity">Size:&nbsp;{{$p->size}}</span>
 											</div>
-											<div class="col-lg-5 col-md-4 col-sm-6">
-												<span class="old-price">Price: Rs.{{$p->price}}</span>
-
+											<div class="col-lg-12 col-md-4 col-sm-6">
+												<span class="old-price">Master Packaging:&nbsp;{{$p->pack}}</span>
 											</div>
+											
 										</div>
 										<div style="margin-top: 9px;"></div>
 										<div class="row">
-											<div class="col-lg-7 col-md-4 col-sm-6">
-												<a href="{{$p->id}}" class="ht_btn blog_btn" data-bs-toggle="modal"
+											<div class="col-lg-12 col-md-4 col-sm-6">
+												<a  style="width:100%" href="{{$p->id}}" class="ht_btn blog_btn" data-bs-toggle="modal"
 													data-bs-target="#exampleModal{{ $p->id }}"
 													data-product-id="{{ $p->id }}">Read
 													more</a>
 
 											</div>
-											<div class="col-lg-5 col-md-4 col-sm-6">
-												<a class="ht_btn blog_btn" data-bs-toggle="modal"
-													data-bs-target="#exampleModal1{{$p->id}}">Inquire</a>
-											</div>
+											
 										</div>
 									</figcaption>
 								</figure>
@@ -143,9 +158,6 @@
                     </div>
 
 
-
-
-
 					</div>
 				</div>
 			</div>
@@ -176,7 +188,7 @@
 								<div class="swiper testimonial__slider__three">
 									<div class="swiper-wrapper mb-20">
 									    	@php
-											$multiImages = explode('|', $p->multiimage);
+	$multiImages = explode('|', $p->multiimage);
 										@endphp
 										@foreach ($multiImages as $index => $image)
 										<div class="swiper-slide product-item">
@@ -194,7 +206,7 @@
 								<div class="swiper product__thumbs__slider"id="thumbnailSlider">
 									<div class="swiper-wrapper">
 										@php
-											$multiImages = explode('|', $p->multiimage);
+	$multiImages = explode('|', $p->multiimage);
 										@endphp
 										@foreach ($multiImages as $index => $image)
 									<div class="swiper-slide product__thumb box">
@@ -222,12 +234,12 @@
 													data-bs-target="#home{{$p->id}}" type="button" role="tab"
 													aria-controls="home" aria-selected="true">Product Description</button>
 											</li>
-											<li class="nav-item" role="presentation">
+											<!-- <li class="nav-item" role="presentation">
 												<button class="nav-link" id="profile-tab" data-bs-toggle="tab"
 													data-bs-target="#profile{{$p->id}}" type="button" role="tab"
 													aria-controls="profile" aria-selected="false">Technical
 													Specification</button>
-											</li>
+											</li> -->
 
 										</ul>
 
@@ -269,73 +281,6 @@
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal1{{$p->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Enter Inquiring Requirement Details</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="contact__section pt-10 pb-110 pt-lg-120 ">
-						<div class="container">
-							<div class="row">
-
-								<div class="col-lg-12">
-									<div class="contact-form-one">
-									<form class="widget-form" action="{{ route('store') }}" method="post" >
-											@csrf
-											<div class="row">
-												<div class="col-md-6">
-													<label class="label">Name</label>
-													<input type="text" name="fname" placeholder="First Name">
-												</div>
-
-												<div class="col-md-6">
-													<label class="label">Email</label>
-													<input type="email" name="email" placeholder="Email ID">
-												</div>
-												<div class="col-md-6">
-													<label class="label">Phone No</label>
-													<input type="text" name="phone" oninput="validateNumber(this)"
-														class="form-control" pattern="\d{10,}" minlength="10" maxlength="10"
-														id="userPhone" required placeholder="Your Phone *"
-														title="Enter exactly 10 digits">
-												</div>
-												<div class="col-md-6">
-													<label class="label">Product Name</label>
-													<input type="text" name="pname" placeholder="Product Name" value="{{$p->name}}"
-														readonly>
-												</div>
-												<div class="col-md-6">
-													<label class="label">Product Quantity</label>
-													<input type="number" name="qty" id="qty" min="1" max="1000000000"
-														step="1" value="1" placeholder="Quantity" required>
-												</div>
-												<div class="col-md-6">
-													<label class="label">Subject</label>
-													<input type="text" name="sub" placeholder="Subject">
-												</div>
-												<div class="col-md-12 mb-25">
-													<label class="label">Message</label>
-													<textarea name="message" placeholder="Message"></textarea>
-												</div>
-												<div class="col-12">
-													<button class="ht_btn hover-bg border-0">Send Message</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 @endforeach
 </div>
 
@@ -365,6 +310,34 @@
     }
 </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.category-link').on('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            var slug = $(this).data('slug'); // Get the slug from the data attribute
+            var url = '/productdetails/' + slug;
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function(data) {
+                    $('#product-container').html($(data).find('#product-container').html()); // Update the product container with new content
+                    window.history.pushState(null, null, url); // Update the URL without reloading the page
+                },
+                error: function() {
+                    alert('An error occurred while loading the content.');
+                }
+            });
+        });
+
+        // Handle back/forward navigation
+        $(window).on('popstate', function() {
+            location.reload();
+        });
+    });
+</script>
 
 
 

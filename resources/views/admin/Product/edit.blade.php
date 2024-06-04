@@ -36,60 +36,69 @@
                                                     <div class="form-group" style="margin-bottom:3rem;">
                                                         <hr>
                                                         <label>Multi Images</label>
-                                                         <div class="">
-                                                             <div class="row">
-                                                             @php
-                                                                $multiImages = explode('|', $product->multiimage);
-                                                            @endphp
+                                                        <div class="">
+                                                            <div class="row">
+                                                                @php
+                                                                    $multiImages = explode('|', $product->multiimage);
+                                                                @endphp
+                                            
+                                                                @if (!empty($multiImages[0]))
+                                                                    @foreach ($multiImages as $index => $image)
 
-                                                            @if (!empty($multiImages[0]))
-                                                                @foreach ($multiImages as $index => $image)
-                                                   
                                                                         <div class="col-md-2 mb-2">
                                                                             <div class="position-relative">
                                                                                 <a href="{{ asset('/Backend/images/product') . '/' . $image }}">
-                                                                                    <img src="{{ asset('/Backend/images/product') . '/' . $image }}" class="img-thumbnail" style="width:150px;height:150px;">
+                                                                                    <img src="{{ asset('/Backend/images/product') . '/' . $image }}" class="img-thumbnail"
+                                                                                        style="width:150px;height:150px;">
                                                                                 </a>
-                                                            <form action="{{ route('product.remove1', ['id' => $product->id, 'image' => $image, $index]) }}" method="POST">
-                                                                            @csrf
-                                                                            @method('DELETE')
-                                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{$index}}" style="padding-top: 3px;margin-top: 5px; padding-left: 7px; padding-right: 10px; margin-left: 13px;">Delete</button>
-                                                                    
-                                                                            <!-- Delete Modal -->
-                                                                            <div class="modal fade" id="deleteModal{{ $index}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $index}}" aria-hidden="true">
-                                                                                <div class="modal-dialog" role="document">
-                                                                                    <div class="modal-content">
-                                                                                        <div class="modal-header">
-                                                                                            <h5 class="modal-title" id="deleteModalLabel{{$index}}">Confirm Delete</h5>
-                                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                                <span aria-hidden="true">&times;</span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <div class="modal-body">
-                                                                                            Are you sure you want to delete this Image?
-                                                                                        </div>
-                                                                                        <div class="modal-footer">
-                                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                                                <form
+                                                                                    action="{{ route('product.remove1', ['id' => $product->id, 'image' => $image, $index]) }}"
+                                                                                    method="POST">
+                                                                                    @csrf
+                                                                                    @method('DELETE')
+                                                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                                                        data-target="#deleteModal{{$index}}"
+                                                                                        style="padding-top: 3px;margin-top: 5px; padding-left: 7px; padding-right: 10px; margin-left: 13px;">Delete</button>
+
+                                                                                    <!-- Delete Modal -->
+                                                                                    <div class="modal fade" id="deleteModal{{ $index}}" tabindex="-1" role="dialog"
+                                                                                        aria-labelledby="deleteModalLabel{{ $index}}" aria-hidden="true">
+                                                                                        <div class="modal-dialog" role="document">
+                                                                                            <div class="modal-content">
+                                                                                                <div class="modal-header">
+                                                                                                    <h5 class="modal-title" id="deleteModalLabel{{$index}}">Confirm Delete
+                                                                                                    </h5>
+                                                                                                    <button type="button" class="close" data-dismiss="modal"
+                                                                                                        aria-label="Close">
+                                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div class="modal-body">
+                                                                                                    Are you sure you want to delete this Image?
+                                                                                                </div>
+                                                                                                <div class="modal-footer">
+                                                                                                    <button type="button" class="btn btn-secondary"
+                                                                                                        data-dismiss="modal">Cancel</button>
+                                                                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
+                                                                                </form>
+
                                                                             </div>
-                                                                        </form>
-                                                                                                                  
-                                                                 </div>
                                                                         </div>
                                                                     @endforeach
                                                                 @else
                                                                     <p>No images added.</p>
                                                                 @endif
-    
-                                                                </div>
-                                                                 </div>
-                                                                </div>
+                                            
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            </div>
                                 <div class="row">
                                     <div class="col-md-6">
                             <form id="main" action="{{ route('product.update', $product->id) }}" method="POST"
@@ -103,8 +112,10 @@
                                             <select id="categorySelect" name="category_id" class="form-control">
                                                 @foreach($categories as $category)
                                                 <option value="{{ $category->id }}"
-                                                    @if(isset($selectedCategory) && $selectedCategory->id ==
-                                                    $category->id) selected @endif>{{ $category->name }}
+                                                    @if(
+                                                    isset($selectedCategory) && $selectedCategory->id ==
+                                                    $category->id
+                                                ) selected @endif>{{ $category->name }}
                                                 </option>
                                                 @endforeach
                                             </select>
@@ -130,18 +141,18 @@
                                         </div>
                                     </div>
                                             <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Price</label>
+                                            <label class="col-sm-4 col-form-label">Size</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="price" id="name"
-                                                    placeholder="Product_Price" value="{{ $product->price }}" >
+                                                <input type="text" class="form-control" name="size" id="name"
+                                                    placeholder="Product_size" value="{{ $product->size }}" >
                                                 <span class="messages"></span>
                                                 </div>
                                                 </div>
                                                 <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Minimum Order Quantity</label>
+                                            <label class="col-sm-4 col-form-label">Master Packaging</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="qty" id=""
-                                                    placeholder="Minimum Order Quantity" value="{{ $product->qty }}" >
+                                                <input type="text" class="form-control" name="pack" id=""
+                                                    placeholder="Master Packaging" value="{{ $product->pack }}" >
                                                 <span class="messages"></span>
                                                 </div>
                                                 </div>
@@ -175,7 +186,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-4 col-form-label"></label>
                                                     <div class="col-sm-8">
-                                                        <img class="form-control"  style="height: 300px; width: 710px;" src="{{ asset('/Backend/images/product/'.$product->image) }}" alt="Card image cap"><br><br><br>
+                                                        <img class="form-control"  style="height: 300px; width: 710px;" src="{{ asset('/Backend/images/product/' . $product->image) }}" alt="Card image cap"><br><br><br>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -189,7 +200,7 @@
                                             </div>
                                               <div class="row">
                                                  @php
-                                              $multiImages = explode('|', $product->multiimage);
+$multiImages = explode('|', $product->multiimage);
                                                 @endphp
                                                    @if (!empty($multiImages[0]))
                                                  @foreach ($multiImages as $index => $image)

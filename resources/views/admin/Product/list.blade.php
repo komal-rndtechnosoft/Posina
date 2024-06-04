@@ -29,7 +29,12 @@
                     <div class="card-header">
                     <a href="{{route('product.create')}}"><button type="submit" class="btn btn-primary">Add Products</button></a>
                     <a href="{{route('show8')}}"><button type="submit" class="btn btn-primary">Update Products Title</button></a>
-
+                    <form action="{{ route('products.import') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control">
+                        <br>
+                        <button class="btn btn-success">Import Products Data</button>
+                    </form>
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">

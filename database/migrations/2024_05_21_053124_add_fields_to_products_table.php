@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('qty')->default(0);
+            $table->string('pack')->default(0);
+            $table->string('size')->default(0);
+
         });
     }
 

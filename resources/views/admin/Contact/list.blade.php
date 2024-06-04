@@ -41,7 +41,8 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Product Name</th>
-                                        <th>Product Quantity</th>
+                                        <th>Company Name</th>
+                                        <th>Address</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +53,9 @@
                                                 <td>{{$contact->email}}</td>
                                                 <td>{{$contact->phone}}</td>
                                                 <td>{{$contact->pname}}</td>
-                                                <td>{{$contact->qty}}</td>
+                                                <td>{{$contact->cname}}</td>
+                                                <td>{{$contact->address}}</td>
+
 
                                                 </td>
                                             </tr>
