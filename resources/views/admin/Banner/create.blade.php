@@ -34,14 +34,14 @@
                                 <form action="{{route('banner.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" name="title" placeholder="Title"
                                                  />
                                             <span class="messages"></span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="form-group row">
                                                    <label class="col-sm-2 col-form-label">Sub-Title</label>
                                                    <div class="col-sm-10">

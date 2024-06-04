@@ -48,7 +48,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Description</label>
                                         <div class="col-sm-8">
-                                            <textarea rows="3" cols="70" type="text"
+                                            <textarea rows="6" cols="100" type="text"
                                                 name="about_description" class="form-control"
                                                 placeholder="Enter Description">{{$data->about_description}}</textarea>
                                             <span class="messages"></span>
@@ -56,7 +56,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Image<h6
+                                        <label class="col-sm-4 col-form-label">Mision Front Icon<h6
                                                 style="font-size: 14px; color: red;">Size:(100X 55px)</h6></label>
                                         <div class="col-sm-8">
                                             <input type="file" class="form-control" name="image" id="p_img">
@@ -74,11 +74,34 @@
                                     </div>
 
 
+
+
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label"></label>
                                         <div class="col-sm-8">
                                             <img class="img-fluid card-img-top" style="height:200px;width:200px;"
                                                 src="{{ asset('/Backend/images/miss/' . $data->image) }}"
+                                                alt="Image"><br><br>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Mision Back Icon<h6
+                                                style="font-size: 14px; color: red;">Size:(100X 55px)</h6></label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="form-control" name="image2" id="p_img">
+                                            <span class="messages"></span>
+
+                                        </div>
+                                    </div>
+                                  
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"></label>
+                                        <div class="col-sm-8">
+                                            <img class="img-fluid card-img-top" style="height:200px;width:200px;"
+                                                src="{{ asset('/Backend/images/miss/' . $data->image2) }}"
                                                 alt="Image"><br><br>
                                         </div>
                                     </div>
@@ -95,7 +118,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Description</label>
                                         <div class="col-sm-8">
-                                            <textarea  rows="3" cols="70" type="text"
+                                            <textarea  rows="6" cols="100" type="text"
                                                 name="about_description1" class="form-control"
                                                 placeholder="Enter Description">{{$data->about_description1}}</textarea>
                                             <span class="messages"></span>
@@ -129,6 +152,26 @@
                                         </div>
                                     </div>
 
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Vision Back Icon<h6
+                                                style="font-size: 14px; color: red;">Size:(100X 55px)</h6></label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="form-control" name="image3" id="p_img">
+                                            <span class="messages"></span>
+
+                                        </div>
+                                    </div>
+                                  
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label"></label>
+                                        <div class="col-sm-8">
+                                            <img class="img-fluid card-img-top" style="height:200px;width:200px;"
+                                                src="{{ asset('/Backend/images/miss/' . $data->image3) }}"
+                                                alt="Image"><br><br>
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4"></label>
                                         <div class="col-sm-8">

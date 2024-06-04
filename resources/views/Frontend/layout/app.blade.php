@@ -1,21 +1,35 @@
+<?php
+$header = DB::table('headers')->select('*')->first();
+$about = DB::table('abouts')->select('*')->first();
+$stat = DB::table('staticseos')->select('*')->first();
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-
-
-<!-- Mirrored from html.creativegigstf.com/factry/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 05:25:42 GMT -->
 <head>
 	<meta charset="utf-8" />
+	@if($BreadCrumb && !empty($BreadCrumb->meta_title))
+
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="keywords"
-		content="Construction, Factory, elementor, engineering, Technology, online bussines, Ecommerce, Shop">
+		content="{{$BreadCrumb->meta_keyword}}">
 	<meta name="description"
-		content="Factry - Factory and Industry Service HTML5 Template for all kinds of Construction,Factory,elementor, engineering, Technology, online bussines, Ecommerce, Shop,website">
-	<title>Posina</title>
-	<meta property="og:site_name" content="Factry">
-	<meta property="og:url" content="">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Factry - Factory and Industry Service HTML5 Template">
-	<meta name='og:image' content='images/assets/ogg.html'>
+		content="{{$BreadCrumb->meta_description}}">
+		<title>{{$BreadCrumb->meta_title}}</title>
+		<meta property="og:site_name" content="{{$BreadCrumb->meta_title}}">
+    	<meta property="og:url" content="{{$BreadCrumb->meta_canonical}}">
+    	@if(request()->route()->getName() == 'blogs')
+    	<meta property="og:type" content="article">
+    	@else
+        <meta property="og:type" content="website">
+        @endif
+        <meta property="og:title" content="{{$BreadCrumb->meta_title}}">
+        @if(request()->route()->getName() == 'index')
+    	<meta name='og:image' content='{{ asset('Backend/images/header/' . $header->image1) }}'>
+    	@elseif(request()->route()->getName() == 'contactus' || request()->route()->getName() == 'aboutus')
+        <meta name='og:image' content='{{ asset('/Backend/images/about/'.$about->image) }}'>
+        @else
+        <meta name='og:image' content='{{ asset('/Backend/images/about/'.$about->image) }}'>
+        @endif
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- For Resposive Device -->
@@ -27,9 +41,29 @@
 	<meta name="msapplication-navbutton-color" content="#913BFF">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
-
+	@elseif($stat)
+    	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+    	<meta name="keywords" content="{{$stat->meta_keyword}}">
+    	<meta name="description" content="{{$stat->meta_description}}">
+    	<title>{{$stat->meta_title}}</title>
+    	<meta property="og:site_name" content="{{$stat->meta_title}}">
+    	<meta property="og:url" content="{{$stat->meta_canonical}}">
+    	@if(request()->route()->getName() == 'blogs')
+    	<meta property="og:type" content="article">
+    	@else
+        <meta property="og:type" content="website">
+        @endif
+        <meta property="og:title" content="{{$stat->meta_title}}">
+        @if(request()->route()->getName() == 'index')
+    	<meta name='og:image' content='{{ asset('/Backend/images/headers/'.$header->image1) }}'>
+    	@elseif(request()->route()->getName() == 'contact-us' || request()->route()->getName() == 'aboutus' || request()->route()->getName() == 'blogs')
+        <meta name='og:image' content='{{ asset('/Backend/images/about/'.$about->image) }}'>
+        @else
+        <meta name='og:image' content='{{ asset('/Backend/images/about/'.$about->image) }}'>
+        @endif
+		@endif
 	<!-- <link rel="manifest" href="site.webmanifest" /> -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.html" />
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('Backend/images/header/' . $header->image1) }}"  alt="{{$header->alt_tag}}"/>
 	<!-- Place favicon.ico in the root directory -->
     @include('Frontend.layout.head')
     </head>   

@@ -28,6 +28,8 @@
                 <div class="card">
                     <div class="card-header">
                     <a href="{{route('menu.create')}}"><button type="submit" class="btn btn-primary">Add Menu</button></a>
+                    <a href="{{route('showdesc')}}"><button type="submit" class="btn btn-primary"> Update Static Data</button></a>
+
 
                     </div>
                     <div class="card-body table-border-style">

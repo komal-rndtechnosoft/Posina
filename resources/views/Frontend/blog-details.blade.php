@@ -1,10 +1,23 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::BlogSeo($slug);
+?>
 @extends('Frontend.layout.app')
 @section('content')
-
+<style>
+	a 
+	{
+		color:#d8292d;
+	}
+	.bloo {
+    box-shadow: 0px 8px 16px rgb(175 164 164 / 20%);
+}
+</style>
 			<main>
 			<!--page-title-area start-->
-			<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
-				data-background="{{asset('assets/img/page-title/page-title-bg-1a.jpg')}}">
+			<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
+				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="{{asset('assets/img/shape/line-14d.svg')}}" alt="shape">
 				<img class="page-title-shape shape-two" src="{{asset('assets/img/shape/pattern-1a.svg')}} " alt="shape">
 
@@ -12,12 +25,11 @@
 					<div class="row gx-4 gx-xxl-5 align-items-center">
 						<div class="col-xl-6 col-md-6">
 							<div class="page-title-wrapper text-md-start text-center">
-								<h2 class="page-title mb-10">Blog-Details</h2>
+								<h2 class="page-title mb-10">{{$menu1->page_name}}</h2>
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{{url('/')}}">Home</a></li>
-										<li><a  href="{{url('/blogs')}}">Blogs</a></li>
-										<li class="active" aria-current="page">Blog-Details</li>
+										<li class="active" aria-current="page">{{$menu1->page_name}}</li>
 									</ul>
 								</nav>
 							</div>
@@ -39,9 +51,9 @@
 															{{ date('d', strtotime($data->created_at)) }},
 															{{ date('Y', strtotime($data->created_at)) }}
 									</a>									
-									<a class="meta-author float-end" href="#">{{$data->posted_by}}</span></a>
+									<a class="date__text float-end">{{$data->posted_by}}</a>
 								</div>
-								<img class="w-100 mb-30" src="{{ asset('/Backend/images/blogs/' . $data->banner_image) }}" alt="Blog">
+								<img class="w-100 mb-30 bloo" src="{{ asset('/Backend/images/blogs/' . $data->banner_image) }}" alt="Blog">
 								<p class="mb-30">{!!$data->short_description!!}</p>
 
 						
@@ -80,10 +92,10 @@
 										<h4 class="widget__title__three">Categories</h4>
 									</div>
 									<ul class="list-none service-widget">
-									    @foreach($category as $c)
-										<li><a href="#">{{$c->name}}<span class="float-end"><i
-														class="bi bi-arrow-right-short"></i></span></a></li>
-										@endforeach
+									@foreach($category as $c)
+								<li><a href="{{url('/productdetails/' . $c->slug)}}">{{$c->name}}<span class="float-end"><i
+												class="bi bi-arrow-right-short"></i></span></a></li>
+							@endforeach
 									
 									</ul>
 								</div>

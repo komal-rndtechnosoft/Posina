@@ -67,7 +67,7 @@
               <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
                 <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
                   <div class="text-center">
-                        <img src="{{ asset('Backend/files/assets/images/logo.png')}}" alt="logo.png">
+                        <!-- <img src="{{ asset('Backend/files/assets/images/logo.png')}}" alt="logo.png"> -->
                      </div>
                 </div>
                 <div class="box-root flex-flex flex-justifyContent--center error">
@@ -93,7 +93,7 @@
                         
                         <div class="field padding-bottom--24">
                           <!--<input  href="#" type="submit" value="Login">-->
-                          <button type="submit" style=" background: linear-gradient(92.35deg, #393672 61.35%, #EA7736 85.44%, #CF463C 99.89%);" class="btn text-center">Login</button>
+                          <button type="submit" style=" background:#d8292d;" class="btn text-center">Login</button>
                         </div>
                           <!--<div class="footer-link padding-top--24">-->
                             <!--<span>Don't Have an account? <a style="color: #164333; cursor: pointer;"> Create an Account</a></span>-->
@@ -183,19 +183,19 @@ label:hover{
   box-shadow: inset 0 0 0 2px black;
 }
 .box-background--blue {
-   background: linear-gradient(92.35deg, #393672 61.35%, #EA7736 85.44%, #CF463C 99.89%);
+   background: black;
 }
 .box-background--white {
   background-color: #ffffff;
 }
 .box-background--blue800 {
-    background: linear-gradient(92.35deg, #393672 61.35%, #EA7736 85.44%, #CF463C 99.89%);
+    background: #d8292d;
 }
 .box-background--gray100 {
-    background: linear-gradient(92.35deg, #393672 61.35%, #EA7736 85.44%, #CF463C 99.89%);
+    background:#d8292d;
 }
 .box-background--cyan200 {
-    background: linear-gradient(92.35deg, #393672 61.35%, #EA7736 85.44%, #CF463C 99.89%);
+    background: #d8292d;
 }
 .padding-top--64 {
   padding-top: 64px;

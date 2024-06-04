@@ -1,3 +1,8 @@
+<?php 
+    $currentURL = url()->current(); 
+    $slug = basename(parse_url($currentURL, PHP_URL_PATH)); 
+    $BreadCrumb = Helper::Breadcrumb($slug);
+?>
 @extends('Frontend.layout.app')
 @section('content')
 <style>
@@ -10,8 +15,8 @@
 
 		<main>
 			<!--page-title-area start-->
-			<div class="page-title-area pt-80 pb-100 pt-lg-120 pb-lg-125 pb-md-50"
-				data-background="assets/img/page-title/page-title-bg-1a.jpg">
+			<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
+				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 				<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
 
@@ -19,11 +24,11 @@
 					<div class="row gx-4 gx-xxl-5 align-items-center">
 						<div class="col-xl-6 col-md-6">
 							<div class="page-title-wrapper text-md-start text-center">
-								<h2 class="page-title mb-10">About Us</h2>
+								<h2 class="page-title mb-10">{{$menu1->page_name}}</h2>
 								<nav aria-label="breadcrumb">
 									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
 										<li><a href="{{url('/')}}">Home</a></li>
-										<li class="active" aria-current="page">About Us</li>
+										<li class="active" aria-current="page">{{$menu1->page_name}}</li>
 									</ul>
 								</nav>
 							</div>
@@ -36,7 +41,7 @@
 	
 			
 			<!-- about__area start -->
-<section class="about__area pt-130 pb-60 pt-lg-60 pb-lg-20">
+<section class="about__area pt-110 pb-40 pt-lg-60 pb-lg-20">
 	<div class="container">
 		
 		<div class="row align-items-center mb-20">
@@ -44,9 +49,9 @@
 				<div class="about__img__wrapper mb-30">
 					<img class="about__img__3c" src="{{ asset('Backend/images/about/' . $about->image) }}" alt="{{$about->alt_tag}}">
 					<div class="service__year d-none d-md-inline-block">
-						<span class="service__label">Over</span>
-						<h2 class="section__title__one text-white">08+</h2>
-						<span class="service__label">Our Products</span>
+						<span class="service__label">Since</span>
+						<h2 class="section__title__one text-white">2014</h2>
+						<span class="service__label">Established</span>
 					</div>
 				</div>
 			</div>
@@ -66,24 +71,24 @@
 <!-- about__area end -->
 
 	  <!-- mission vision start -->
-	  <section class="feature__area pt-20 pb-100 pt-lg-40 pb-lg-20">
+	  <section class="feature__area pt-20 pb-50 pt-lg-40 pb-lg-20">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6">
 							<div class="single__box feat__border mb-30">
 								<div class="icon mb-35">
-									<img class="front-icon" src="assets/img/icon/icon-1a.svg" alt="Icon">
-									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image) }}" alt="{{$miss->alt_tag}}">
+									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image) }}" alt="{{$miss->alt_tag}}" style="width:80px">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image2) }}" alt="{{$miss->alt_tag}}" style="width:80px">
 								</div>
 								<h3 class="single__box__title">{{$miss->about_title}}</a></h3>
 								<p class="single__box__desc">{{$miss->about_description}}</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-6">
-							<div class="single__box feat__border mb-30">
+							<div class="single__box feat__border mb-30" style="height:564px;">
 								<div class="icon mb-35">
-									<img class="front-icon" src="assets/img/icon/icon-1a.svg" alt="Icon">
-									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image1) }}" alt="{{$miss->alt_tag1}}">
+									<img class="front-icon" src="{{ asset('/Backend/images/miss/' . $miss->image1) }}" alt="{{$miss->alt_tag1}}" style="width:80px">
+									<img class="back-icon" src="{{ asset('/Backend/images/miss/' . $miss->image3) }}" alt="{{$miss->alt_tag1}}" style="width:80px">
 								</div>
 								<h3 class="single__box__title">{{$miss->about_title1}}</a></h3>
 								<p class="single__box__desc"> {{$miss->about_description1}}</p>
@@ -103,7 +108,7 @@
 					<div class="container">
 						<div class="row justify-content-center justify-content-xl-end">
 							<div class="col-xxl-5 col-lg-6">
-								<div class="section__title text-center text-xl-start mb-50">
+								<div class="section__title text-center text-xl-start mb-50" style="margin-left:8%;">
 									<h4 class="sub__title__one mb-0">{{$title5->title}}</h4>
 									<div class="snake-line mb-15">
 										<img src="assets/img/shape/snake-line-1a.svg" alt="line">
@@ -176,6 +181,9 @@
 					
 				</div>
 			</section>
+
+
+			
 			<!-- team__area end -->
 		</main>
 

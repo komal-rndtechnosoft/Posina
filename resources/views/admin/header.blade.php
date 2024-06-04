@@ -36,15 +36,15 @@
 						<img class="img-radius" src="{{asset('admin/assets/images/user/avatar-2.jpg')}}"
 							alt="User-Profile-Image">
 						<div class="user-details">
-							<div id="more-details">Admin <i class="fa fa-caret-down"></i></div>
+							<div id="more-details">Admin </div>
 						</div>
 					</div>
-					<div class="collapse" id="nav-user-link">
+					<!-- <div class="collapse" id="nav-user-link">
 						<ul class="list-unstyled">
 							<li class="list-group-item"><a href="user-profile.html"><i
 										class="feather icon-user m-r-5"></i>View Profile</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 
 				<ul class="nav pcoded-inner-navbar ">
@@ -138,6 +138,11 @@
 									<span class="pcoded-mtext">Products</span>
 								</a>
 							</li>
+							<li class="">
+								<a href="{{url('Technical')}}" class="waves-effect waves-dark">
+									<span class="pcoded-mtext">Technical Specification</span>
+								</a>
+							</li>
 							
 							
 						</ul>
@@ -147,17 +152,31 @@
 							<span class="pcoded-mtext">Blogs</span>
 						</a>
 					</li>
+					<li class="">
+						<a href="{{url('inquiry')}}" class="waves-effect waves-dark">
+							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+							<span class="pcoded-mtext">Inquiry-details</span>
+						</a>
+					</li>
+					<li class="">
+						<a href="{{url('contact')}}" class="waves-effect waves-dark">
+							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+							<span class="pcoded-mtext">Contactus-details</span>
+						</a>
+					</li>
+					<li class="">
+								<a href="{{url('menu')}}" class="waves-effect waves-dark">
+								<span class="pcoded-micon"><i class="feather icon-home"></i></span>
+									<span class="pcoded-mtext">Seo Setting</span>
+								</a>
+							</li>
 					<li class="pcoded-hasmenu">
 						<a class="waves-effect waves-dark">
 							<span class="pcoded-micon"><i class="feather icon-home"></i></span>
 							<span class="pcoded-mtext">Menu Setting</span>
 						</a>
 						<ul class="pcoded-submenu">
-							<li class="">
-								<a href="{{url('menu')}}" class="waves-effect waves-dark">
-									<span class="pcoded-mtext">Menus</span>
-								</a>
-							</li>
+							
 							<li class="">
 								<a href="{{url('header')}}" class="waves-effect waves-dark">
 									<span class="pcoded-mtext">Header Setting</span>

@@ -18,6 +18,8 @@ use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MisionVisionController;
+use App\Http\Controllers\TechnicalController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -33,7 +35,7 @@ use App\Http\Controllers\MisionVisionController;
 |
 */
 
-Route::get('/', [MainController::class,'index']);
+Route::get('/', [MainController::class,'index'])->name('index');
 Route::get('/products', [MainController::class,'products'])->name('products');
 Route::get('/aboutus', [MainController::class,'aboutus'])->name('aboutus');
 Route::get('/blogs', [MainController::class,'blogs'])->name('blogs');
@@ -44,6 +46,8 @@ Route::get('/productdetails/{categorySlug}', [MainController::class,'productdeta
 
 Route::get('/productsdetails', [MainController::class,'productsdetails'])->name('productsdetails');
 Route::POST('store', [Maincontroller::class,'store'])->name('store');
+Route::POST('store1', [Maincontroller::class,'store1'])->name('store1');
+
 Route::get('/get-product', 'MainController@getProduct')->name('get-product');
 
 
@@ -54,6 +58,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/banner',BannerController::class);
 Route::resource('/brands',BrandController::class);
+Route::post('product/import', [ProductController::class, 'import'])->name('product.import');
 Route::resource('/usp',USPController::class);
 Route::resource('/wcs',WCSController::class);
 Route::resource('/About',AboutController::class);
@@ -68,8 +73,10 @@ Route::resource('/header',HeaderController::class);
 Route::resource('/footer',FooterController::class);
 Route::resource('/product',ProductController::class);
 Route::resource('/MissionVision',MisionVisionController::class);
+Route::resource('/Technical',TechnicalController::class);
+Route::resource('/inquiry',ContactController::class);
 Route::delete('/product/remove/{id}/{image}/{index}', [ProductController::class, 'remove1'])->name('product.remove1');
-
+Route::get('/contact', [ContactController::class,'contact'])->name('contact');
 
 
 
@@ -94,6 +101,10 @@ Route::post('/update6', [App\Http\Controllers\CertificateController::class, 'upd
 Route::get('/show7', [App\Http\Controllers\CategoryController::class, 'show7'])->name('show7');
 Route::post('/update7', [App\Http\Controllers\CategoryController::class, 'update7'])->name('update7');
 
-
-
+Route::get('/show8', [App\Http\Controllers\ProductController::class, 'show8'])->name('show8');
+Route::post('/update8', [App\Http\Controllers\ProductController::class, 'update8'])->name('update8');
+Route::get('/showdesc', [Maincontroller::class, 'showdesc'])->name('showdesc');
+Route::post('/updatedesc1', [Maincontroller::class, 'updatedesc1'])->name('updatedesc1');
+Route::get('/getProductsByCategory/{category}', [TechnicalController::class, 'getProductsByCategory'])->name('getProductsByCategory');
+Route::post('/products-import', [ProductController::class, 'import'])->name('products.import');
 

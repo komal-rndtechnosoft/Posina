@@ -17,6 +17,8 @@ class MissionVision extends Model
         'about_description1',
         'alt_tag',
         'alt_tag1',
+        'image2',
+        'image3',
 
 
     ];

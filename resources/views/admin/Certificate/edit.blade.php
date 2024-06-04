@@ -36,14 +36,14 @@
 
                                     {{ method_field('PATCH') }}
                                     {{ csrf_field() }}
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Name</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" name="name" placeholder="Title"
                                                 value="{{ $data->name }}">
                                             <span class="messages"></span>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Image<h6

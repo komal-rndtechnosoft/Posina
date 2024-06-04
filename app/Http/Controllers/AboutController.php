@@ -34,30 +34,35 @@ class AboutController extends Controller
 
 
 
-    public function update(Request $request, $id)
-    {
-        $data = About::find($id);
-        $filename = "";
-        $destinationpath = public_path('/Backend/images/about/');
-        if ($request->hasFile('image')) {
-            $files = $request->file('image');
-            //Remove Old Image
-            $usersImage = public_path("/Backend/images/about/$data->image"); // get previous image from folder
-            if (File::exists($usersImage)) {
-                File::delete($usersImage);
-            }
-            //Upload Image
-            $filename = "header-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
-            $data->image = $filename;
-            $files->move($destinationpath, $filename);
-        }
+     public function update(Request $request, $id)
+     {
+         $data = About::find($id);
+         $destinationPath = public_path('/Backend/images/about/');
          
-        $data->save();
-
-        $data->update($request->except('image')); // Exclude the 'image' field from the update
-
-        return redirect()->route('About.index')->with('success', 'About updated successfully');
-    }
+         if ($request->hasFile('image')) {
+             $files = $request->file('image');
+             
+             // Remove Old Image
+             $oldImage = $data->image;
+             if ($oldImage) {
+                 $oldImagePath = public_path("/Backend/images/about/$oldImage");
+                 if (File::exists($oldImagePath)) {
+                     File::delete($oldImagePath);
+                 }
+             }
+     
+             // Upload New Image
+             $filename = "header-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+             $data->image = $filename;
+             $files->move($destinationPath, $filename);
+         }
+     
+         // Update other fields excluding the 'image' field
+         $data->update($request->except('image'));
+     
+         return redirect()->route('About.index')->with('success', 'About updated successfully');
+     }
+     
     /**
      * Remove the specified resource from storage.
      */

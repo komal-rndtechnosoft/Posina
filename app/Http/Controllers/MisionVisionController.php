@@ -55,6 +55,31 @@ class MisionVisionController extends Controller
             $files->move($destinationpath, $filename);
         }
 
+        if ($request->hasFile('image2')) {
+            $files = $request->file('image2');
+            //Remove Old Image
+            $usersImage = public_path("/Backend/images/miss/$data->image2"); // get previous image from folder
+            if (File::exists($usersImage)) {
+                File::delete($usersImage);
+            }
+            //Upload Image
+            $filename = "header-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+            $data->image2 = $filename;
+            $files->move($destinationpath, $filename);
+        }
+
+        if ($request->hasFile('image3')) {
+            $files = $request->file('image3');
+            //Remove Old Image
+            $usersImage = public_path("/Backend/images/miss/$data->image3"); // get previous image from folder
+            if (File::exists($usersImage)) {
+                File::delete($usersImage);
+            }
+            //Upload Image
+            $filename = "header-" . strtotime(date('d-m-Y h:i:s')) . "." . $files->getClientOriginalExtension();
+            $data->image3 = $filename;
+            $files->move($destinationpath, $filename);
+        }
        
         
           if ($request->hasFile('image1')) {
@@ -72,7 +97,7 @@ class MisionVisionController extends Controller
 
         $data->save();
 
-        $data->update($request->except('image','image1')); // Exclude the 'image' field from the update
+        $data->update($request->except('image','image1','image2','image3')); // Exclude the 'image' field from the update
 
         return redirect()->route('MissionVision.index')->with('success', 'MissionVision updated successfully');
     }

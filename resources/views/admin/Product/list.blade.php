@@ -28,7 +28,13 @@
                 <div class="card">
                     <div class="card-header">
                     <a href="{{route('product.create')}}"><button type="submit" class="btn btn-primary">Add Products</button></a>
-
+                    <a href="{{route('show8')}}"><button type="submit" class="btn btn-primary">Update Products Title</button></a>
+                    <form action="{{ route('products.import') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control">
+                        <br>
+                        <button class="btn btn-success">Import Products Data</button>
+                    </form>
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">
@@ -36,6 +42,7 @@
                         <thead>
                         <tr style="text-transform: capitalize;">
                              <th>Id</th>
+                             <th>Category</th>
                               <th>Name</th>
                               <th>Image</th>
                                  <th>Action</th>
@@ -45,6 +52,16 @@
                               <tr>
                                  @foreach($banners as $d)
                                  <td>{{$d->id}}</td>
+                                 <td>
+                                     @php
+                                        $matchingcat = $category->firstWhere('id', $d->category_id);
+                                       @endphp
+                                  @if($matchingcat)
+                                      {{ $matchingcat->name }}
+                                          @else
+                                        No matching product found.
+                                         @endif
+                                      </td>
                                   <td>{{$d->name}}</td>
                                   <td><img src="{{ asset('/Backend/images/product/'.$d->image) }}" alt="Image" title="Image" width="100px" height="100px"></td>
 

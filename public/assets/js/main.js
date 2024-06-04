@@ -74,9 +74,17 @@
 	$(window).on('scroll', function () {
 		var scroll = $(window).scrollTop();
 		if (scroll < 200) {
-			$(".main-header-area").removeClass("sticky-menu");
+			$(".cust").removeClass("sticky-menu");
 		} else {
-			$(".main-header-area").addClass("sticky-menu");
+			$(".cust").addClass("sticky-menu");
+		}
+	});
+	$(window).on('scroll', function () {
+		var scroll = $(window).scrollTop();
+		if (scroll < 200) {
+			$(".c1").removeClass("sticky-menu");
+		} else {
+			$(".cust").addClass("sticky-menu");
 		}
 	});
 
@@ -206,7 +214,7 @@
 	const testimonial__slider__one = new Swiper('.testimonial__slider__one', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 1,
+		slidesPerView: 2,
 		loop: true,
 		autoplay: {
 			delay: 2500,
@@ -224,6 +232,10 @@
 				slidesPerView: 2,
 				spaceBetween: 30
 			},
+			1200: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			}
 
 		}
 	});
@@ -552,8 +564,8 @@
 				spaceBetween: 30
 			},
 			1200: {
-				slidesPerView: 2,
-				spaceBetween: 70
+				slidesPerView: 1,
+				spaceBetween: 20
 			}
 		}
 	});
@@ -563,35 +575,34 @@
 	const teams__slider__one = new Swiper('.teams__slider__one', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 1,
+		slidesPerView: 3,
 		loop: true,
+		centeredSlides: false,
 		autoplay: {
 			delay: 2500,
 			disableOnInteraction: false,
 		},
 
-		// Navigation arrows
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-
 		breakpoints: {
-			// when window width is >= 320px
+
 			320: {
 				slidesPerView: 1,
-				spaceBetween: 20
+				spaceBetween: 20,
 			},
 			800: {
 				slidesPerView: 2,
-				spaceBetween: 30
+				spaceBetween: 30,
 			},
 			991: {
 				slidesPerView: 3,
-				spaceBetween: 30
+				spaceBetween: 30,
 			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			}
+		},
 
-		}
 	});
 
 
@@ -599,13 +610,13 @@
 	const product__thumbs__slider = new Swiper('.product__thumbs__slider', {
 		// Optional parameters
 		direction: 'horizontal',
-		slidesPerView: 4,
-		spaceBetween: 10,
+		slidesPerView: 3,
+		spaceBetween: 4,
 		loop: true,
-		slideToClickedSlide: false,
+		slideToClickedSlide: true,
 		autoplay: {
-			delay: 500,
-			disableOnInteraction: true,
+			delay: 2500,
+			disableOnInteraction: false,
 		},
 
 		breakpoints: {
@@ -624,9 +635,19 @@
 				slidesPerView: 4,
 				spaceBetween: 10
 			},
+			991: {
+				slidesPerView: 3,
+				spaceBetween: 30
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 40
+			}
 
 		}
 	});
+
+
 
 	//product__slider
 	const product__slider = new Swiper('.product__slider', {
@@ -636,7 +657,7 @@
 		loop: true,
 		autoplay: {
 			delay: 500,
-			disableOnInteraction: true,
+			disableOnInteraction: false,
 		},
 		thumbs: {
 			swiper: product__thumbs__slider,
@@ -647,6 +668,50 @@
 			prevEl: '.swiper-button-prev',
 		},
 	});
+	
+	
+	
+	
+// 		const product__slider = new Swiper('.product__thumbs__slider', {
+// 		// Optional parameters
+// 		direction: 'horizontal',
+// 		slidesPerView: 3,
+// 		spaceBetween: 4,
+// 		loop: true,
+// 		slideToClickedSlide: true,
+// 		autoplay: {
+// 			delay: 2500,
+// 			disableOnInteraction: false,
+// 		},
+
+// 		breakpoints: {
+// 			// when window width is >= 320px
+// 			320: {
+// 				slidesPerView: 2,
+// 				spaceBetween: 0
+// 			},
+// 			// when window width is >= 576px
+// 			576: {
+// 				slidesPerView: 3,
+// 				spaceBetween: 0
+// 			},
+// 			// when window width is >= 768
+// 			768: {
+// 				slidesPerView: 4,
+// 				spaceBetween: 10
+// 			},
+// 			991: {
+// 				slidesPerView: 3,
+// 				spaceBetween: 30
+// 			},
+// 			1200: {
+// 				slidesPerView: 4,
+// 				spaceBetween: 40
+// 			}
+
+// 		}
+// 	});
+
 
 
 	//blog__img__gallery
@@ -779,7 +844,60 @@
 	});
 
 
-
+	var Zoom = function(imageZoom) {
+		this.urlImage = imageZoom;
+		this.img = undefined;
+		this.$img = undefined;
+	  
+		this.init = function() {
+		  this.loaders("on");
+		  this.calcs();
+		};
+		this.calcs = function() {
+		  var self = this;
+		  this.img = new Image();
+		  this.img.onload = function() {
+			self.build();
+		  };
+		  this.img.src = this.urlImage;
+		};
+		this.loaders = function(status) {
+		  switch(status) {
+			case "on":
+			  $('#loader').fadeIn(200);
+			  break;
+			case "off":
+			  $('#loader').fadeOut(200);
+			  break;
+		  }
+		};
+		this.build = function() {
+		  var self = this;
+		  this.$img = $(self.img);
+		  
+		  $('#zoom').fadeIn(200).append(this.$img);
+		  
+		  this.$img.on('mousedown', function(e) {
+			e.preventDefault();
+		  });
+		  
+		  // this is the problematic function
+		  $('body').on('mousemove', function(e) {
+			e.preventDefault();
+			// calc the percents of the window where
+			var px = 100 * e.pageX / $(window).width(); 
+			var py = 100 * e.pageY / $(window).height();
+	  
+			// calc of the percent pixel of the image
+			var fx = self.$img.width() * px / 100;
+			var fy = self.$img.height() * py / 100;
+	  
+			// render it left / 2 and top / 1.5 (the 1.5 value is imaginary!!)
+			self.$img.css({'transform': 'translate('+ -(fx/2) +'px, '+ -(fy/1.5)+'px)'});
+		  });
+		  self.loaders("off");
+		};
+	  };
 	//jquiry-price-slider
 	$(function () {
 		$("#slider-range").slider({
@@ -810,3 +928,4 @@
 
 
 })(jQuery);
+
