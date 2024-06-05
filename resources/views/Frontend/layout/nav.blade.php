@@ -11,7 +11,10 @@ if ($current_page == '/') {
   top: 0; /* Ensures the header sticks to the top of the viewport */
   z-index: 10; /* Sets the stacking order to keep the header on top during overlaps */
 }
-
+.theme-menu-two .sticky-menu {
+    background: #181818 !important;
+    padding: 0px 0 !important;
+}
 
 
 	li a.active {
@@ -158,7 +161,7 @@ if ($current_page == '/') {
 
 
 <header class="theme-main-menu theme-menu-two black-bg  ">
-	<div class="container header-custom-container pt-10 pb-8 ">
+	<div class="container header-custom-container pt-10 pb-8 cust ">
 		<div class="row">
 			<div class="col-lg-3 d-none d-lg-inline-block">
 				<a class="front" href="{{url('/')}}">

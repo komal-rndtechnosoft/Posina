@@ -19,13 +19,15 @@ $BreadCrumb = Helper::CategorySEo($slug);
     max-width: 1275px;
 }
 }
-
+.figure-caption {
+    padding: 18px 20px 0px 20px;
+}
 
 </style>
 
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
+	<div class="page-title-area pt-300 pb-160 pt-lg-120 pb-lg-125 pb-md-100"
 				data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 				<img class="page-title-shape shape-one " src="{{asset('assets/img/shape/line-14d.svg')}}" alt="shape">
 				<img class="page-title-shape shape-two" src="{{asset('assets/img/shape/pattern-1a.svg')}} " alt="shape">
@@ -92,12 +94,23 @@ $BreadCrumb = Helper::CategorySEo($slug);
 					<div class="row" id="product-container">
 						@foreach($product as $p)
 							<div class="col-lg-5 col-md-4 col-sm-6">
-								<figure class="product-wrapper white-bg mb-45" >
-									<div class="product-thumb" id="loader">
+								<figure class="product-wrapper white-bg mb-45" style="height:412px">
+									<div class="product-thumb" id="loader" style="height: 219px;width: 108%;">
 										<a  id="zoom">
-											<img
-												src="{{ asset('/Backend/images/product/' . $p->image) }}"
-												class="figure-img w-100" alt="{{$p->alt}}" style="height:280px;"></a>
+										<div class="enlarge_pane_contain">
+								<div class="enlarge_pane">
+									<div class="enlarge">
+										<div class="enlarge_contain">
+											<img   class="" src="{{ asset('Backend/images/product/' . $p->image) }}"
+												srcset="{{ asset('Backend/images/product/' . $p->image) }} 480w, {{ asset('Backend/images/product/' . $p->image) }} 1200w, {{ asset('Backend/images/product/' . $p->image) }} 2000w"
+												sizes="100vw" alt="{{$p->alt}}" id="test-img">
+										</div>
+										<a href="https://peterdoes.it/product-enlarge/needles-canyon.jpg"
+											class="enlarge_btn" title="Toggle Zoom">Toggle Zoom</a>
+									</div>
+								</div>
+
+							</div>
 										</div>
 									
 									<figcaption class="figure-caption">
