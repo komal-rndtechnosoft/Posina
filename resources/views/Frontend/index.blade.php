@@ -8,20 +8,7 @@ $product = DB::table('products')->select('*')->latest()->first();
 @extends('Frontend.layout.app')
 @section('content')
 
-<style>
-        .xzoom, .xzoom-gallery {
-            max-width: 100%;
-        }
 
-        .xzoom-hidden {
-            display: none !important;
-        }
-
-        .xzoom-source {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
 <div class="modal fade" id="diya" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -208,42 +195,57 @@ $product = DB::table('products')->select('*')->latest()->first();
 <!-- who__we__area end -->
 
 
-
-<!-- category start -->
-<section class="services__area2 pt-20 pt-lg-55 pb-30 pb-lg-110">
+<!-- category start  myh cat-->
+<section class="services__area2 pt-20 pt-lg-55 pb-30 pb-lg-110 mainImageContainer ">
 	<div class="container">
-	<div class="row justify-content-center">
+		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<div class="section__title text-center mb-50">
 					<h4 class="sub__title__three mb-25">{{$title7->title}}</h4>
-					
+
 					<h2 class="section__title__one">{{$title7->subtitle}}
 					</h2>
 				</div>
 			</div>
 		</div>
 		<div class="row">
+			@foreach($category as $c)
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="single__services__box mb-60">
+						<div class="services__thumb">
+							<div class="enlarge_pane_contain">
+								<div class="enlarge_pane">
+									<div class="enlarge">
+										<div class="enlarge_contain">
+											<img  style="width:410px;height:370px;" class="" src="{{ asset('Backend/images/banners/' . $c->image) }}"
+												srcset="{{ asset('Backend/images/banners/' . $c->image) }} 480w, {{ asset('Backend/images/banners/' . $c->image) }} 1200w, {{ asset('Backend/images/banners/' . $c->image) }} 2000w"
+												sizes="100vw" alt="{{$c->alt_tag}}" id="test-img">
+										</div>
+										<a href="https://peterdoes.it/product-enlarge/needles-canyon.jpg"
+											class="enlarge_btn" title="Toggle Zoom">Toggle Zoom</a>
+									</div>
+								</div>
 
-		@foreach($category as $c)
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single__services__box mb-60">
-                <div class="services__thumb">
-                    <img class="xzoom w-100" src="{{ asset('Backend/images/banners/' . $c->image) }}"
-                         alt="{{$c->alt_tag}}" style="width:410px;height:370px;">
-                </div>
-                <div class="services__content">
-                    <h4 class="single__service__title"><a href="{{url('/productdetails/' . $c->slug)}}">{{$c->name}}</a></h4>
-                    <a href="{{url('/productdetails/' . $c->slug)}}"><img src="assets/img/icon/long-arrow.svg" alt="Arrow"></a>
-                </div>
-            </div>
-        </div>
-    @endforeach
+							</div>
+
+						</div>
+						<div class="services__content">
+						<h4 class="single__service__title"><a href="{{url('/productdetails/' . $c->slug)}}">{{$c->name}}</a></h4>
+						<a href="{{url('/productdetails/' . $c->slug)}}"><img src="assets/img/icon/long-arrow.svg" alt="Arrow"></a>
+					</div>
+
+					</div>
+				</div>
+			@endforeach
 
 		</div>
-		
+
 	</div>
 </section>
+
+
 <!-- services__area end -->
+
 
 
 <!-- brand__area start -->
@@ -292,7 +294,7 @@ $product = DB::table('products')->select('*')->latest()->first();
 					@foreach($serve as $s)
 						<div class="col-xl-3 col-md-4 col-sm-6">
 							<div class="single__services__three mb-30"
-								data-background="{{ asset('Backend/images/serve/' . $s->image) }}">
+								data-background="{{ asset('Backend/images/serve/' . $s->image) }}" style="height: 391px;">
 								<div class="services__content">
 									<div class="services__icon mb-20">
 										<img src="{{ asset('Backend/images/serve/' . $s->icon) }}" alt="{{$s->alt_tag}}"
@@ -414,6 +416,13 @@ $product = DB::table('products')->select('*')->latest()->first();
 	</section>
 	<!-- blog__area end -->
 
+
+
+
+
+
+
+
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script>
 		$(document).ready(function () {
@@ -429,19 +438,8 @@ $product = DB::table('products')->select('*')->latest()->first();
 		});
 	</script>
 
-<script>
-    $(document).ready(function() {
-        // Check if xZoom plugin is available
-        if ($.fn.xzoom) {
-            $('.xzoom').xzoom({
-                zoomWidth: 400, // Adjust the width of the zoomed area
-                tint: '#333', // Tint color of the zoomed area
-                Xoffset: 15, // Offset distance of the zoomed area from the image
-                defaultScale: 0.5 // Adjust the default scale of the zoomed image
-            });
-        } else {
-            console.error("xZoom plugin not found");
-        }
-    });
-</script>
+
+
+
+
 	@endsection

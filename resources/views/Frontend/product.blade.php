@@ -28,7 +28,7 @@ $BreadCrumb = Helper::Breadcrumb($slug);
 </style>
 <main>
 	<!--page-title-area start-->
-	<div class="page-title-area pt-220 pb-240 pt-lg-120 pb-lg-125 pb-md-100"
+	<div class="page-title-area pt-300 pb-160 pt-lg-120 pb-lg-125 pb-md-100"
 		data-background="{{ asset('Backend/images/menu/' . $menu1->banner_image) }}">
 		<img class="page-title-shape shape-one " src="assets/img/shape/line-14d.svg" alt="shape">
 		<img class="page-title-shape shape-two" src="assets/img/shape/pattern-1a.svg " alt="shape">
@@ -68,8 +68,24 @@ $BreadCrumb = Helper::Breadcrumb($slug);
 					<div class="col-lg-4 col-md-6">
 						<div class="blog__one mb-30 bloo">
 							<div class="blog__thumb">
-								<a><img class="w-100" src="{{ asset('Backend/images/product/' . $c->image) }}"
-										alt="{{$c->alt}}"></a>
+								<a>
+									
+										<div class="enlarge_pane_contain">
+								<div class="enlarge_pane">
+									<div class="enlarge">
+										<div class="enlarge_contain">
+											<img   class="" src="{{ asset('Backend/images/product/' . $c->image) }}"
+												srcset="{{ asset('Backend/images/product/' . $c->image) }} 480w, {{ asset('Backend/images/product/' . $c->image) }} 1200w, {{ asset('Backend/images/product/' . $c->image) }} 2000w"
+												sizes="100vw" alt="{{$c->alt}}" id="test-img">
+										</div>
+										<a href="https://peterdoes.it/product-enlarge/needles-canyon.jpg"
+											class="enlarge_btn" title="Toggle Zoom">Toggle Zoom</a>
+									</div>
+								</div>
+
+							</div>
+									
+							</a>
 							</div>
 							<div class="blog__content__one">
 
